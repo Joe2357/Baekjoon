@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 10 / 498
+  * 15 / 500
 
 ## 문제 목록
 ### 1000
@@ -15,3 +15,9 @@
   * 1010 다리 놓기  <https://acmicpc.net/problem/1010>  
   * 1011 Fly me to the Alpha Centauri <https://acmicpc.net/problem/1011>  
   * 1012 유기농 배추 <https://acmicpc.net/problem/1012>  
+  * 1015 수열 정렬 <https://acmicpc.net/problem/1015>  
+  * 1018 체스판 다시 칠하기 <https://acmicpc.net/problem/1018>  
+  * 1019 책 페이지 <https://acmicpc.net/problem/1019>  
+  * 1021 회전하는 큐 <https://acmicpc.net/problem/1021>  
+  * 1026 보물 <https://acmicpc.net/problem/1026>  
+  
