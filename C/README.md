@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 15 / 500
+  * 20 / 500
 
 ## 문제 목록
 ### 1000
@@ -20,4 +20,9 @@
   * 1019 책 페이지 <https://acmicpc.net/problem/1019>  
   * 1021 회전하는 큐 <https://acmicpc.net/problem/1021>  
   * 1026 보물 <https://acmicpc.net/problem/1026>  
+  * 1032 명령 프롬프트 <https://acmicpc.net/problem/1032>  
+  * 1034 램프 <https://acmicpc.net/problem/1034>  
+  * 1037 약수 <https://acmicpc.net/problem/1037>  
+  * 1049 기타줄 <https://acmicpc.net/problem/1049>  
+  * 1051 숫자 정사각형 <https://acmicpc.net/problem/1051>  
   
