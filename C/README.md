@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 20 / 500
+  * 25 / 501
 
 ## 문제 목록
 ### 1000
@@ -25,4 +25,9 @@
   * 1037 약수 <https://acmicpc.net/problem/1037>  
   * 1049 기타줄 <https://acmicpc.net/problem/1049>  
   * 1051 숫자 정사각형 <https://acmicpc.net/problem/1051>  
+  * 1057 토너먼트 <https://acmicpc.net/problem/1057>  
+  * 1065 한수 <https://acmicpc.net/problem/1065>  
+  * 1072 게임 <https://acmicpc.net/problem/1072>  
+  * 1074 Z <https://acmicpc.net/problem/1074>  
+  * 1075 나누기 <https://acmicpc.net/problem/1075>  
   
