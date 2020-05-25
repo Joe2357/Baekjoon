@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 25 / 501
+  * 30 / 501
 
 ## 문제 목록
 ### 1000
@@ -30,4 +30,10 @@
   * 1072 게임 <https://acmicpc.net/problem/1072>  
   * 1074 Z <https://acmicpc.net/problem/1074>  
   * 1075 나누기 <https://acmicpc.net/problem/1075>  
+  * 1076 저항 <https://acmicpc.net/problem/1076>  
+  * 1085 직사각형에서 탈출 <https://acmicpc.net/problem/1085>  
+  * 1094 막대기 <https://acmicpc.net/problem/1094>  
+### 1100
+  * 1100 하얀 칸 <https://acmicpc.net/problem/1100>  
+  * 1107 리모컨 <https://acmicpc.net/problem/1107>  
   
