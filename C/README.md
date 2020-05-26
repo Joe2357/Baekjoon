@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 30 / 501
+  * 35 / 501
 
 ## 문제 목록
 ### 1000
@@ -36,4 +36,8 @@
 ### 1100
   * 1100 하얀 칸 <https://acmicpc.net/problem/1100>  
   * 1107 리모컨 <https://acmicpc.net/problem/1107>  
-  
+  * 1110 더하기 사이클 <https://acmicpc.net/problem/1110>  
+  * 1120 문자열 <https://acmicpc.net/problem/1120>  
+  * 1149 RGB거리 <https://acmicpc.net/problem/1149>  
+  * 1152 단어의 개수 <https://acmicpc.net/problem/1152>  
+  * 1157 단어 공부 <https://acmicpc.net/problem/1157>  
