@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 35 / 501
+  * 40 / 501
 
 ## 문제 목록
 ### 1000
@@ -41,3 +41,9 @@
   * 1149 RGB거리 <https://acmicpc.net/problem/1149>  
   * 1152 단어의 개수 <https://acmicpc.net/problem/1152>  
   * 1157 단어 공부 <https://acmicpc.net/problem/1157>  
+  * 1158 조세퍼스 문제 <https://acmicpc.net/problem/1158>  
+  * 1159 농구 경기 <https://acmicpc.net/problem/1159>  
+  * 1181 단어 정렬 <https://acmicpc.net/problem/1181>  
+  * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
+  * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
+  
