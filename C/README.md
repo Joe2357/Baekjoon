@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 40 / 501
+  * 45 / 502
 
 ## 문제 목록
 ### 1000
@@ -46,4 +46,9 @@
   * 1181 단어 정렬 <https://acmicpc.net/problem/1181>  
   * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
   * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
-  
+  * 1193 분수찾기 <https://acmicpc.net/problem/1193>  
+### 1200
+  * 1212 8진수 2진수 <https://acmicpc.net/problem/1212>  
+  * 1237 정ㅋ벅ㅋ <https://acmicpc.net/problem/1237>  
+  * 1259 팰린드롬수 <https://acmicpc.net/problem/1259>  
+  * 1260 DFS와 BFS <https://acmicpc.net/problem/1260>  
