@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 45 / 502
+  * 50 / 495
 
 ## 문제 목록
 ### 1000
@@ -52,3 +52,9 @@
   * 1237 정ㅋ벅ㅋ <https://acmicpc.net/problem/1237>  
   * 1259 팰린드롬수 <https://acmicpc.net/problem/1259>  
   * 1260 DFS와 BFS <https://acmicpc.net/problem/1260>  
+  * 1267 핸드폰 요금 <https://acmicpc.net/problem/1267>  
+  * 1292 쉽게 푸는 문제 <https://acmicpc.net/problem/1292>  
+### 1300
+  * 1300 K번째 수 <https://acmicpc.net/problem/1300>  
+  * 1309 동물원 <https://acmicpc.net/problem/1309>  
+  * 1316 그룹 단어 체커 <https://acmicpc.net/problem/1316>  
