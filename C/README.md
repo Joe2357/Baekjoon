@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 50 / 495
+  * 55 / 495
 
 ## 문제 목록
 ### 1000
@@ -58,3 +58,9 @@
   * 1300 K번째 수 <https://acmicpc.net/problem/1300>  
   * 1309 동물원 <https://acmicpc.net/problem/1309>  
   * 1316 그룹 단어 체커 <https://acmicpc.net/problem/1316>  
+  * 1330 두 수 비교하기 <https://acmicpc.net/problem/1330>  
+  * 1357 뒤집힌 덧셈 <https://acmicpc.net/problem/1357>  
+  * 1388 바닥 장식 <https://acmicpc.net/problem/1388>  
+  * 1389 케빈 베이컨의 6단계 법칙 <https://acmicpc.net/problem/1389>  
+### 1400
+  * 1408 24 <https://acmicpc.net/problem/1408>  
