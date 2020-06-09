@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 55 / 495
+  * 60 / 495
 
 ## 문제 목록
 ### 1000
@@ -64,3 +64,8 @@
   * 1389 케빈 베이컨의 6단계 법칙 <https://acmicpc.net/problem/1389>  
 ### 1400
   * 1408 24 <https://acmicpc.net/problem/1408>  
+  * 1417 국회의원 선거 <https://acmicpc.net/problem/1417>  
+  * 1427 소트인사이드 <https://acmicpc.net/problem/1427>  
+  * 1436 영화감독 숌 <https://acmicpc.net/problem/1436>  
+  * 1453 피시방 알바 <https://acmicpc.net/problem/1453>  
+  * 1463 1로 만들기 <https://acmicpc.net/problem/1463>  
