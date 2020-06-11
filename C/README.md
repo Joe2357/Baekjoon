@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 60 / 495
+  * 65 / 495
 
 ## 문제 목록
 ### 1000
@@ -69,3 +69,9 @@
   * 1436 영화감독 숌 <https://acmicpc.net/problem/1436>  
   * 1453 피시방 알바 <https://acmicpc.net/problem/1453>  
   * 1463 1로 만들기 <https://acmicpc.net/problem/1463>  
+  * 1475 방 번호 <https://acmicpc.net/problem/1475>  
+  * 1476 날짜 계산 <https://acmicpc.net/problem/1476>  
+### 1500
+  * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
+  * 1546 평균 <https://acmicpc.net/problem/1546>  
+  * 1547 공 <https://acmicpc.net/problem/1547>  
