@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 65 / 495
+  * 70 / 495
 
 ## 문제 목록
 ### 1000
@@ -75,3 +75,9 @@
   * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
   * 1546 평균 <https://acmicpc.net/problem/1546>  
   * 1547 공 <https://acmicpc.net/problem/1547>  
+  * 1550 16진수 <https://acmicpc.net/problem/1550>  
+  * 1568 새 <https://acmicpc.net/problem/1568>  
+### 1600
+  * 1620 나는야 포켓몬 마스터 이다솜 <https://acmicpc.net/problem/1620>  
+  * 1629 곱셈 <https://acmicpc.net/problem/1629>  
+  * 1654 랜선 자르기 <https://acmicpc.net/problem/1654>  
