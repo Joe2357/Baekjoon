@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 70 / 495
+  * 75 / 495
 
 ## 문제 목록
 ### 1000
@@ -81,3 +81,10 @@
   * 1620 나는야 포켓몬 마스터 이다솜 <https://acmicpc.net/problem/1620>  
   * 1629 곱셈 <https://acmicpc.net/problem/1629>  
   * 1654 랜선 자르기 <https://acmicpc.net/problem/1654>  
+  * 1655 가운데를 말해요 <https://acmicpc.net/problem/1655>  
+  * 1668 트로피 진열 <https://acmicpc.net/problem/1668>  
+  * 1676 팩토리얼 0의 개수 <https://acmicpc.net/problem/1676>  
+  * 1697 숨바꼭질 <https://acmicpc.net/problem/1697>  
+### 1700
+  * 1712 손익분기점 <https://acmicpc.net/problem/1712>  
+ 
