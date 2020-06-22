@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 75 / 495
+  * 80 / 495
 
 ## 문제 목록
 ### 1000
@@ -87,4 +87,8 @@
   * 1697 숨바꼭질 <https://acmicpc.net/problem/1697>  
 ### 1700
   * 1712 손익분기점 <https://acmicpc.net/problem/1712>  
- 
+  * 1725 히스토그램 <https://acmicpc.net/problem/1725>  
+  * 1735 분수 합 <https://acmicpc.net/problem/1735>  
+  * 1748 수 이어 쓰기 1 <https://acmicpc.net/problem/1748>  
+  * 1753 최단경로 <https://acmicpc.net/problem/1753>  
+  * 1764 듣보잡 <https://acmicpc.net/problem/1764>  
