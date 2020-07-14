@@ -1,5 +1,5 @@
 # My Problem Solving in Baekjoon
 
 ## 푼 문제 
- * C ( 80 / 495 )
+ * C ( 404 / 499 )
  
