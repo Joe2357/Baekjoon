@@ -1,7 +1,7 @@
 # C
 
 ## 기록한 문제 / 푼 문제 
-  * 404 / 499
+  * 431 / 506
 
 ## 문제 목록
 ### 1000
@@ -72,6 +72,7 @@
   * 1475 방 번호 <https://acmicpc.net/problem/1475>  
   * 1476 날짜 계산 <https://acmicpc.net/problem/1476>  
 ### 1500
+  * 1520 내리막 길 <https://acmicpc.net/problem/1520>  
   * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
   * 1546 평균 <https://acmicpc.net/problem/1546>  
   * 1547 공 <https://acmicpc.net/problem/1547>  
@@ -94,6 +95,7 @@
   * 1764 듣보잡 <https://acmicpc.net/problem/1764>  
   * 1773 폭죽쇼 <https://acmicpc.net/problem/1773>  
   * 1780 종이의 개수 <https://acmicpc.net/problem/1780>  
+  * 1786 찾기 <https://acmicpc.net/problem/1786>  
   * 1789 수들의 합 <https://acmicpc.net/problem/1789>  
 ### 1800
   * 1850 최대공약수 <https://acmicpc.net/problem/1850>  
@@ -112,6 +114,7 @@
   * 1931 회의실배정 <https://acmicpc.net/problem/1931>  
   * 1932 정수 삼각형 <https://acmicpc.net/problem/1932>  
   * 1934 최소공배수 <https://acmicpc.net/problem/1934>  
+  * 1937 욕심쟁이 판다 <https://acmicpc.net/problem/1937>  
   * 1941 소문난 칠공주 <https://acmicpc.net/problem/1941>  
   * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
@@ -137,6 +140,7 @@
 ### 2200
   * 2206 벽 부수고 이동하기 <https://acmicpc.net/problem/2206>  
   * 2217 로프 <https://acmicpc.net/problem/2217>  
+  * 2225 합분해 <https://acmicpc.net/problem/2225>  
   * 2231 분해합 <https://acmicpc.net/problem/2231>  
   * 2261 가장 가까운 두 점 <https://acmicpc.net/problem/2261>  
   * 2292 벌집 <https://acmicpc.net/problem/2292>  
@@ -468,6 +472,7 @@
   * 11053 가장 긴 증가하는 부분 수열 <https://acmicpc.net/problem/11053>  
   * 11054 가장 긴 바이토닉 부분 수열 <https://acmicpc.net/problem/11054>  
   * 11057 오르막 수 <https://acmicpc.net/problem/11057>  
+  * 11066 파일 합치기 <https://acmicpc.net/problem/11066>  
   * 11098 첼시를 도와줘! <https://acmicpc.net/problem/11098>  
 ### 11100
   * 11134 쿠키애호가 <https://acmicpc.net/problem/11134>  
@@ -475,4 +480,35 @@
 ### 11200
   * 11279 최대 힙 <https://acmicpc.net/problem/11279>  
   * 11286 절댓값 힙 <https://acmicpc.net/problem/11286>  
+### 11300
+  * 11365 !밀비 급일 <https://acmicpc.net/problem/11365>  
+  * 11399 ATM <https://acmicpc.net/problem/11399>  
+### 11400
+  * 11401 이항 계수 3 <https://acmicpc.net/problem/11401>  
+  * 11403 경로 찾기 <https://acmicpc.net/problem/11403>  
+### 11500
+  * 11506 占쏙옙 <https://acmicpc.net/problem/11506>  
+  * 11557 Yangjojang of The Year <https://acmicpc.net/problem/11557>  
+### 11600
+  * 11650 좌표 정렬하기 <https://acmicpc.net/problem/11650>  
+  * 11651 좌표 정렬하기 2 <https://acmicpc.net/problem/11651>  
+  * 11653 소인수분해 <https://acmicpc.net/problem/11653>  
+  * 11654 아스키 코드 <https://acmicpc.net/problem/11654>  
+### 11700
+  * 11718 그대로 출력하기 <https://acmicpc.net/problem/11718>  
+  * 11719 그대로 출력하기 2 <https://acmicpc.net/problem/11719>  
+  * 11720 숫자의 합 <https://acmicpc.net/problem/11720>  
+  * 11721 열 개씩 끊어 출력하기 <https://acmicpc.net/problem/11721>  
+  * 11723 집합 <https://acmicpc.net/problem/11723>  
+  * 11724 연결 요소의 개수 <https://acmicpc.net/problem/11724>  
+  * 11726 2xn 타일링 <https://acmicpc.net/problem/11726>  
+  * 11727 2xn 타일링 2 <https://acmicpc.net/problem/11727>  
+  * 11729 하노이 탑 이동 순서 <https://acmicpc.net/problem/11729>  
+### 11800
+  * 11866 요세푸스 문제 0 <https://acmicpc.net/problem/11866>  
   
+### 14500
+  * 14500 테트로미노 <https://acmicpc.net/problem/14500>  
+  * 14503 로봇 청소기 <https://acmicpc.net/problem/14503>  
+
+## 현재 진행중
