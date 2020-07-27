@@ -1,7 +1,7 @@
-# C
+# C/C++
 
 ## 기록한 문제 / 푼 문제 
-  * 431 / 506
+  * 455 / 513
 
 ## 문제 목록
 ### 1000
@@ -16,6 +16,7 @@
   * 1011 Fly me to the Alpha Centauri <https://acmicpc.net/problem/1011>  
   * 1012 유기농 배추 <https://acmicpc.net/problem/1012>  
   * 1015 수열 정렬 <https://acmicpc.net/problem/1015>  
+  * 1016 제곱 ㄴㄴ수 <https://acmicpc.net/problem/1016>  
   * 1018 체스판 다시 칠하기 <https://acmicpc.net/problem/1018>  
   * 1019 책 페이지 <https://acmicpc.net/problem/1019>  
   * 1021 회전하는 큐 <https://acmicpc.net/problem/1021>  
@@ -127,6 +128,7 @@
   * 2004 조합 0의 개수 <https://acmicpc.net/problem/2004>  
   * 2010 플러그 <https://acmicpc.net/problem/2010>  
   * 2083 럭비 클럽 <https://acmicpc.net/problem/2083>  
+  * 2098 외판원 순회 <https://acmicpc.net/problem/2098>  
 ### 2100
   * 2108 통계학 <https://acmicpc.net/problem/2108>  
   * 2110 공유기 설치 <https://acmicpc.net/problem/2110>  
@@ -270,6 +272,7 @@
   * 4153 직각삼각형 <https://acmicpc.net/problem/4153>  
 ### 4300
   * 4344 평균은 넘겠지 <https://acmicpc.net/problem/4344>  
+  * 4354 문자열 제곱 <https://acmicpc.net/problem/4354>  
 ### 4400
   * 4411 The Trip <https://acmicpc.net/problem/4411>  
   * 4458 첫 글자를 대문자로 <https://acmicpc.net/problem/4458>  
@@ -362,6 +365,7 @@
 ### 9300
   * 9316 Hello Judge <https://acmicpc.net/problem/9316>  
   * 9325 얼마? <https://acmicpc.net/problem/9325>  
+  * 9370 미확인 도착지 <https://acmicpc.net/problem/9370>  
   * 9375 패션왕 신해빈 <https://acmicpc.net/problem/9375>  
 ### 9400
   * 9461 파도반 수열 <https://acmicpc.net/problem/9461>  
@@ -446,6 +450,7 @@
   * 10886 0 = not cute / 1 = cute <https://acmicpc.net/problem/10886>  
 ### 10900
   * 10926 ??! <https://acmicpc.net/problem/10926>  
+  * 10942 팰린드롬 <https://acmicpc.net/problem/10942>  
   * 10949 숫자야구 <https://acmicpc.net/problem/10949>  
   * 10950 A + B - 3 <https://acmicpc.net/problem/10950>  
   * 10951 A + B - 4 <https://acmicpc.net/problem/10951>  
@@ -506,9 +511,38 @@
   * 11729 하노이 탑 이동 순서 <https://acmicpc.net/problem/11729>  
 ### 11800
   * 11866 요세푸스 문제 0 <https://acmicpc.net/problem/11866>  
-  
+### 11900
+  * 11942 고려대는 사랑입니다 <https://acmicpc.net/problem/11942>  
+  * 11948 과목선택 <https://acmicpc.net/problem/11948>  
+  * 11966 2의 제곱인가 <https://acmicpc.net/problem/11966>  
+### 12000
+  * 12015 가장 긴 증가하는 부분 수열 2 <https://acmicpc.net/problem/12015>  
+  * 12096   <https://acmicpc.net/problem/12096>  
+### 12800
+  * 12865 평범한 배낭 <https://acmicpc.net/problem/12865>  
+### 13400
+  * 13458 시험 감독 <https://acmicpc.net/problem/13458>  
+### 13700
+  * 13701 중복 제거 <https://acmicpc.net/problem/13701>  
+  * 13752 히스토그램 <https://acmicpc.net/problem/13752>  
+### 14400
+  * 14489 치킨 두 마리 <https://acmicpc.net/problem/14489>  
+  * 14490 백대열 <https://acmicpc.net/problem/14490>  
 ### 14500
   * 14500 테트로미노 <https://acmicpc.net/problem/14500>  
+  * 14501 퇴사 <https://acmicpc.net/problem/14501>  
+  * 14502 연구소 <https://acmicpc.net/problem/14502>  
   * 14503 로봇 청소기 <https://acmicpc.net/problem/14503>  
+  * 14581 팬들에게 둘러싸인 홍준 <https://acmicpc.net/problem/14581>  
+### 14600
+  * 14624 전북대학교 <https://acmicpc.net/problem/14624>  
+  * 14645 와이버스 부릉부릉 <https://acmicpc.net/problem/14645>  
+  * 14656 조교는 새디스트야!! <https://acmicpc.net/problem/14656>  
+  * 14681 사분면 고르기 <https://acmicpc.net/problem/14681>  
+### 14800
+  * 14888 연산자 끼워넣기 <https://acmicpc.net/problem/14888>  
+
+
 
 ## 현재 진행중
+  * 1806 부분합 <https://acmicpc.net/problem/1806>  
