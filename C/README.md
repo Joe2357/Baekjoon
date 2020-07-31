@@ -1,7 +1,7 @@
 # C/C++
 
 ## 기록한 문제 / 푼 문제 
-  * 455 / 513
+  * 500 / 517
 
 ## 문제 목록
 ### 1000
@@ -60,6 +60,7 @@
   * 1309 동물원 <https://acmicpc.net/problem/1309>  
   * 1316 그룹 단어 체커 <https://acmicpc.net/problem/1316>  
   * 1330 두 수 비교하기 <https://acmicpc.net/problem/1330>  
+  * 1352 문자열 <https://acmicpc.net/problem/1352>  
   * 1357 뒤집힌 덧셈 <https://acmicpc.net/problem/1357>  
   * 1388 바닥 장식 <https://acmicpc.net/problem/1388>  
   * 1389 케빈 베이컨의 6단계 법칙 <https://acmicpc.net/problem/1389>  
@@ -99,6 +100,7 @@
   * 1786 찾기 <https://acmicpc.net/problem/1786>  
   * 1789 수들의 합 <https://acmicpc.net/problem/1789>  
 ### 1800
+  * 1806 부분합 <https://acmicpc.net/problem/1806>  
   * 1850 최대공약수 <https://acmicpc.net/problem/1850>  
   * 1874 스택 수열 <https://acmicpc.net/problem/1874>  
 ### 1900
@@ -137,6 +139,7 @@
   * 2156 포도주 시식 <https://acmicpc.net/problem/2156>  
   * 2163 초콜릿 자르기 <https://acmicpc.net/problem/2163>  
   * 2164 카드2 <https://acmicpc.net/problem/2164>  
+  * 2170 선 긋기 <https://acmicpc.net/problem/2170>  
   * 2178 미로 탐색 <https://acmicpc.net/problem/2178>  
   * 2193 이친수 <https://acmicpc.net/problem/2193>  
 ### 2200
@@ -541,8 +544,61 @@
   * 14681 사분면 고르기 <https://acmicpc.net/problem/14681>  
 ### 14800
   * 14888 연산자 끼워넣기 <https://acmicpc.net/problem/14888>  
-
-
+  * 14889 스타트와 링크 <https://acmicpc.net/problem/14889>  
+### 14900
+  * 14918 더하기 <https://acmicpc.net/problem/14918>  
+### 15300
+  * 15353 큰 수 A+B (2) <https://acmicpc.net/problem/15353>  
+### 15500
+  * 15549 if <https://acmicpc.net/problem/15549>  
+  * 15550 if 2 <https://acmicpc.net/problem/15550>  
+  * 15552 빠른 A+B <https://acmicpc.net/problem/15552>  
+  * 15596 정수 N개의 합 <https://acmicpc.net/problem/15596>  
+### 15600
+  * 15643 Yee <https://acmicpc.net/problem/15643>  
+  * 15649 N과 M (1) <https://acmicpc.net/problem/15649>  
+  * 15650 N과 M (2) <https://acmicpc.net/problem/15650>  
+  * 15651 N과 M (3) <https://acmicpc.net/problem/15651>  
+  * 15652 N과 M (4) <https://acmicpc.net/problem/15652>  
+  * 15654 N과 M (5) <https://acmicpc.net/problem/15654>  
+  * 15655 N과 M (6) <https://acmicpc.net/problem/15655>  
+  * 15656 N과 M (7) <https://acmicpc.net/problem/15656>  
+  * 15657 N과 M (8) <https://acmicpc.net/problem/15657>  
+  * 15663 N과 M (9) <https://acmicpc.net/problem/15663>  
+  * 15664 N과 M (10) <https://acmicpc.net/problem/15664>  
+  * 15665 N과 M (11) <https://acmicpc.net/problem/15665>  
+  * 15666 N과 M (12) <https://acmicpc.net/problem/15666>  
+  * 15680 연세대학교 <https://acmicpc.net/problem/15680>  
+### 15700
+  * 15733 나는 누구인가 <https://acmicpc.net/problem/15733>  
+  * 15740 A+B 9 <https://acmicpc.net/problem/15740>  
+### 15800
+  * 15802 타노스 <https://acmicpc.net/problem/15802>  
+  * 15829 Hashing <https://acmicpc.net/problem/15829>  
+  * 15894 수학은 체육과목 입니다 <https://acmicpc.net/problem/15894>  
+### 15900
+  * 15947 아기 석환 뚜루루 뚜루 <https://acmicpc.net/problem/15947>  
+  * 15953 상금 헌터 <https://acmicpc.net/problem/15953>  
+  * 15962 새로운 시작 <https://acmicpc.net/problem/15962>  
+  * 15963 CASIO <https://acmicpc.net/problem/15963>  
+  * 15964 이상한 기호 <https://acmicpc.net/problem/15964>  
+  * 15969 행복 <https://acmicpc.net/problem/15969>  
+### 16000
+  * 16076 휴식이 필요해 <https://acmicpc.net/problem/16076>  
+### 16100
+  * 16170 오늘의 날짜는 <https://acmicpc.net/problem/16170>  
+  * 16171 나는 친구가 적다 (Small) <https://acmicpc.net/problem/16171>  
+  * 16199 나이 계산하기 <https://acmicpc.net/problem/16199>  
+### 16300
+  * 16394 홍익대학교 <https://acmicpc.net/problem/16394>  
+### 16400
+  * 16430 제리와 톰 <https://acmicpc.net/problem/16430>  
+### 16500
+  * 16561 3의 배수 <https://acmicpc.net/problem/16561>  
+### 16600
+  * 16637 괄호 추가하기 <https://acmicpc.net/problem/16637>  
+  * 16673 고려대학교에는 공식 와인이 있다 <https://acmicpc.net/problem/16673>  
+### 17000
+  * 17009 Winning Score <https://acmicpc.net/problem/17009>  
 
 ## 현재 진행중
-  * 1806 부분합 <https://acmicpc.net/problem/1806>  
