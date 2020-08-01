@@ -1,7 +1,7 @@
 # C/C++
 
-## 기록한 문제 / 푼 문제 
-  * 500 / 517
+## 푼 문제 / 현재 진행중
+  * 517문제 / X
 
 ## 문제 목록
 ### 1000
@@ -600,5 +600,31 @@
   * 16673 고려대학교에는 공식 와인이 있다 <https://acmicpc.net/problem/16673>  
 ### 17000
   * 17009 Winning Score <https://acmicpc.net/problem/17009>  
+  * 17010 Time to Decompress <https://acmicpc.net/problem/17010>  
+  * 17070 파이프 옮기기 1 <https://acmicpc.net/problem/17070>  
+### 17100
+  * 17113 3분 그래프 <https://acmicpc.net/problem/17113>  
+  * 17136 색종이 붙이기 <https://acmicpc.net/problem/17136>  
+  * 17144 미세먼지 안녕! <https://acmicpc.net/problem/17144>  
+  * 17173 배수들의 합 <https://acmicpc.net/problem/17173>  
+### 17200
+  * 17219 비밀번호 찾기 <https://acmicpc.net/problem/17219>  
+  * 17298 오큰수 <https://acmicpc.net/problem/17298>  
+### 17300
+  * 17362 수학은 체육과목 입니다 2 <https://acmicpc.net/problem/17362>  !ob  
+  * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  !ob
+### 17400
+  * 17466 N! mod P (1) <https://acmicpc.net/problem/17466>  
+### 17600
+  * 17626 Four Squares <https://acmicpc.net/problem/17626>  
+### 18100
+  * 18111 마인크래프트 <https://acmicpc.net/problem/18111>  
+### 18200
+  * 18258 큐 2 <https://acmicpc.net/problem/18258>  
+### 18800
+  * 18825 ... <https://acmicpc.net/problem/18825>  
+  * 18870 좌표 압축 <https://acmicpc.net/problem/18870>  
+### 19500
+  * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
 
 ## 현재 진행중
