@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 517문제 / X
+  * 520문제 / X
 
 ## 문제 목록
 ### 1000
@@ -48,6 +48,7 @@
   * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
   * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
   * 1193 분수찾기 <https://acmicpc.net/problem/1193>  
+  * 1199 오일러 회로 <https://acmicpc.net/problem/1199>  
 ### 1200
   * 1212 8진수 2진수 <https://acmicpc.net/problem/1212>  
   * 1237 정ㅋ벅ㅋ <https://acmicpc.net/problem/1237>  
@@ -59,6 +60,7 @@
   * 1300 K번째 수 <https://acmicpc.net/problem/1300>  
   * 1309 동물원 <https://acmicpc.net/problem/1309>  
   * 1316 그룹 단어 체커 <https://acmicpc.net/problem/1316>  
+  * 1323 숫자 연결하기 <https://acmicpc.net/problem/1323>  
   * 1330 두 수 비교하기 <https://acmicpc.net/problem/1330>  
   * 1352 문자열 <https://acmicpc.net/problem/1352>  
   * 1357 뒤집힌 덧셈 <https://acmicpc.net/problem/1357>  
@@ -612,13 +614,14 @@
   * 17298 오큰수 <https://acmicpc.net/problem/17298>  
 ### 17300
   * 17362 수학은 체육과목 입니다 2 <https://acmicpc.net/problem/17362>  !ob  
-  * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  !ob
+  * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  !ob  
 ### 17400
   * 17466 N! mod P (1) <https://acmicpc.net/problem/17466>  
 ### 17600
   * 17626 Four Squares <https://acmicpc.net/problem/17626>  
 ### 18100
   * 18111 마인크래프트 <https://acmicpc.net/problem/18111>  
+  * 18185 라면 사기 (Small) <https://acmicpc.net/problem/18185>  
 ### 18200
   * 18258 큐 2 <https://acmicpc.net/problem/18258>  
 ### 18800
