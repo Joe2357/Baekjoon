@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 520문제 / X
+  * 521문제 / X
 
 ## 문제 목록
 ### 1000
@@ -175,6 +175,7 @@
   * 2475 검증수 <https://acmicpc.net/problem/2475>  
   * 2476 주사위 게임 <https://acmicpc.net/problem/2476>  
   * 2480 주사위 세개 <https://acmicpc.net/problem/2480>  
+  * 2482 색상환 <https://acmicpc.net/problem/2482>  
   * 2490 윷놀이 <https://acmicpc.net/problem/2490>  
 ### 2500
   * 2501 약수 구하기 <https://acmicpc.net/problem/2501>  
