@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 521문제 / X
+  * 523문제 / X
 
 ## 문제 목록
 ### 1000
@@ -477,6 +477,7 @@
   * 11021 A + B 7 <https://acmicpc.net/problem/11021>  
   * 11022 A + B 8 <https://acmicpc.net/problem/11022>  
   * 11047 동전 0 <https://acmicpc.net/problem/11047>  
+  * 11049 행렬 곱셈 순서 <https://acmicpc.net/problem/11049>  
   * 11050 이항 계수 1 <https://acmicpc.net/problem/11050>  
   * 11051 이항 계수 2 <https://acmicpc.net/problem/11051>  
   * 11052 카드 구매하기 <https://acmicpc.net/problem/11052>  
@@ -596,6 +597,7 @@
   * 16394 홍익대학교 <https://acmicpc.net/problem/16394>  
 ### 16400
   * 16430 제리와 톰 <https://acmicpc.net/problem/16430>  
+  * 16489 삼각형 해커 <https://acmicpc.net/problem/16489>  
 ### 16500
   * 16561 3의 배수 <https://acmicpc.net/problem/16561>  
 ### 16600
@@ -614,8 +616,8 @@
   * 17219 비밀번호 찾기 <https://acmicpc.net/problem/17219>  
   * 17298 오큰수 <https://acmicpc.net/problem/17298>  
 ### 17300
-  * 17362 수학은 체육과목 입니다 2 <https://acmicpc.net/problem/17362>  !ob  
-  * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  !ob  
+  * 17362 수학은 체육과목 입니다 2 <https://acmicpc.net/problem/17362>  
+  * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  
 ### 17400
   * 17466 N! mod P (1) <https://acmicpc.net/problem/17466>  
 ### 17600
