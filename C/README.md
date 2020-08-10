@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 523문제 / X
+  * 526문제 / X
 
 ## 문제 목록
 ### 1000
@@ -339,6 +339,7 @@
   * 6321 IBM 빼기 1 <https://acmicpc.net/problem/6321>  
 ### 6500
   * 6549 히스토그램에서 가장 큰 직사각형 <https://acmicpc.net/problem/6549>  
+  * 6588 골드바흐의 추측 <https://acmicpc.net/problem/6588>  
 ### 6600
   * 6603 로또 <https://acmicpc.net/problem/6603>  
 ### 6900
@@ -381,6 +382,7 @@
   * 9506 약수들의 합 <https://acmicpc.net/problem/9506>  
 ### 9600
   * 9610 사분면 <https://acmicpc.net/problem/9610>  
+  * 9613 GCD 합 <https://acmicpc.net/problem/9613>  
   * 9653 스타워즈 로고 <https://acmicpc.net/problem/9653>  
   * 9654 나부 함대 데이터 <https://acmicpc.net/problem/9654>  
   * 9655 돌 게임 <https://acmicpc.net/problem/9655>  
@@ -473,6 +475,7 @@
   * 10996 별 찍기 21 <https://acmicpc.net/problem/10996>  
   * 10998 A x B <https://acmicpc.net/problem/10998>  
 ### 11000
+  * 11003 최솟값 찾기 <https://acmicpc.net/problem/11003>  
   * 11006 남욱이의 담장 <https://acmicpc.net/problem/11006>  
   * 11021 A + B 7 <https://acmicpc.net/problem/11021>  
   * 11022 A + B 8 <https://acmicpc.net/problem/11022>  
