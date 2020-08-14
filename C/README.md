@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 526문제 / X
+  * 529문제 / X
 
 ## 문제 목록
 ### 1000
@@ -351,6 +351,7 @@
   * 7568 덩치 <https://acmicpc.net/problem/7568>  
   * 7569 토마토 <https://acmicpc.net/problem/7569>  
   * 7576 토마토 <https://acmicpc.net/problem/7576>  
+  * 7579 앱 <https://acmicpc.net/problem/7579>  
 ### 7600
   * 7662 이중 우선순위 큐 <https://acmicpc.net/problem/7662>  
 ### 8300
@@ -396,6 +397,7 @@
 ### 9700
   * 9713 Sum of Odd Sequence <https://acmicpc.net/problem/9713>  
 ### 9900
+  * 9935 문자열 폭발 <https://acmicpc.net/problem/9935>  
   * 9999 구구 <https://acmicpc.net/problem/9999>  
 ### 10000
   * 10026 적록색약 <https://acmicpc.net/problem/10026>  
@@ -631,6 +633,7 @@
 ### 18200
   * 18258 큐 2 <https://acmicpc.net/problem/18258>  
 ### 18800
+  * 18821 홀수와 짝수의 대결 <https://acmicpc.net/problem/18821>  
   * 18825 ... <https://acmicpc.net/problem/18825>  
   * 18870 좌표 압축 <https://acmicpc.net/problem/18870>  
 ### 19500
