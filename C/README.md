@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 529문제 / X
+  * 533문제 / 2문제
 
 ## 문제 목록
 ### 1000
@@ -76,6 +76,7 @@
   * 1475 방 번호 <https://acmicpc.net/problem/1475>  
   * 1476 날짜 계산 <https://acmicpc.net/problem/1476>  
 ### 1500
+  * 1504 특정한 최단 경로 <https://acmicpc.net/problem/1504>  
   * 1520 내리막 길 <https://acmicpc.net/problem/1520>  
   * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
   * 1546 평균 <https://acmicpc.net/problem/1546>  
@@ -289,6 +290,8 @@
 ### 4600
   * 4641 Doubles <https://acmicpc.net/problem/4641>  
   * 4673 셀프 넘버 <https://acmicpc.net/problem/4673>  
+### 4800
+  * 4892 숫자 맞추기 게임 <https://acmicpc.net/problem/4892>  
 ### 4900
   * 4948 베르트랑 공준 <https://acmicpc.net/problem/4948>  
   * 4949 균형잡힌 세상 <https://acmicpc.net/problem/4949>  
@@ -503,6 +506,7 @@
 ### 11400
   * 11401 이항 계수 3 <https://acmicpc.net/problem/11401>  
   * 11403 경로 찾기 <https://acmicpc.net/problem/11403>  
+  * 11404 플로이드 <https://acmicpc.net/problem/11404>  
 ### 11500
   * 11506 占쏙옙 <https://acmicpc.net/problem/11506>  
   * 11557 Yangjojang of The Year <https://acmicpc.net/problem/11557>  
@@ -511,6 +515,7 @@
   * 11651 좌표 정렬하기 2 <https://acmicpc.net/problem/11651>  
   * 11653 소인수분해 <https://acmicpc.net/problem/11653>  
   * 11654 아스키 코드 <https://acmicpc.net/problem/11654>  
+  * 11657 타임머신 <https://acmicpc.net/problem/11657>  
 ### 11700
   * 11718 그대로 출력하기 <https://acmicpc.net/problem/11718>  
   * 11719 그대로 출력하기 2 <https://acmicpc.net/problem/11719>  
@@ -640,3 +645,5 @@
   * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
 
 ## 현재 진행중
+  * 1086 박성원 <https://acmicpc.net/problem/1086>  
+  * 10217 KCM Travel <https://acmicpc.net/problem/10217>  
