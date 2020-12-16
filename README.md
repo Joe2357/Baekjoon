@@ -1,5 +1,4 @@
 # My Problem Solving in Baekjoon
 
 ## 푼 문제
-  * C/C++ ( 533 )
- 
+  * C/C++ ( 540 )

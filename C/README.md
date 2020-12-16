@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 533문제 / 2문제
+  * 540문제
 
 ## 문제 목록
 ### 1000
@@ -33,6 +33,7 @@
   * 1075 나누기 <https://acmicpc.net/problem/1075>  
   * 1076 저항 <https://acmicpc.net/problem/1076>  
   * 1085 직사각형에서 탈출 <https://acmicpc.net/problem/1085>  
+  * 1086 박성원 <https://acmicpc.net/problem/1086>  
   * 1094 막대기 <https://acmicpc.net/problem/1094>  
 ### 1100
   * 1100 하얀 칸 <https://acmicpc.net/problem/1100>  
@@ -122,6 +123,7 @@
   * 1934 최소공배수 <https://acmicpc.net/problem/1934>  
   * 1937 욕심쟁이 판다 <https://acmicpc.net/problem/1937>  
   * 1941 소문난 칠공주 <https://acmicpc.net/problem/1941>  
+  * 1956 운동 <https://acmicpc.net/problem/1956>  
   * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
   * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
@@ -157,6 +159,7 @@
 ### 2300
   * 2309 일곱 난쟁이 <https://acmicpc.net/problem/2309>  
   * 2312 수 복원하기 <https://acmicpc.net/problem/2312>  
+  * 2386 도비의 영어 공부 <https://acmicpc.net/problem/2386>  
 ### 2400
   * 2420 사파리월드 <https://acmicpc.net/problem/2420>  
   * 2438 별 찍기 1 <https://acmicpc.net/problem/2438>  
@@ -417,7 +420,8 @@
   * 10172 개 <https://acmicpc.net/problem/10172>  
   * 10179 쿠폰 <https://acmicpc.net/problem/10179>  
 ### 10200
-  * 10214 Baseball <https://acmicpc.net/problem/10214>  
+  * 10214 Baseball <https://acmicpc.net/problem/10214> 
+  * 10217 KCM Travel <https://acmicpc.net/problem/10217>   
   * 10250 ACM호텔 <https://acmicpc.net/problem/10250>  
 ### 10400
   * 10430 나머지 <https://acmicpc.net/problem/10430>  
@@ -563,6 +567,7 @@
   * 14918 더하기 <https://acmicpc.net/problem/14918>  
 ### 15300
   * 15353 큰 수 A+B (2) <https://acmicpc.net/problem/15353>  
+  * 15372 A Simple Problem. <https://acmicpc.net/problem/15372>  
 ### 15500
   * 15549 if <https://acmicpc.net/problem/15549>  
   * 15550 if 2 <https://acmicpc.net/problem/15550>  
@@ -629,12 +634,14 @@
   * 17362 수학은 체육과목 입니다 2 <https://acmicpc.net/problem/17362>  
   * 17363 우유가 넘어지면 <https://acmicpc.net/problem/17363>  
 ### 17400
+  * 17404 RGB거리 2 <https://acmicpc.net/problem/17404>  
   * 17466 N! mod P (1) <https://acmicpc.net/problem/17466>  
 ### 17600
   * 17626 Four Squares <https://acmicpc.net/problem/17626>  
 ### 18100
   * 18111 마인크래프트 <https://acmicpc.net/problem/18111>  
   * 18185 라면 사기 (Small) <https://acmicpc.net/problem/18185>  
+  * 18186 라면 사기 (Large) <https://acmicpc.net/problem/18186>  
 ### 18200
   * 18258 큐 2 <https://acmicpc.net/problem/18258>  
 ### 18800
@@ -645,5 +652,3 @@
   * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
 
 ## 현재 진행중
-  * 1086 박성원 <https://acmicpc.net/problem/1086>  
-  * 10217 KCM Travel <https://acmicpc.net/problem/10217>  

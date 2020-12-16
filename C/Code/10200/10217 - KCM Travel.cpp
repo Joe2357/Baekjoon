@@ -3,64 +3,77 @@
 #include <queue>
 #include <algorithm>
 #define INF 987654321
-#define MAX_INDEX 100000
+#define MAX_INDEX 100
+#define MAX_MONEY 10000
 
 using namespace std;
-typedef struct Node
-{
-	int pos, money, hour;
-} ND;
+class Node {
+public:
+	int pos, money, dist;
+	Node(int a, int b, int c) {
+		pos = a, money = b, dist = c;
+	}
+};
 
-vector<vector<ND>> matrix;
+vector<vector<Node>> matrix;
+int dp[MAX_INDEX + 1][MAX_MONEY + 1];
 
-int main()
-{
+int dijkstra(int n, int m) {
+	// init
+	queue<Node> q;
+	q.push(Node(1, 0, 0));
+	fill(&dp[1][0], &dp[n][m + 1], INF);
+	dp[1][0] = 0;
+
+	// start dijkstra
+	while (!q.empty()) {
+		Node node = q.front();
+		q.pop();
+
+		if (node.dist <= dp[node.pos][node.money]) {
+			for (Node a : matrix[node.pos]) {
+				a.money += node.money, a.dist += node.dist;
+
+				// check available
+				if (a.money <= m && a.dist < dp[a.pos][a.money]) { // why don't change all values from a.money to m?
+					dp[a.pos][a.money] = a.dist;
+					q.push(a);
+				}
+			}
+		}
+	}
+
+	// get result
+	int retval = INF;
+	for (int i = 0; i <= m; i++)
+		retval = min(retval, dp[n][i]);
+
+	// no way to get there
+	return retval;
+}
+
+int main() {
 	// i/o init
 	ios_base::sync_with_stdio(false);
 	cin.tie(0), cout.tie(0);
 
 	// loop testcase
-	int t;
-	for (cin >> t; t; t--)
-	{
+	int n, m, t;
+	for (cin >> t; t; t--) {
 		// init
-		int n, m, k;
+		int k;
 		cin >> n >> m >> k;
 
 		// ticket init
-		matrix = vector<vector<ND>>(n + 1);
-		for (; k; k--)
-		{
+		matrix = vector<vector<Node>>(n + 1);
+		for (; k; k--) {
 			int a, b, c, d;
 			cin >> a >> b >> c >> d;
-			matrix[a].push_back({b, c, d});
+			matrix[a].push_back(Node(b, c, d));
 		}
 
-		// BFS init
-		int retval = INF;
-		ND q[MAX_INDEX];
-		int front = 0, rear = 0;
-		q[rear++] = {1, 0, 0};
-
-		// BFS search
-		while (front != rear)
-		{
-			// get first node
-			ND node = q[front++];
-			front %= MAX_INDEX;
-
-			// check available
-			if (node.money > m || node.hour > retval)
-				continue;
-			else if (node.pos == n)
-				retval = node.hour;
-			else
-				for (ND tempNode : matrix[node.pos])
-				{
-					q[rear++] = {tempNode.pos, node.money + tempNode.money, node.hour + tempNode.hour};
-					rear %= MAX_INDEX;
-				}
-		}
+		// start algorithm
+		int retval = dijkstra(n, m);
 
 		// print result
 		(retval == INF) ? cout << "Poor KCM" : cout << retval;
