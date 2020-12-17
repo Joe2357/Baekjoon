@@ -1,0 +1,5 @@
+n = int(input())
+a = list(map(int, input().split()))
+a.sort()
+result = sum(a) / a[len(a) - 1] * 100 / len(a)
+print(result)
