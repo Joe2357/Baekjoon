@@ -32,7 +32,7 @@
   * 2439 별 찍기 - 2 <https://acmicpc.net/problem/2439>  
 ### 2500
   * 2557 Hello World <https://acmicpc.net/problem/2557>  
-  * 2562 최댓값 <https://acmicpc.net/problem/2557>  
+  * 2562 최댓값 <https://acmicpc.net/problem/2562>  
   * 2577 숫자의 개수 <https://acmicpc.net/problem/2577>  
   * 2588 곱셈 <https://acmicpc.net/problem/2588>  
 ### 2600
@@ -99,13 +99,5 @@
 ### 15500
   * 15552 빠른 A+B <https://acmicpc.net/problem/15552>  
   * 15596 정수 N개의 합 <https://acmicpc.net/problem/15596>  
-
-
-
-
-
-
-
-
 
 ## 현재 진행중
