@@ -1,11 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <stdio.h>
+
+#define MAX_INDEX 1000
+int dp[MAX_INDEX + 1][MAX_INDEX + 1];
+
 #define MOD 1000000003
-
-using namespace std;
-vector<vector<int>> dp;
-
 int dc(int color, int used) {
 
 	// exception
@@ -21,18 +19,19 @@ int dc(int color, int used) {
 }
 
 int main() {
-	// i/o init
-	ios_base::sync_with_stdio(false);
-	cin.tie(0), cout.tie(0);
 
 	// init
 	int n, k;
-	cin >> n >> k;
-	dp = vector<vector<int>>(n + 1, vector<int>(k + 1, -1));
+	scanf("%d %d", &n, &k);
+	for (int i = 0; i <= n; ++i) {
+		for (int j = 0; j <= k; ++j) {
+			dp[i][j] = -1;
+		}
+	}
 
 	// exception
 	if (n / k < 2) {
-		cout << 0;
+		printf("0");
 		return 0;
 	}
 
@@ -46,7 +45,7 @@ int main() {
 		dp[i * 2][i] = 2;
 
 	// print result
-	cout << dc(n, k);
+	printf("%d", dc(n, k));
 
 	return 0;
 }

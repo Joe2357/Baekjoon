@@ -1,9 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <stdio.h>
+#define MAX_INDEX 100
 #define MAX_COST 10000
-
-using namespace std;
 
 typedef struct App {
 	int memory;
@@ -12,29 +9,25 @@ typedef struct App {
 
 int n, m;
 int result = MAX_COST + 1;
-vector<APP> app;
+APP app[MAX_INDEX];
 int dp[MAX_COST + 1];
 
 int main() {
-	// i/o init
-	ios_base::sync_with_stdio(false);
-	cin.tie(0), cout.tie(0);
-
 	// init
-	cin >> n >> m;
-	app = vector<APP>(n, { 0, 0 });
+	scanf("%d %d", &n, &m);
 	for (int i = 0; i < n; i++) {
 		int temp;
-		cin >> temp;
+		scanf("%d", &temp);
 		app[i].memory = temp;
 	}
 	for (int i = 0; i < n; i++) {
 		int temp;
-		cin >> temp;
+		scanf("%d", &temp);
 		app[i].cost = temp;
 	}
 
 	// memory dp
+	#define max(a, b) (((a) > (b)) ? (a) : (b))
 	for (int i = 0; i < n; i++)
 		for (int j = MAX_COST; j >= app[i].cost; j--)
 			dp[j] = max(dp[j], dp[j - app[i].cost] + app[i].memory);
@@ -42,7 +35,7 @@ int main() {
 	// get result
 	for (int i = 0; i <= MAX_COST; i++)
 		if (dp[i] >= m) {
-			cout << i;
+			printf("%d", i);
 			break;
 		}
 

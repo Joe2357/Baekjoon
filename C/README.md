@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 540문제 / X
+  * 546문제 / 2문제
 
 ## 문제 목록
 ### 1000
@@ -40,6 +40,7 @@
   * 1107 리모컨 <https://acmicpc.net/problem/1107>  
   * 1110 더하기 사이클 <https://acmicpc.net/problem/1110>  
   * 1120 문자열 <https://acmicpc.net/problem/1120>  
+  * 1138 한 줄로 서기 <https://acmicpc.net/problem/1138>  
   * 1149 RGB거리 <https://acmicpc.net/problem/1149>  
   * 1152 단어의 개수 <https://acmicpc.net/problem/1152>  
   * 1157 단어 공부 <https://acmicpc.net/problem/1157>  
@@ -77,7 +78,7 @@
   * 1475 방 번호 <https://acmicpc.net/problem/1475>  
   * 1476 날짜 계산 <https://acmicpc.net/problem/1476>  
 ### 1500
-  * 1504 특정한 최단 경로 <https://acmicpc.net/problem/1504>  
+  * 1504 특정한 최단 경로 <https://acmicpc.net/problem/1504> (C++)
   * 1520 내리막 길 <https://acmicpc.net/problem/1520>  
   * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
   * 1546 평균 <https://acmicpc.net/problem/1546>  
@@ -128,6 +129,7 @@
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
   * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
   * 1978 소수 찾기 <https://acmicpc.net/problem/1978>  
+  * 1987 알파벳 <https://acmicpc.net/problem/1987>  
   * 1991 트리 순회 <https://acmicpc.net/problem/1991>  
   * 1992 쿼드트리 <https://acmicpc.net/problem/1992>  
 ### 2000
@@ -152,7 +154,7 @@
   * 2217 로프 <https://acmicpc.net/problem/2217>  
   * 2225 합분해 <https://acmicpc.net/problem/2225>  
   * 2231 분해합 <https://acmicpc.net/problem/2231>  
-  * 2261 가장 가까운 두 점 <https://acmicpc.net/problem/2261>  
+  * 2261 가장 가까운 두 점 <https://acmicpc.net/problem/2261> (C++)
   * 2292 벌집 <https://acmicpc.net/problem/2292>  
   * 2293 동전 1 <https://acmicpc.net/problem/2293>  
   * 2294 동전 2 <https://acmicpc.net/problem/2294>  
@@ -372,6 +374,8 @@
   * 9085 더하기 <https://acmicpc.net/problem/9085>  
   * 9094 수학적 호기심 <https://acmicpc.net/problem/9094>  
   * 9095 1, 2, 3 더하기 <https://acmicpc.net/problem/9095>  
+### 9100
+  * 9184 신나는 함수 실행 <https://acmicpc.net/problem/9184>  
 ### 9200
   * 9205 맥주 마시면서 걸어가기 <https://acmicpc.net/problem/9205>  
   * 9251 LCS <https://acmicpc.net/problem/9251>  
@@ -379,7 +383,7 @@
 ### 9300
   * 9316 Hello Judge <https://acmicpc.net/problem/9316>  
   * 9325 얼마? <https://acmicpc.net/problem/9325>  
-  * 9370 미확인 도착지 <https://acmicpc.net/problem/9370>  
+  * 9370 미확인 도착지 <https://acmicpc.net/problem/9370> (C++)
   * 9375 패션왕 신해빈 <https://acmicpc.net/problem/9375>  
 ### 9400
   * 9461 파도반 수열 <https://acmicpc.net/problem/9461>  
@@ -424,6 +428,7 @@
   * 10217 KCM Travel <https://acmicpc.net/problem/10217>   
   * 10250 ACM호텔 <https://acmicpc.net/problem/10250>  
 ### 10400
+  * 10409 서버 <https://acmicpc.net/problem/10409> (C++)
   * 10430 나머지 <https://acmicpc.net/problem/10430>  
   * 10474 분수좋아해 <https://acmicpc.net/problem/10474>  
 ### 10500
@@ -540,12 +545,15 @@
   * 12015 가장 긴 증가하는 부분 수열 2 <https://acmicpc.net/problem/12015>  
   * 12096   <https://acmicpc.net/problem/12096>  
 ### 12800
+  * 12852 1로 만들기 2 <https://acmicpc.net/problem/12852>  
   * 12865 평범한 배낭 <https://acmicpc.net/problem/12865>  
 ### 13400
   * 13458 시험 감독 <https://acmicpc.net/problem/13458>  
 ### 13700
   * 13701 중복 제거 <https://acmicpc.net/problem/13701>  
   * 13752 히스토그램 <https://acmicpc.net/problem/13752>  
+### 14000
+  * 14002 가장 긴 증가하는 부분 수열 4 <https://acmicpc.net/problem/14002>  
 ### 14400
   * 14489 치킨 두 마리 <https://acmicpc.net/problem/14489>  
   * 14490 백대열 <https://acmicpc.net/problem/14490>  
@@ -652,3 +660,5 @@
   * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
 
 ## 현재 진행중
+  * 1799 비숍 <https://acmicpc.net/problem/1799>  
+  * 14003 가장 긴 증가하는 부분 수열 5 <https://acmicpc.net/problem/14003>  

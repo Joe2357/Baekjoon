@@ -1,17 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
+#include <stdio.h>
 
 int main() {
-	// i/o init
-	ios_base::sync_with_stdio(false);
-	cin.tie(0), cout.tie(0);
 
 	// init
 	int n, k;
-	cin >> n >> k;
+	scanf("%d %d", &n, &k);
 
 	// get modulo & length
 	long long mod = n % k, length = 1;
@@ -22,16 +15,16 @@ int main() {
 	// get result
 	int i;
 	long long temp = mod;
-	for (i = 0; i < k && temp > 0; i++) {
+	for (i = 0; i < k && temp > 0; ++i) {
 		temp *= length, temp += mod;
 		temp %= k;
 	}
 
 	// print result
 	if (i == k)
-		cout << -1;
+		printf("-1");
 	else
-		cout << i + 1;
+		printf("%d", i + 1);
 
 	return 0;
 }
