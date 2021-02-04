@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 546문제 / 2문제
+  * 552문제 / 2문제
 
 ## 문제 목록
 ### 1000
@@ -69,6 +69,7 @@
   * 1388 바닥 장식 <https://acmicpc.net/problem/1388>  
   * 1389 케빈 베이컨의 6단계 법칙 <https://acmicpc.net/problem/1389>  
 ### 1400
+  * 1406 에디터 <https://acmicpc.net/problem/1406>  
   * 1408 24 <https://acmicpc.net/problem/1408>  
   * 1417 국회의원 선거 <https://acmicpc.net/problem/1417>  
   * 1427 소트인사이드 <https://acmicpc.net/problem/1427>  
@@ -88,6 +89,7 @@
 ### 1600
   * 1620 나는야 포켓몬 마스터 이다솜 <https://acmicpc.net/problem/1620>  
   * 1629 곱셈 <https://acmicpc.net/problem/1629>  
+  * 1644 소수의 연속합 <https://acmicpc.net/problem/1644>  
   * 1654 랜선 자르기 <https://acmicpc.net/problem/1654>  
   * 1655 가운데를 말해요 <https://acmicpc.net/problem/1655>  
   * 1668 트로피 진열 <https://acmicpc.net/problem/1668>  
@@ -125,6 +127,7 @@
   * 1937 욕심쟁이 판다 <https://acmicpc.net/problem/1937>  
   * 1941 소문난 칠공주 <https://acmicpc.net/problem/1941>  
   * 1956 운동 <https://acmicpc.net/problem/1956>  
+  * 1963 소수 경로 <https://acmicpc.net/problem/1963>  
   * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
   * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
@@ -212,6 +215,7 @@
   * 2602 바이러스 <https://acmicpc.net/problem/2602>  
   * 2607 비슷한 단어 <https://acmicpc.net/problem/2607>  
   * 2609 최대공약수와 최수공배수 <https://acmicpc.net/problem/2609>  
+  * 2618 경찰차 <https://acmicpc.net/problem/2618>  
   * 2630 색종이 만들기 <https://acmicpc.net/problem/2630>  
   * 2644 촌수계산 <https://acmicpc.net/problem/2644>  
   * 2661 좋은수열 <https://acmicpc.net/problem/2661>  
@@ -345,6 +349,8 @@
   * 6131 완전 제곱수 <https://acmicpc.net/problem/6131>  
 ### 6300
   * 6321 IBM 빼기 1 <https://acmicpc.net/problem/6321>  
+### 6400
+  * 6443 애너그램 <https://acmicpc.net/problem/6443>  
 ### 6500
   * 6549 히스토그램에서 가장 큰 직사각형 <https://acmicpc.net/problem/6549>  
   * 6588 골드바흐의 추측 <https://acmicpc.net/problem/6588>  
@@ -547,6 +553,8 @@
 ### 12800
   * 12852 1로 만들기 2 <https://acmicpc.net/problem/12852>  
   * 12865 평범한 배낭 <https://acmicpc.net/problem/12865>  
+### 13300
+  * 13305 주유소 <https://acmicpc.net/problem/13305>  
 ### 13400
   * 13458 시험 감독 <https://acmicpc.net/problem/13458>  
 ### 13700
