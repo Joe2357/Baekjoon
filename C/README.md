@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 552문제 / 2문제
+  * 558문제 / 1문제
 
 ## 문제 목록
 ### 1000
@@ -101,11 +101,13 @@
   * 1735 분수 합 <https://acmicpc.net/problem/1735>  
   * 1748 수 이어 쓰기 1 <https://acmicpc.net/problem/1748>  
   * 1753 최단경로 <https://acmicpc.net/problem/1753>  
+  * 1759 암호 만들기 <https://acmicpc.net/problem/1759>  
   * 1764 듣보잡 <https://acmicpc.net/problem/1764>  
   * 1773 폭죽쇼 <https://acmicpc.net/problem/1773>  
   * 1780 종이의 개수 <https://acmicpc.net/problem/1780>  
   * 1786 찾기 <https://acmicpc.net/problem/1786>  
   * 1789 수들의 합 <https://acmicpc.net/problem/1789>  
+  * 1799 비숍 <https://acmicpc.net/problem/1799>  
 ### 1800
   * 1806 부분합 <https://acmicpc.net/problem/1806>  
   * 1850 최대공약수 <https://acmicpc.net/problem/1850>  
@@ -291,6 +293,7 @@
   * 4354 문자열 제곱 <https://acmicpc.net/problem/4354>  
 ### 4400
   * 4411 The Trip <https://acmicpc.net/problem/4411>  
+  * 4447 좋은놈 나쁜놈 <https://acmicpc.net/problem/4447> (C++)
   * 4458 첫 글자를 대문자로 <https://acmicpc.net/problem/4458>  
   * 4470 줄번호 <https://acmicpc.net/problem/4470>  
   * 4493 가위 바위 보 <https://acmicpc.net/problem/4493>  
@@ -522,6 +525,7 @@
   * 11401 이항 계수 3 <https://acmicpc.net/problem/11401>  
   * 11403 경로 찾기 <https://acmicpc.net/problem/11403>  
   * 11404 플로이드 <https://acmicpc.net/problem/11404>  
+  * 11444 피보나치 수 6 <https://acmicpc.net/problem/11444>  
 ### 11500
   * 11506 占쏙옙 <https://acmicpc.net/problem/11506>  
   * 11557 Yangjojang of The Year <https://acmicpc.net/problem/11557>  
@@ -540,6 +544,7 @@
   * 11724 연결 요소의 개수 <https://acmicpc.net/problem/11724>  
   * 11726 2xn 타일링 <https://acmicpc.net/problem/11726>  
   * 11727 2xn 타일링 2 <https://acmicpc.net/problem/11727>  
+  * 11728 배열 합치기 <https://acmicpc.net/problem/11728>  
   * 11729 하노이 탑 이동 순서 <https://acmicpc.net/problem/11729>  
 ### 11800
   * 11866 요세푸스 문제 0 <https://acmicpc.net/problem/11866>  
@@ -668,5 +673,4 @@
   * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
 
 ## 현재 진행중
-  * 1799 비숍 <https://acmicpc.net/problem/1799>  
   * 14003 가장 긴 증가하는 부분 수열 5 <https://acmicpc.net/problem/14003>  
