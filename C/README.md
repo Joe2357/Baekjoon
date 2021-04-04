@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 576문제 / 0문제
+  * 579문제 / 0문제
 
 ## 문제 목록
 ### 1000
@@ -47,6 +47,7 @@
   * 1157 단어 공부 <https://acmicpc.net/problem/1157>  
   * 1158 조세퍼스 문제 <https://acmicpc.net/problem/1158>  
   * 1159 농구 경기 <https://acmicpc.net/problem/1159>  
+  * 1167 트리의 지름 <https://acmicpc.net/problem/1167>  
   * 1181 단어 정렬 <https://acmicpc.net/problem/1181>  
   * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
   * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
@@ -135,6 +136,7 @@
   * 1963 소수 경로 <https://acmicpc.net/problem/1963>  
   * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
+  * 1967 트리의 지름 <https://acmicpc.net/problem/1967>  
   * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
   * 1978 소수 찾기 <https://acmicpc.net/problem/1978>  
   * 1987 알파벳 <https://acmicpc.net/problem/1987>  
@@ -163,6 +165,7 @@
   * 2225 합분해 <https://acmicpc.net/problem/2225>  
   * 2231 분해합 <https://acmicpc.net/problem/2231>  
   * 2261 가장 가까운 두 점 <https://acmicpc.net/problem/2261> (C++)
+  * 2263 트리의 순회 <https://acmicpc.net/problem/2263> 
   * 2292 벌집 <https://acmicpc.net/problem/2292>  
   * 2293 동전 1 <https://acmicpc.net/problem/2293>  
   * 2294 동전 2 <https://acmicpc.net/problem/2294>  
