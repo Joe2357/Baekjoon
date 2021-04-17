@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 579문제 / 0문제
+  * 582문제 / 0문제
 
 ## 문제 목록
 ### 1000
@@ -137,6 +137,7 @@
   * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
   * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
   * 1967 트리의 지름 <https://acmicpc.net/problem/1967>  
+  * 1976 여행 가자 <https://acmicpc.net/problem/1976>  
   * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
   * 1978 소수 찾기 <https://acmicpc.net/problem/1978>  
   * 1987 알파벳 <https://acmicpc.net/problem/1987>  
@@ -313,6 +314,7 @@
   * 4641 Doubles <https://acmicpc.net/problem/4641>  
   * 4673 셀프 넘버 <https://acmicpc.net/problem/4673>  
 ### 4800
+  * 4803 트리 <https://acmicpc.net/problem/4803>  
   * 4892 숫자 맞추기 게임 <https://acmicpc.net/problem/4892>  
 ### 4900
   * 4948 베르트랑 공준 <https://acmicpc.net/problem/4948>  
@@ -350,6 +352,7 @@
 ### 5600
   * 5622 다이얼 <https://acmicpc.net/problem/5622>  
   * 5635 생일 <https://acmicpc.net/problem/5635>  
+  * 5639 이진 검색 트리 <https://acmicpc.net/problem/5639>  
 ### 5700
   * 5704 팬그램 <https://acmicpc.net/problem/5704>  
   * 5717 상근이의 친구들 <https://acmicpc.net/problem/5717>  
