@@ -1,7 +1,7 @@
 # C/C++
 
 ## 푼 문제 / 현재 진행중
-  * 582문제 / 0문제
+  * 586문제 / 0문제
 
 ## 문제 목록
 ### 1000
@@ -52,6 +52,7 @@
   * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
   * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
   * 1193 분수찾기 <https://acmicpc.net/problem/1193>  
+  * 1197 최소 스패닝 트리 <https://acmicpc.net/problem/1197>  
   * 1199 오일러 회로 <https://acmicpc.net/problem/1199>  
 ### 1200
   * 1212 8진수 2진수 <https://acmicpc.net/problem/1212>  
@@ -299,6 +300,7 @@
 ### 4100
   * 4101 크냐? <https://acmicpc.net/problem/4101>  
   * 4153 직각삼각형 <https://acmicpc.net/problem/4153>  
+  * 4195 친구 네트워크 <https://acmicpc.net/problem/4195>  
 ### 4300
   * 4344 평균은 넘겠지 <https://acmicpc.net/problem/4344>  
   * 4354 문자열 제곱 <https://acmicpc.net/problem/4354>  
@@ -407,6 +409,7 @@
   * 9316 Hello Judge <https://acmicpc.net/problem/9316>  
   * 9325 얼마? <https://acmicpc.net/problem/9325>  
   * 9370 미확인 도착지 <https://acmicpc.net/problem/9370> (C++)
+  * 9372 상근이의 여행 <https://acmicpc.net/problem/9372>  
   * 9375 패션왕 신해빈 <https://acmicpc.net/problem/9375>  
 ### 9400
   * 9461 파도반 수열 <https://acmicpc.net/problem/9461>  
@@ -694,5 +697,7 @@
   * 18870 좌표 압축 <https://acmicpc.net/problem/18870>  
 ### 19500
   * 19532 수학은 비대면강의입니다 <https://acmicpc.net/problem/19532>  
+### 20000
+  * 20040 사이클 게임 <https://acmicpc.net/problem/20040>  
 
 ## 현재 진행중

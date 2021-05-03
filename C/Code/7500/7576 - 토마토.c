@@ -1,60 +1,73 @@
 #include <stdio.h>
-#define max(a, b) a > b ? a : b
-#define QUEUE_SIZE 10000
 
-typedef struct Position {
-	int x, y, day;
-} PS;
+typedef char boolean;
+#define True 1
+#define False 0
+typedef struct Node {
+	int x, y;
+	int c;
+} ND;
 
-PS Queue[QUEUE_SIZE];
-int arr[1000][1000],
-	front = -1, rear = 0,
-	n, m, tomato[2];
+#define DONE 1
+#define NOTDONE 0
+#define WALL -1
+#define MAX_INDEX 1000
+#define INF 987654321
 
-void change(int y, int x, int day) {
-	if (x < 0 || y < 0 || x == n || y == m) // out of grid
-		return;
-	if (!arr[y][x]) { // if not visited
-		tomato[0]--, tomato[1]++;
-		arr[y][x] = day + 1;
-		Queue[rear].x = x, Queue[rear].y = y, Queue[rear].day = day + 1,
-			rear++, rear %= QUEUE_SIZE;
-	}
-	return;
-}
+ND queue[MAX_INDEX * MAX_INDEX];
+int day[MAX_INDEX][MAX_INDEX];
+int front = -1, rear = -1;
+ND pos[4] = { {1, 0},{-1, 0}, {0, 1}, {0, -1} };
+boolean visited[MAX_INDEX][MAX_INDEX + 1] = { False };
 
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+#define max(a, b) (((a) > (b)) ? (a) : (b))
 int main() {
-	scanf("%d %d", &n, &m);
-	for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++) {
-			scanf("%d", &arr[i][j]);
-			if (!arr[i][j])
-				tomato[0]++;
-			else if (arr[i][j] == 1) { // BFS queue expression
-				tomato[1]++;
-				Queue[rear].x = j, Queue[rear].y = i, Queue[rear].day = 0,
-					rear++, rear %= QUEUE_SIZE;
+	int n, m;
+	scanf("%d %d", &m, &n);
+	char grid[MAX_INDEX][MAX_INDEX + 1];
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < m; ++j) {
+			int a;
+			scanf("%d", &a);
+			grid[i][j] = a;
+			if (a == DONE) {
+				queue[++rear] = (ND) { i, j, 0 };
+				visited[i][j] = True;
+			}
+			else if (a == NOTDONE) {
+				day[i][j] = INF;
 			}
 		}
-	while (front != rear && tomato[0]) { // BFS search
-		PS temp = Queue[++front];
-		change(temp.y - 1, temp.x, temp.day);
-		change(temp.y + 1, temp.x, temp.day);
-		change(temp.y, temp.x - 1, temp.day);
-		change(temp.y, temp.x + 1, temp.day);
 	}
-	if (!tomato[0]) { // no tomato left
-		if (front == -1)
-			printf("0"); // there's no tomato[0]
-		else {
-			int result = -1;
-			for (int i = 0; i < m; i++)
-				for (int j = 0; j < n; j++)
-					result = max(arr[i][j], result); // find the largest value
-			printf("%d", result);
+
+	while (front < rear) {
+		ND cur = queue[++front];
+
+		for (int i = 0; i < 4; ++i) {
+			ND temp = (ND) { cur.x + pos[i].x, cur.y + pos[i].y, cur.c + 1 };
+			if (temp.x < 0 || temp.y < 0 || temp.x == n || temp.y == m || grid[temp.x][temp.y] == WALL || visited[temp.x][temp.y]) {
+				continue;
+			}
+
+			visited[temp.x][temp.y] = True;
+			day[temp.x][temp.y] = temp.c;
+			queue[++rear] = temp;
 		}
 	}
-	else // can't make all tomatoes to 1
+
+	int result = 0;
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < m; ++j) {
+			result = max(result, day[i][j]);
+		}
+	}
+
+	if (result == INF) {
 		printf("-1");
+	}
+	else {
+		printf("%d", result);
+	}
 	return 0;
 }
