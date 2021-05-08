@@ -1,180 +1,294 @@
 # C/C++
 
-## 푼 문제 / 현재 진행중
-  * 586문제 / 0문제
-
 ## 문제 목록
 ### 1000
-  * 1000 A + B <https://acmicpc.net/problem/1000>  
-  * 1001 A - B <https://acmicpc.net/problem/1001>  
-  * 1002 터렛 <https://acmicpc.net/problem/1002>  
-  * 1003 피보나치 함수 <https://acmicpc.net/problem/1003>  
-  * 1004 어린 왕자 <https://acmicpc.net/problem/1004>  
-  * 1008 A ÷ B <https://acmicpc.net/problem/1008>  
-  * 1009 분산처리  <https://acmicpc.net/problem/1009>  
-  * 1010 다리 놓기  <https://acmicpc.net/problem/1010>  
-  * 1011 Fly me to the Alpha Centauri <https://acmicpc.net/problem/1011>  
-  * 1012 유기농 배추 <https://acmicpc.net/problem/1012>  
-  * 1015 수열 정렬 <https://acmicpc.net/problem/1015>  
-  * 1016 제곱 ㄴㄴ수 <https://acmicpc.net/problem/1016>  
-  * 1018 체스판 다시 칠하기 <https://acmicpc.net/problem/1018>  
-  * 1019 책 페이지 <https://acmicpc.net/problem/1019>  
-  * 1021 회전하는 큐 <https://acmicpc.net/problem/1021>  
-  * 1026 보물 <https://acmicpc.net/problem/1026>  
-  * 1032 명령 프롬프트 <https://acmicpc.net/problem/1032>  
-  * 1034 램프 <https://acmicpc.net/problem/1034>  
-  * 1037 약수 <https://acmicpc.net/problem/1037>  
-  * 1049 기타줄 <https://acmicpc.net/problem/1049>  
-  * 1051 숫자 정사각형 <https://acmicpc.net/problem/1051>  
-  * 1057 토너먼트 <https://acmicpc.net/problem/1057>  
-  * 1065 한수 <https://acmicpc.net/problem/1065>  
-  * 1069 집으로 <https://acmicpc.net/problem/1069>  
-  * 1072 게임 <https://acmicpc.net/problem/1072>  
-  * 1074 Z <https://acmicpc.net/problem/1074>  
-  * 1075 나누기 <https://acmicpc.net/problem/1075>  
-  * 1076 저항 <https://acmicpc.net/problem/1076>  
-  * 1085 직사각형에서 탈출 <https://acmicpc.net/problem/1085>  
-  * 1086 박성원 <https://acmicpc.net/problem/1086>  
-  * 1094 막대기 <https://acmicpc.net/problem/1094>  
+
+<details markdown="1"><summary>문제 목록</summary>
+
+| No.  |           Problem            |                   Link                   |
+| :--: | :--------------------------: | :--------------------------------------: |
+| 1000 |             A+B              | [링크](https://acmicpc.net/problem/1000) |
+| 1001 |             A-B              | [링크](https://acmicpc.net/problem/1001) |
+| 1002 |             터렛             | [링크](https://acmicpc.net/problem/1002) |
+| 1003 |        피보나치 함수         | [링크](https://acmicpc.net/problem/1003) |
+| 1004 |          어린 왕자           | [링크](https://acmicpc.net/problem/1004) |
+| 1008 |             A/B              | [링크](https://acmicpc.net/problem/1008) |
+| 1009 |           분산처리           | [링크](https://acmicpc.net/problem/1009) |
+| 1010 |          다리 놓기           | [링크](https://acmicpc.net/problem/1010) |
+| 1011 | Fly me to the Alpha Centauri | [링크](https://acmicpc.net/problem/1011) |
+| 1012 |         유기농 배추          | [링크](https://acmicpc.net/problem/1012) |
+| 1015 |          수열 정렬           | [링크](https://acmicpc.net/problem/1015) |
+| 1016 |         제곱 ㄴㄴ수          | [링크](https://acmicpc.net/problem/1016) |
+| 1018 |      체스판 다시 칠하기      | [링크](https://acmicpc.net/problem/1018) |
+| 1019 |          책 페이지           | [링크](https://acmicpc.net/problem/1019) |
+| 1021 |         회전하는 큐          | [링크](https://acmicpc.net/problem/1021) |
+| 1026 |             보물             | [링크](https://acmicpc.net/problem/1026) |
+| 1032 |        명령 프롬프트         | [링크](https://acmicpc.net/problem/1032) |
+| 1034 |             램프             | [링크](https://acmicpc.net/problem/1034) |
+| 1037 |             약수             | [링크](https://acmicpc.net/problem/1037) |
+| 1049 |            기타줄            | [링크](https://acmicpc.net/problem/1049) |
+| 1051 |        숫자 정사각형         | [링크](https://acmicpc.net/problem/1051) |
+| 1057 |           토너먼트           | [링크](https://acmicpc.net/problem/1057) |
+| 1065 |             한수             | [링크](https://acmicpc.net/problem/1065) |
+| 1069 |            집으로            | [링크](https://acmicpc.net/problem/1069) |
+| 1072 |             게임             | [링크](https://acmicpc.net/problem/1072) |
+| 1074 |              Z               | [링크](https://acmicpc.net/problem/1074) |
+| 1075 |            나누기            | [링크](https://acmicpc.net/problem/1075) |
+| 1076 |             저항             | [링크](https://acmicpc.net/problem/1076) |
+| 1085 |      직사각형에서 탈출       | [링크](https://acmicpc.net/problem/1085) |
+| 1086 |            박성원            | [링크](https://acmicpc.net/problem/1086) |
+| 1094 |            막대기            | [링크](https://acmicpc.net/problem/1094) |
+
+</details>
+
 ### 1100
-  * 1100 하얀 칸 <https://acmicpc.net/problem/1100>  
-  * 1107 리모컨 <https://acmicpc.net/problem/1107>  
-  * 1110 더하기 사이클 <https://acmicpc.net/problem/1110>  
-  * 1120 문자열 <https://acmicpc.net/problem/1120>  
-  * 1138 한 줄로 서기 <https://acmicpc.net/problem/1138>  
-  * 1149 RGB거리 <https://acmicpc.net/problem/1149>  
-  * 1152 단어의 개수 <https://acmicpc.net/problem/1152>  
-  * 1157 단어 공부 <https://acmicpc.net/problem/1157>  
-  * 1158 조세퍼스 문제 <https://acmicpc.net/problem/1158>  
-  * 1159 농구 경기 <https://acmicpc.net/problem/1159>  
-  * 1167 트리의 지름 <https://acmicpc.net/problem/1167>  
-  * 1181 단어 정렬 <https://acmicpc.net/problem/1181>  
-  * 1182 부분수열의 합 <https://acmicpc.net/problem/1182>  
-  * 1188 음식 평론가 <https://acmicpc.net/problem/1188>  
-  * 1193 분수찾기 <https://acmicpc.net/problem/1193>  
-  * 1197 최소 스패닝 트리 <https://acmicpc.net/problem/1197>  
-  * 1199 오일러 회로 <https://acmicpc.net/problem/1199>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |     Problem      |                   Link                   |
+| :--: | :--------------: | :--------------------------------------: |
+| 1100 |     하얀 칸      | [링크](https://acmicpc.net/problem/1100) |
+| 1107 |      리모컨      | [링크](https://acmicpc.net/problem/1107) |
+| 1110 |  더하기 사이클   | [링크](https://acmicpc.net/problem/1110) |
+| 1120 |      문자열      | [링크](https://acmicpc.net/problem/1120) |
+| 1138 |   한 줄로 서기   | [링크](https://acmicpc.net/problem/1138) |
+| 1149 |     RGB거리      | [링크](https://acmicpc.net/problem/1149) |
+| 1152 |   단어의 개수    | [링크](https://acmicpc.net/problem/1152) |
+| 1157 |    단어 공부     | [링크](https://acmicpc.net/problem/1157) |
+| 1158 |  요세푸스 문제   | [링크](https://acmicpc.net/problem/1158) |
+| 1159 |    농구 경기     | [링크](https://acmicpc.net/problem/1159) |
+| 1167 |   트리의 지름    | [링크](https://acmicpc.net/problem/1167) |
+| 1181 |    단어 정렬     | [링크](https://acmicpc.net/problem/1181) |
+| 1182 |  부분수열의 합   | [링크](https://acmicpc.net/problem/1182) |
+| 1188 |   음식 평론가    | [링크](https://acmicpc.net/problem/1188) |
+| 1193 |    분수찾기     | [링크](https://acmicpc.net/problem/1193) |
+| 1197 | 최소 스패닝 트리 | [링크](https://acmicpc.net/problem/1197) |
+| 1199 |   오일러 회로    | [링크](https://acmicpc.net/problem/1199) |
+
+</details>
+
 ### 1200
-  * 1212 8진수 2진수 <https://acmicpc.net/problem/1212>  
-  * 1237 정ㅋ벅ㅋ <https://acmicpc.net/problem/1237>  
-  * 1259 팰린드롬수 <https://acmicpc.net/problem/1259>  
-  * 1260 DFS와 BFS <https://acmicpc.net/problem/1260>  
-  * 1267 핸드폰 요금 <https://acmicpc.net/problem/1267>  
-  * 1292 쉽게 푸는 문제 <https://acmicpc.net/problem/1292>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |    Problem     |                   Link                   |
+| :--: | :------------: | :--------------------------------------: |
+| 1212 |  8진수 2진수   | [링크](https://acmicpc.net/problem/1212) |
+| 1237 |    정ㅋ벅ㅋ    | [링크](https://acmicpc.net/problem/1237) |
+| 1259 |   팰린드롬수   | [링크](https://acmicpc.net/problem/1259) |
+| 1260 |   DFS와 BFS    | [링크](https://acmicpc.net/problem/1260) |
+| 1267 |  핸드폰 요금   | [링크](https://acmicpc.net/problem/1267) |
+| 1292 | 쉽게 푸는 문제 | [링크](https://acmicpc.net/problem/1292) |
+
+</details>
+
 ### 1300
-  * 1300 K번째 수 <https://acmicpc.net/problem/1300>  
-  * 1309 동물원 <https://acmicpc.net/problem/1309>  
-  * 1316 그룹 단어 체커 <https://acmicpc.net/problem/1316>  
-  * 1323 숫자 연결하기 <https://acmicpc.net/problem/1323>  
-  * 1330 두 수 비교하기 <https://acmicpc.net/problem/1330>  
-  * 1352 문자열 <https://acmicpc.net/problem/1352>  
-  * 1357 뒤집힌 덧셈 <https://acmicpc.net/problem/1357>  
-  * 1388 바닥 장식 <https://acmicpc.net/problem/1388>  
-  * 1389 케빈 베이컨의 6단계 법칙 <https://acmicpc.net/problem/1389>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |        Problem         |                   Link                   |
+| :--: | :--------------------: | :--------------------------------------: |
+| 1300 |        K번째 수        | [링크](https://acmicpc.net/problem/1300) |
+| 1309 |         동물원         | [링크](https://acmicpc.net/problem/1309) |
+| 1316 |     그룹 단어 체커     | [링크](https://acmicpc.net/problem/1316) |
+| 1323 |     숫자 연결하기      | [링크](https://acmicpc.net/problem/1323) |
+| 1330 |     두 수 비교하기      | [링크](https://acmicpc.net/problem/1330) |
+| 1352 |         문자열         | [링크](https://acmicpc.net/problem/1352) |
+| 1357 |      뒤집힌 덧셈       | [링크](https://acmicpc.net/problem/1357) |
+| 1388 |       바닥 장식        | [링크](https://acmicpc.net/problem/1388) |
+| 1389 | 케빈 베이컨의 6단계 법칙 | [링크](https://acmicpc.net/problem/1389) |
+
+</details>
+
 ### 1400
-  * 1406 에디터 <https://acmicpc.net/problem/1406>  
-  * 1408 24 <https://acmicpc.net/problem/1408>  
-  * 1417 국회의원 선거 <https://acmicpc.net/problem/1417>  
-  * 1427 소트인사이드 <https://acmicpc.net/problem/1427>  
-  * 1436 영화감독 숌 <https://acmicpc.net/problem/1436>  
-  * 1453 피시방 알바 <https://acmicpc.net/problem/1453>  
-  * 1463 1로 만들기 <https://acmicpc.net/problem/1463>  
-  * 1475 방 번호 <https://acmicpc.net/problem/1475>  
-  * 1476 날짜 계산 <https://acmicpc.net/problem/1476>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |    Problem    |                   Link                   |
+| :--: | :-----------: | :--------------------------------------: |
+| 1406 |    에디터     | [링크](https://acmicpc.net/problem/1406) |
+| 1408 |      24       | [링크](https://acmicpc.net/problem/1408) |
+| 1417 | 국회의원 선거 | [링크](https://acmicpc.net/problem/1417) |
+| 1427 | 소트인사이드  | [링크](https://acmicpc.net/problem/1427) |
+| 1436 |  영화감독 숌  | [링크](https://acmicpc.net/problem/1436) |
+| 1450 |   냅색문제    | [링크](https://acmicpc.net/problem/1450) |
+| 1453 |  피시방 알바  | [링크](https://acmicpc.net/problem/1453) |
+| 1463 |  1로 만들기   | [링크](https://acmicpc.net/problem/1463) |
+| 1475 |    방 번호    | [링크](https://acmicpc.net/problem/1475) |
+| 1476 |   날짜 계산   | [링크](https://acmicpc.net/problem/1476) |
+
+</details>
+
 ### 1500
-  * 1504 특정한 최단 경로 <https://acmicpc.net/problem/1504> (C++)
-  * 1520 내리막 길 <https://acmicpc.net/problem/1520>  
-  * 1541 잃어버린 괄호 <https://acmicpc.net/problem/1541>  
-  * 1546 평균 <https://acmicpc.net/problem/1546>  
-  * 1547 공 <https://acmicpc.net/problem/1547>  
-  * 1550 16진수 <https://acmicpc.net/problem/1550>  
-  * 1568 새 <https://acmicpc.net/problem/1568>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |        Problem         |                   Link                   |
+| :--: | :--------------------: | :--------------------------------------: |
+| 1504 | 특정한 최단 경로 (C++) | [링크](https://acmicpc.net/problem/1504) |
+| 1520 |       내리막 길        | [링크](https://acmicpc.net/problem/1520) |
+| 1541 |     잃어버린 괄호      | [링크](https://acmicpc.net/problem/1541) |
+| 1546 |          평균          | [링크](https://acmicpc.net/problem/1546) |
+| 1547 |           공           | [링크](https://acmicpc.net/problem/1547) |
+| 1550 |         16진수         | [링크](https://acmicpc.net/problem/1550) |
+| 1568 |           새           | [링크](https://acmicpc.net/problem/1568) |
+
+</details>
+
 ### 1600
-  * 1620 나는야 포켓몬 마스터 이다솜 <https://acmicpc.net/problem/1620>  
-  * 1629 곱셈 <https://acmicpc.net/problem/1629>  
-  * 1644 소수의 연속합 <https://acmicpc.net/problem/1644>  
-  * 1654 랜선 자르기 <https://acmicpc.net/problem/1654>  
-  * 1655 가운데를 말해요 <https://acmicpc.net/problem/1655>  
-  * 1668 트로피 진열 <https://acmicpc.net/problem/1668>  
-  * 1676 팩토리얼 0의 개수 <https://acmicpc.net/problem/1676>  
-  * 1697 숨바꼭질 <https://acmicpc.net/problem/1697>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |           Problem           |                   Link                   |
+| :--: | :-------------------------: | :--------------------------------------: |
+| 1620 | 나는야 포켓몬 마스터 이다솜 | [링크](https://acmicpc.net/problem/1620) |
+| 1629 |            곱셈             | [링크](https://acmicpc.net/problem/1629) |
+| 1644 |        소수의 연속합        | [링크](https://acmicpc.net/problem/1644) |
+| 1654 |         랜선 자르기         | [링크](https://acmicpc.net/problem/1654) |
+| 1655 |       가운데를 말해요       | [링크](https://acmicpc.net/problem/1655) |
+| 1668 |         트로피 진열         | [링크](https://acmicpc.net/problem/1668) |
+| 1676 |      팩토리얼 0의 개수      | [링크](https://acmicpc.net/problem/1676) |
+| 1697 |          숨바꼭질           | [링크](https://acmicpc.net/problem/1697) |
+
+</details>
+
 ### 1700
-  * 1712 손익분기점 <https://acmicpc.net/problem/1712>  
-  * 1715 카드 정렬하기 <https://acmicpc.net/problem/1715>  
-  * 1717 집합의 표현 <https://acmicpc.net/problem/1717>  
-  * 1725 히스토그램 <https://acmicpc.net/problem/1725>  
-  * 1735 분수 합 <https://acmicpc.net/problem/1735>  
-  * 1748 수 이어 쓰기 1 <https://acmicpc.net/problem/1748>  
-  * 1753 최단경로 <https://acmicpc.net/problem/1753>  
-  * 1759 암호 만들기 <https://acmicpc.net/problem/1759>  
-  * 1764 듣보잡 <https://acmicpc.net/problem/1764>  
-  * 1773 폭죽쇼 <https://acmicpc.net/problem/1773>  
-  * 1780 종이의 개수 <https://acmicpc.net/problem/1780>  
-  * 1786 찾기 <https://acmicpc.net/problem/1786>  
-  * 1789 수들의 합 <https://acmicpc.net/problem/1789>  
-  * 1799 비숍 <https://acmicpc.net/problem/1799>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |     Problem     |                   Link                   |
+| :--: | :-------------: | :--------------------------------------: |
+| 1707 |   이분 그래프   | [링크](https://acmicpc.net/problem/1707) |
+| 1712 |   손익분기점    | [링크](https://acmicpc.net/problem/1712) |
+| 1715 |  카드 정렬하기  | [링크](https://acmicpc.net/problem/1715) |
+| 1717 |   집합의 표현   | [링크](https://acmicpc.net/problem/1717) |
+| 1725 |   히스토그램    | [링크](https://acmicpc.net/problem/1725) |
+| 1735 |     분수 합     | [링크](https://acmicpc.net/problem/1735) |
+| 1748 | 수 이어 쓰기 1  | [링크](https://acmicpc.net/problem/1748) |
+| 1753 |    최단경로     | [링크](https://acmicpc.net/problem/1753) |
+| 1759 |   암호 만들기   | [링크](https://acmicpc.net/problem/1759) |
+| 1764 |     듣보잡      | [링크](https://acmicpc.net/problem/1764) |
+| 1773 |     폭죽쇼      | [링크](https://acmicpc.net/problem/1773) |
+| 1774 | 우주신과의 교감 | [링크](https://acmicpc.net/problem/1774) |
+| 1780 |   종이의 개수   | [링크](https://acmicpc.net/problem/1780) |
+| 1786 |      찾기       | [링크](https://acmicpc.net/problem/1786) |
+| 1789 |    수들의 합    | [링크](https://acmicpc.net/problem/1789) |
+| 1799 |      비숍       | [링크](https://acmicpc.net/problem/1799) |
+
+</details>
+
 ### 1800
-  * 1806 부분합 <https://acmicpc.net/problem/1806>  
-  * 1850 최대공약수 <https://acmicpc.net/problem/1850>  
-  * 1874 스택 수열 <https://acmicpc.net/problem/1874>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |  Problem   |                   Link                   |
+| :--: | :--------: | :--------------------------------------: |
+| 1806 |   부분합   | [링크](https://acmicpc.net/problem/1806) |
+| 1850 | 최대공약수 | [링크](https://acmicpc.net/problem/1850) |
+| 1874 | 스택 수열  | [링크](https://acmicpc.net/problem/1874) |
+
+</details>
+
 ### 1900
-  * 1904 01타일 <https://acmicpc.net/problem/1904>  
-  * 1912 연속합 <https://acmicpc.net/problem/1912>  
-  * 1913 달팽이 <https://acmicpc.net/problem/1913>  
-  * 1915 가장 큰 정사각형 <https://acmicpc.net/problem/1915>  
-  * 1918 후위 표기식 <https://acmicpc.net/problem/1918>  
-  * 1919 에너그램 만들기 <https://acmicpc.net/problem/1919>  
-  * 1920 수 찾기 <https://acmicpc.net/problem/1920>  
-  * 1924 2007년 <https://acmicpc.net/problem/1924>  
-  * 1927 최소 힙 <https://acmicpc.net/problem/1927>  
-  * 1929 소수 구하기 <https://acmicpc.net/problem/1929>  
-  * 1931 회의실배정 <https://acmicpc.net/problem/1931>  
-  * 1932 정수 삼각형 <https://acmicpc.net/problem/1932>  
-  * 1934 최소공배수 <https://acmicpc.net/problem/1934>  
-  * 1937 욕심쟁이 판다 <https://acmicpc.net/problem/1937>  
-  * 1941 소문난 칠공주 <https://acmicpc.net/problem/1941>  
-  * 1956 운동 <https://acmicpc.net/problem/1956>  
-  * 1963 소수 경로 <https://acmicpc.net/problem/1963>  
-  * 1965 상자넣기 <https://acmicpc.net/problem/1965>  
-  * 1966 프린트 큐 <https://acmicpc.net/problem/1966>  
-  * 1967 트리의 지름 <https://acmicpc.net/problem/1967>  
-  * 1976 여행 가자 <https://acmicpc.net/problem/1976>  
-  * 1977 완전제곱수 <https://acmicpc.net/problem/1977>  
-  * 1978 소수 찾기 <https://acmicpc.net/problem/1978>  
-  * 1987 알파벳 <https://acmicpc.net/problem/1987>  
-  * 1991 트리 순회 <https://acmicpc.net/problem/1991>  
-  * 1992 쿼드트리 <https://acmicpc.net/problem/1992>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |     Problem      |                   Link                   |
+| :--: | :--------------: | :--------------------------------------: |
+| 1904 |      01타일      | [링크](https://acmicpc.net/problem/1904) |
+| 1912 |      연속합      | [링크](https://acmicpc.net/problem/1912) |
+| 1913 |      달팽이      | [링크](https://acmicpc.net/problem/1913) |
+| 1915 | 가장 큰 정사각형 | [링크](https://acmicpc.net/problem/1915) |
+| 1918 |   후위 표기식    | [링크](https://acmicpc.net/problem/1918) |
+| 1919 | 애너그램 만들기  | [링크](https://acmicpc.net/problem/1919) |
+| 1920 |     수 찾기      | [링크](https://acmicpc.net/problem/1920) |
+| 1924 |      2007년      | [링크](https://acmicpc.net/problem/1924) |
+| 1927 |     최소 힙      | [링크](https://acmicpc.net/problem/1927) |
+| 1929 |   소수 구하기    | [링크](https://acmicpc.net/problem/1929) |
+| 1931 |   회의실 배정    | [링크](https://acmicpc.net/problem/1931) |
+| 1932 |   정수 삼각형    | [링크](https://acmicpc.net/problem/1932) |
+| 1934 |    최소공배수    | [링크](https://acmicpc.net/problem/1934) |
+| 1937 |  욕심쟁이 판다   | [링크](https://acmicpc.net/problem/1937) |
+| 1941 |  소문난 칠공주   | [링크](https://acmicpc.net/problem/1941) |
+| 1956 |       운동       | [링크](https://acmicpc.net/problem/1956) |
+| 1963 |    소수 경로     | [링크](https://acmicpc.net/problem/1963) |
+| 1965 |     상자넣기     | [링크](https://acmicpc.net/problem/1965) |
+| 1966 |    프린터 큐     | [링크](https://acmicpc.net/problem/1966) |
+| 1967 |   트리의 지름    | [링크](https://acmicpc.net/problem/1967) |
+| 1976 |    여행 가자     | [링크](https://acmicpc.net/problem/1976) |
+| 1977 |    완전제곱수    | [링크](https://acmicpc.net/problem/1977) |
+| 1978 |    소수 찾기     | [링크](https://acmicpc.net/problem/1978) |
+| 1987 |      알파벳      | [링크](https://acmicpc.net/problem/1987) |
+| 1991 |    트리 순회     | [링크](https://acmicpc.net/problem/1991) |
+| 1992 |     쿼드트리     | [링크](https://acmicpc.net/problem/1992) |
+
+</details>
+
 ### 2000
-  * 2003 수들의 합 2 <https://acmicpc.net/problem/2003>  
-  * 2004 조합 0의 개수 <https://acmicpc.net/problem/2004>  
-  * 2010 플러그 <https://acmicpc.net/problem/2010>  
-  * 2083 럭비 클럽 <https://acmicpc.net/problem/2083>  
-  * 2098 외판원 순회 <https://acmicpc.net/problem/2098>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |    Problem    |                   Link                   |
+| :--: | :-----------: | :--------------------------------------: |
+| 2003 |  수들의 합 2  | [링크](https://acmicpc.net/problem/2003) |
+| 2004 | 조합 0의 개수 | [링크](https://acmicpc.net/problem/2004) |
+| 2010 |    플러그     | [링크](https://acmicpc.net/problem/2010) |
+| 2083 |   럭비 클럽   | [링크](https://acmicpc.net/problem/2083) |
+| 2096 |   내려가기    | [링크](https://acmicpc.net/problem/2096) |
+| 2098 |  외판원 순회  | [링크](https://acmicpc.net/problem/2098) |
+
+</details>
+
 ### 2100
-  * 2108 통계학 <https://acmicpc.net/problem/2108>  
-  * 2110 공유기 설치 <https://acmicpc.net/problem/2110>  
-  * 2145 숫자 놀이 <https://acmicpc.net/problem/2145>  
-  * 2153 소수 단어 <https://acmicpc.net/problem/2153>  
-  * 2156 포도주 시식 <https://acmicpc.net/problem/2156>  
-  * 2163 초콜릿 자르기 <https://acmicpc.net/problem/2163>  
-  * 2164 카드2 <https://acmicpc.net/problem/2164>  
-  * 2170 선 긋기 <https://acmicpc.net/problem/2170>  
-  * 2178 미로 탐색 <https://acmicpc.net/problem/2178>  
-  * 2193 이친수 <https://acmicpc.net/problem/2193>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |    Problem    |                   Link                   |
+| :--: | :-----------: | :--------------------------------------: |
+| 2108 |    통계학     | [링크](https://acmicpc.net/problem/2108) |
+| 2110 |  공유기 설치  | [링크](https://acmicpc.net/problem/2110) |
+| 2145 |   숫자 놀이   | [링크](https://acmicpc.net/problem/2145) |
+| 2153 |   소수 단어   | [링크](https://acmicpc.net/problem/2153) |
+| 2156 |  포도주 시식  | [링크](https://acmicpc.net/problem/2156) |
+| 2163 | 초콜릿 자르기 | [링크](https://acmicpc.net/problem/2163) |
+| 2164 |     카드2     | [링크](https://acmicpc.net/problem/2164) |
+| 2170 |    선 긋기    | [링크](https://acmicpc.net/problem/2170) |
+| 2178 |   미로 탐색   | [링크](https://acmicpc.net/problem/2178) |
+| 2193 |    이친수     | [링크](https://acmicpc.net/problem/2193) |
+
+</details>
+
 ### 2200
-  * 2206 벽 부수고 이동하기 <https://acmicpc.net/problem/2206>  
-  * 2217 로프 <https://acmicpc.net/problem/2217>  
-  * 2225 합분해 <https://acmicpc.net/problem/2225>  
-  * 2231 분해합 <https://acmicpc.net/problem/2231>  
-  * 2261 가장 가까운 두 점 <https://acmicpc.net/problem/2261> (C++)
-  * 2263 트리의 순회 <https://acmicpc.net/problem/2263> 
-  * 2292 벌집 <https://acmicpc.net/problem/2292>  
-  * 2293 동전 1 <https://acmicpc.net/problem/2293>  
-  * 2294 동전 2 <https://acmicpc.net/problem/2294>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |         Problem         |                   Link                   |
+| :--: | :---------------------: | :--------------------------------------: |
+| 2206 |   벽 부수고 이동하기    | [링크](https://acmicpc.net/problem/2206) |
+| 2217 |          로프           | [링크](https://acmicpc.net/problem/2217) |
+| 2225 |         합분해          | [링크](https://acmicpc.net/problem/2225) |
+| 2231 |         분해합          | [링크](https://acmicpc.net/problem/2231) |
+| 2232 |          지뢰           | [링크](https://acmicpc.net/problem/2232) |
+| 2261 | 가장 가까운 두 점 (C++) | [링크](https://acmicpc.net/problem/2261) |
+| 2263 |       트리의 순회       | [링크](https://acmicpc.net/problem/2263) |
+| 2292 |          벌집           | [링크](https://acmicpc.net/problem/2292) |
+| 2293 |         동전 1          | [링크](https://acmicpc.net/problem/2293) |
+| 2294 |         동전 2          | [링크](https://acmicpc.net/problem/2294) |
+
+</details>
+
 ### 2300
-  * 2309 일곱 난쟁이 <https://acmicpc.net/problem/2309>  
-  * 2312 수 복원하기 <https://acmicpc.net/problem/2312>  
-  * 2386 도비의 영어 공부 <https://acmicpc.net/problem/2386>  
+
+<details markdown=1><summary>문제 목록</summary>
+
+| No.  |     Problem      |                   Link                   |
+| :--: | :--------------: | :--------------------------------------: |
+| 2309 |   일곱 난쟁이    | [링크](https://acmicpc.net/problem/2309) |
+| 2312 |   수 복원하기    | [링크](https://acmicpc.net/problem/2312) |
+| 2386 | 도비의 영어 공부 | [링크](https://acmicpc.net/problem/2386) |
+
+</details>
+
 ### 2400
   * 2420 사파리월드 <https://acmicpc.net/problem/2420>  
   * 2438 별 찍기 1 <https://acmicpc.net/problem/2438>  
@@ -197,6 +311,7 @@
   * 2480 주사위 세개 <https://acmicpc.net/problem/2480>  
   * 2482 색상환 <https://acmicpc.net/problem/2482>  
   * 2490 윷놀이 <https://acmicpc.net/problem/2490>  
+  * 2493 탑 <https://acmicpc.net/problem/2493>  
 ### 2500
   * 2501 약수 구하기 <https://acmicpc.net/problem/2501>  
   * 2502 떡 먹는 호랑이 <https://acmicpc.net/problem/2502>  
@@ -268,6 +383,7 @@
   * 2864 5와 6의 차이 <https://acmicpc.net/problem/2864>  
   * 2869 달팽이는 올라가고 싶다 <https://acmicpc.net/problem/2869>  
   * 2884 알람 시계 <https://acmicpc.net/problem/2884>  
+  * 2887 행성 터널 <https://acmicpc.net/problem/2887>  
 ### 2900
   * 2902 KMP는 왜 KMP일까? <https://acmicpc.net/problem/2902>  
   * 2903 중앙 이동 알고리즘 <https://acmicpc.net/problem/2903>  
@@ -304,6 +420,7 @@
 ### 4300
   * 4344 평균은 넘겠지 <https://acmicpc.net/problem/4344>  
   * 4354 문자열 제곱 <https://acmicpc.net/problem/4354>  
+  * 4386 별자리 만들기 <https://acmicpc.net/problem/4386>  
 ### 4400
   * 4411 The Trip <https://acmicpc.net/problem/4411>  
   * 4447 좋은놈 나쁜놈 <https://acmicpc.net/problem/4447>  
