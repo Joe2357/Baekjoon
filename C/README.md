@@ -86,16 +86,17 @@
 
 <details markdown=1><summary>문제 목록</summary>
 
-| No.  |        Problem         |                   Link                   |
-| :--: | :--------------------: | :--------------------------------------: |
-| 1300 |        K번째 수        | [링크](https://acmicpc.net/problem/1300) |
-| 1309 |         동물원         | [링크](https://acmicpc.net/problem/1309) |
-| 1316 |     그룹 단어 체커     | [링크](https://acmicpc.net/problem/1316) |
-| 1323 |     숫자 연결하기      | [링크](https://acmicpc.net/problem/1323) |
-| 1330 |     두 수 비교하기      | [링크](https://acmicpc.net/problem/1330) |
-| 1352 |         문자열         | [링크](https://acmicpc.net/problem/1352) |
-| 1357 |      뒤집힌 덧셈       | [링크](https://acmicpc.net/problem/1357) |
-| 1388 |       바닥 장식        | [링크](https://acmicpc.net/problem/1388) |
+| No.  |         Problem          |                   Link                   |
+| :--: | :----------------------: | :--------------------------------------: |
+| 1300 |         K번째 수         | [링크](https://acmicpc.net/problem/1300) |
+| 1309 |          동물원          | [링크](https://acmicpc.net/problem/1309) |
+| 1311 |      할 일 정하기 1      | [링크](https://acmicpc.net/problem/1311) |
+| 1316 |      그룹 단어 체커      | [링크](https://acmicpc.net/problem/1316) |
+| 1323 |      숫자 연결하기       | [링크](https://acmicpc.net/problem/1323) |
+| 1330 |      두 수 비교하기      | [링크](https://acmicpc.net/problem/1330) |
+| 1352 |          문자열          | [링크](https://acmicpc.net/problem/1352) |
+| 1357 |       뒤집힌 덧셈        | [링크](https://acmicpc.net/problem/1357) |
+| 1388 |        바닥 장식         | [링크](https://acmicpc.net/problem/1388) |
 | 1389 | 케빈 베이컨의 6단계 법칙 | [링크](https://acmicpc.net/problem/1389) |
 
 </details>
@@ -228,14 +229,15 @@
 
 <details markdown=1><summary>문제 목록</summary>
 
-| No.  |    Problem    |                   Link                   |
-| :--: | :-----------: | :--------------------------------------: |
-| 2003 |  수들의 합 2  | [링크](https://acmicpc.net/problem/2003) |
-| 2004 | 조합 0의 개수 | [링크](https://acmicpc.net/problem/2004) |
-| 2010 |    플러그     | [링크](https://acmicpc.net/problem/2010) |
-| 2083 |   럭비 클럽   | [링크](https://acmicpc.net/problem/2083) |
-| 2096 |   내려가기    | [링크](https://acmicpc.net/problem/2096) |
-| 2098 |  외판원 순회  | [링크](https://acmicpc.net/problem/2098) |
+| No.  |    Problem     |                   Link                   |
+| :--: | :------------: | :--------------------------------------: |
+| 2003 |  수들의 합 2   | [링크](https://acmicpc.net/problem/2003) |
+| 2004 | 조합 0의 개수  | [링크](https://acmicpc.net/problem/2004) |
+| 2010 |     플러그     | [링크](https://acmicpc.net/problem/2010) |
+| 2042 | 구간 합 구하기 | [링크](https://acmicpc.net/problem/2042) |
+| 2083 |   럭비 클럽    | [링크](https://acmicpc.net/problem/2083) |
+| 2096 |    내려가기    | [링크](https://acmicpc.net/problem/2096) |
+| 2098 |  외판원 순회   | [링크](https://acmicpc.net/problem/2098) |
 
 </details>
 
@@ -1149,13 +1151,14 @@
 
 <details markdown="1"><summary>문제 목록</summary>
 
-|  No.  |     Problem     |                   Link                    |
-| :---: | :-------------: | :---------------------------------------: |
-| 11650 |  좌표 정렬하기  | [링크](https://acmicpc.net/problem/11650) |
-| 11651 | 좌표 정렬하기 2 | [링크](https://acmicpc.net/problem/11651) |
-| 11653 |   소인수분해    | [링크](https://acmicpc.net/problem/11653) |
-| 11654 |   아스키 코드   | [링크](https://acmicpc.net/problem/11654) |
-| 11657 |    타임머신     | [링크](https://acmicpc.net/problem/11657) |
+|  No.  |     Problem      |                   Link                    |
+| :---: | :--------------: | :---------------------------------------: |
+| 11650 |  좌표 정렬하기   | [링크](https://acmicpc.net/problem/11650) |
+| 11651 | 좌표 정렬하기 2  | [링크](https://acmicpc.net/problem/11651) |
+| 11653 |    소인수분해    | [링크](https://acmicpc.net/problem/11653) |
+| 11654 |   아스키 코드    | [링크](https://acmicpc.net/problem/11654) |
+| 11657 |     타임머신     | [링크](https://acmicpc.net/problem/11657) |
+| 11659 | 구간 합 구하기 4 | [링크](https://acmicpc.net/problem/11659) |
 
 </details>
 
@@ -1382,6 +1385,7 @@
 | 15665 |                          N과 M (11)                          | [링크](https://acmicpc.net/problem/15665) |
 | 15666 |                          N과 M (12)                          | [링크](https://acmicpc.net/problem/15666) |
 | 15680 |                          연세대학교                          | [링크](https://acmicpc.net/problem/15680) |
+| 15681 |                         트리와 쿼리                          | [링크](https://acmicpc.net/problem/15681) |
 
 </details>
 
@@ -1538,10 +1542,11 @@
 
 <details markdown="1"><summary>문제 목록</summary>
 
-|  No.  |   Problem    |                   Link                    |
-| :---: | :----------: | :---------------------------------------: |
-| 17404 |  RGB거리 2   | [링크](https://acmicpc.net/problem/17404) |
-| 17466 | N! mod P (1) | [링크](https://acmicpc.net/problem/17466) |
+|  No.  |    Problem    |                   Link                    |
+| :---: | :-----------: | :---------------------------------------: |
+| 17404 |   RGB거리 2   | [링크](https://acmicpc.net/problem/17404) |
+| 17466 | N! mod P (1)  | [링크](https://acmicpc.net/problem/17466) |
+| 17472 | 다리 만들기 2 | [링크](https://acmicpc.net/problem/17472) |
 
 </details>
 
