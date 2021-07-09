@@ -49,7 +49,7 @@ int press(int x) {
 	return p;
 }
 
-#define abs(x) (((x) < 0) ? (-(x)) : (x))	 // abstract function
+#define abs(x) (((x) < 0) ? (-(x)) : (x))	 // absolute value function
 #define min(a, b) (((a) > (b)) ? (b) : (a))	 // return smaller value
 int main() {
 	int n;
