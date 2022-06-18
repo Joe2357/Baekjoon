@@ -1,36 +1,51 @@
 #include <stdio.h>
 
-void DFS(int arr[][50], int x, int y, int horizon, int vertical) {
-	if (x < 0 || y < 0 || x >= horizon || y >= vertical)				// out of greed
-		return;
-	else if (arr[y][x]) {
-		arr[y][x] = 0;													// remove value ( already visited )
-		DFS(arr, x - 1, y, horizon, vertical);							// spread up
-		DFS(arr, x + 1, y, horizon, vertical);							// spread down
-		DFS(arr, x, y - 1, horizon, vertical);							// spread left
-		DFS(arr, x, y + 1, horizon, vertical);							// spread right
-		return;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
+typedef struct Node {
+	int x, y;
+} ND;
+
+#define M 50
+
+int n, m, k;
+bool matrix[M][M + 1];
+ND dir[4] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+void dfs(ND cur) {
+	for (int i = 0; i < 4; ++i) {
+		ND new = {cur.x + dir[i].x, cur.y + dir[i].y};
+		if (new.x >= 0 && new.x < n&& new.y >= 0 && new.y < m && matrix[new.x][new.y]) {
+			matrix[new.x][new.y] = false;
+			dfs(new);
+		}
 	}
-	else
-		return;
+	return;
 }
 
-int main(t) {
-	for (scanf("%d", &t); t; t--) {
-		int arr[50][50] = { 0 }, x, y, cabbage;
-		scanf("%d %d %d", &x, &y, &cabbage);
-		for (; cabbage; cabbage--) {
-			int xtemp, ytemp;
-			scanf("%d %d", &xtemp, &ytemp);
-			arr[ytemp][xtemp] = 1;										// making greed
+int main() {
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		scanf("%d %d %d", &n, &m, &k);
+		while (k--) {
+			int a, b;
+			scanf("%d %d", &a, &b);
+			matrix[a][b] = true;
 		}
+
 		int result = 0;
-		for (int i = 0; i < y; i++)
-			for (int j = 0; j < x; j++)
-				if (arr[i][j]) {
-					result++;											// add 1 to result
-					DFS(arr, j, i, x, y);								// DFS
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < m; ++j) {
+				if (matrix[i][j]) {
+					matrix[i][j] = false;
+					dfs((ND){i, j});
+					++result;
 				}
+			}
+		}
+
 		printf("%d\n", result);
 	}
 	return 0;
