@@ -1,10 +1,4 @@
 # My Problem Solving in Baekjoon
 
-## ê³„ì •
+## °èÁ¤
   * Joe2357 [[BOJ]](https://acmicpc.net/user/joe2357) [[solved.ac]](https://solved.ac/profile/joe2357)
-
-## í‘¼ ë¬¸ì œ
-  * C/C++ ( 622 )
-  * Python ( 64 )
-  * Java ( 48 )
-

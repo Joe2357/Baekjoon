@@ -1,29 +1,39 @@
 #include <stdio.h>
 
-int main(n, trash) {
-	int arr[100000] = { 0 }, max = 0;
+#define M (int)(1e5)
+
+char str[2 * M + 1];
+int sl;
+int stack[M], len;
+int n, c;
+
+int main() {
 	scanf("%d", &n);
-	for (int i = 0; i < n; i++) {
-		scanf("%d", arr + i);
-		if (arr[i] > max)						// temporary max value
-			max = arr[i], trash = -1;
-		else if (trash == -1 || arr[i] < trash)	// next value of the temporary max value is no matter, 
-			trash = arr[i];
-		else {									// but next of them must be decending value
+	for (int i = 0; i < n; ++i) {
+		int a;
+		scanf("%d", &a);
+
+		if (len != 0 && stack[len - 1] > a) {
 			printf("NO");
 			return 0;
 		}
-	}
-	trash = 0;
-	for (int i = 0; i < n; i++)
-		if (trash == arr[i])					// pop
-			printf("-\n");
-		else {
-			while (trash < arr[i]) {			// push until target value in stack
-				trash++;
-				printf("+\n");
-			}
-			printf("-\n");						// pop
+
+		while (c < a) {
+			stack[len++] = ++c;
+			str[sl++] = '+';
 		}
+
+		if (len == 0 || stack[len - 1] != a) {
+			printf("NO");
+			return 0;
+		} else {
+			str[sl++] = '-';
+			--len;
+		}
+	}
+
+	for (int i = 0; i < sl; ++i) {
+		printf("%c\n", str[i]);
+	}
 	return 0;
 }
