@@ -1,59 +1,66 @@
-#include <math.h>
+#include <math.h>  // sqrt
 #include <stdio.h>
-
-typedef struct Node {
-	int x, y;
-} ND;
 
 typedef char bool;
 const bool true = 1;
 const bool false = 0;
+typedef struct Node {
+	long long x, y;
+} ND;
 
-#define MAX_IDX 20
 #define INF 987654321987654321
-
+#define MAX_IDX 20
 ND arr[MAX_IDX];
-bool ch[MAX_IDX + 1];
-int choosed;
-int n, target;
-long long result, sum_x, sum_y;
+bool comb[MAX_IDX];
+int n;
+long long result;
+int threshold;
 
 #define min(a, b) (((a) > (b)) ? (b) : (a))
+#define get_len(a) ((a.x * a.x) + (a.y * a.y))
 
-void init() {
-	sum_x = sum_y = 0;
+void reset() {
+	for (int i = 0; i < n; ++i) {
+		comb[i] = false;
+	}
 	result = INF;
-	choosed = 0;
 	return;
 }
 
-void get_result() {
-	long long tx = sum_x, ty = sum_y;
+void get_current_result() {
+	ND vector_sum = (ND){0, 0};
+
+	// if choosed, add them all
+	// if not choosed, subtract them all
 	for (int i = 0; i < n; ++i) {
-		if (ch[i]) {
-			tx -= (arr[i].x << 1), ty -= (arr[i].y << 1);
+		if (comb[i] == true) {
+			vector_sum.x += arr[i].x;
+			vector_sum.y += arr[i].y;
+		} else {
+			vector_sum.x -= arr[i].x;
+			vector_sum.y -= arr[i].y;
 		}
 	}
 
-	result = min(result, tx * tx + ty * ty);
+	// calculate vector length
+	result = min(result, get_len(vector_sum));
 	return;
 }
 
-void backtrack(int x) {
-	if (choosed == target) {
-		get_result();
+void make_combination(int cur, int choose_count) {
+	if (choose_count == threshold) {  // combination created
+		get_current_result();
 		return;
-	} else if (x == n) {
+	} else if (cur == n) {	// out of bound
 		return;
 	}
 
-	ch[x] = true;
-	++choosed;
-	backtrack(x + 1);
+	// backtracking
+	comb[cur] = true;
+	make_combination(cur + 1, choose_count + 1);
 
-	ch[x] = false;
-	--choosed;
-	backtrack(x + 1);
+	comb[cur] = false;
+	make_combination(cur + 1, choose_count);
 
 	return;
 }
@@ -61,21 +68,20 @@ void backtrack(int x) {
 int main() {
 	int t;
 	scanf("%d", &t);
-	while (t--) {
-		init();
 
+	while (t--) {
+		reset();
 		scanf("%d", &n);
-		target = (n >> 1);
 		for (int i = 0; i < n; ++i) {
-			int a, b;
-			scanf("%d %d", &a, &b);
-			arr[i] = (ND){a, b};
-			sum_x += a, sum_y += b;
+			int x, y;
+			scanf("%d %d", &x, &y);
+			arr[i] = (ND){x, y};
 		}
 
-		backtrack(0);
+		threshold = (n >> 1);
+		make_combination(0, 0);
+
 		printf("%.7lf\n", sqrt(result));
 	}
-
 	return 0;
 }

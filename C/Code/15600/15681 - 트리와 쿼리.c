@@ -2,58 +2,62 @@
 #include <stdlib.h>
 
 typedef struct Node {
-	int dest;
-	struct Node *next;
-} Node;
+	int x;
+	struct Node* next;
+} ND;
 
-#define MAX_IDX (int)1e5
+#define MAX_IDX (int)(1e5 + 1)
+#define NONE 0
 
-Node *matrix[MAX_IDX + 1];
-int dp[MAX_IDX + 1];
-int n, start, q;
+ND* tree[MAX_IDX];
+int dp[MAX_IDX];
+int n, root, q;
 
-Node *createNewNode(int x) {
-	Node *newNode = (Node *)malloc(sizeof(Node));
-	newNode->dest = x;
+ND* createNewNode(int x) {
+	ND* newNode = (ND*)malloc(sizeof(ND));
+	newNode->x = x;
 	newNode->next = NULL;
 	return newNode;
 }
 
-void insertNewNode(int s, int x) {
-	Node *newNode = createNewNode(x);
-	newNode->next = matrix[s];
-	matrix[s] = newNode;
+void makePath(int a, int b) {
+	ND* newNode = createNewNode(b);
+	newNode->next = tree[a];
+	tree[a] = newNode;
 	return;
 }
 
-int makeTree(int s, int p) {
-	dp[s] = 1;
-	Node *cur = matrix[s];
+int getDP(int x, int parent) {
+	ND* cur = tree[x];
+	if (cur == NULL) {
+		return (dp[x] = 1);
+	}
 
-	while (cur) {
-		if (cur->dest != p) {
-			dp[s] += makeTree(cur->dest, s);
+	int retval = 1;
+	while (cur != NULL) {
+		if (cur->x != parent) {
+			retval += getDP(cur->x, x);
 		}
 		cur = cur->next;
 	}
-	return dp[s];
+	return dp[x] = retval;
 }
 
 int main() {
-	scanf("%d %d %d", &n, &start, &q);
+	scanf("%d %d %d", &n, &root, &q);
 	for (int i = 1; i < n; ++i) {
 		int a, b;
 		scanf("%d %d", &a, &b);
-		insertNewNode(a, b), insertNewNode(b, a);
+		makePath(a, b);
+		makePath(b, a);
 	}
 
-	dp[start] = makeTree(start, -1);
+	getDP(root, NONE);
 
-	while (q--) {
+	for (int i = 0; i < q; ++i) {
 		int a;
 		scanf("%d", &a);
 		printf("%d\n", dp[a]);
 	}
-
 	return 0;
 }

@@ -1,72 +1,59 @@
 #include <stdio.h>
 
-typedef struct Node {
-	int cur;
-	int used;
-} ND;
-typedef char boolean;
-#define True 1
-#define False 0
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-#define MAX_IDX 100
+typedef struct Path {
+	int x, y;
+} PT;
+typedef struct Node {
+	int x, c;
+} ND;
+
+#define MAX_IDX (100 + 1)
+#define START 1
+#define END 100
 #define DICE 6
 
-boolean visited[MAX_IDX + 1];
-const int start = 1;
-const int end = 100;
-
-int ladder[MAX_IDX + 1];
-int snake[MAX_IDX + 1];
-ND queue[MAX_IDX + 1];
-int result;
+bool visit[MAX_IDX];
+PT path[30];
+int pathLen;
+ND q[MAX_IDX];
+int front, rear;
 
 int main() {
-	int a, b;
-	scanf("%d %d", &a, &b);
-
-	while (a--) {
-		int c, d;
-		scanf("%d %d", &c, &d);
-		ladder[c] = d;
-	}
-	while (b--) {
-		int c, d;
-		scanf("%d %d", &c, &d);
-		snake[c] = d;
+	int n, m;
+	scanf("%d %d", &n, &m);
+	pathLen = n + m;
+	for (int i = 0; i < pathLen; ++i) {
+		int a, b;
+		scanf("%d %d", &a, &b);
+		path[i] = (PT){a, b};
 	}
 
-	visited[start] = True;
-	queue[0] = (ND) { start, 0 };
-	int front = 0, rear = 1;
-
+	visit[START] = true;
+	q[rear++] = (ND){START, 0};
 	while (front < rear) {
-		ND node = queue[front++];
-
-		if (node.cur == end) {
-			printf("%d", node.used);
+		ND cur = q[front++];
+		if (cur.x == END) {
+			printf("%d", cur.c);
 			break;
 		}
 
-		for (int i = DICE; i > 0; --i) {
-			if (node.cur + i > end) {
-				continue;
+		for (int i = 1; i <= DICE; ++i) {
+			int next = cur.x + i;
+			for (int j = 0; j < pathLen; ++j) {
+				if (next == path[j].x) {
+					next = path[j].y;
+				}
 			}
-			else {
-				int dest = node.cur + i;
-				if (ladder[dest]) {
-					dest = ladder[dest];
-				}
-				else if (snake[dest]) {
-					dest = snake[dest];
-				}
-				if (visited[dest]) {
-					continue;
-				}
-
-				visited[dest] = True;
-				queue[rear++] = (ND) { dest, node.used + 1 };
+			if (next <= END && visit[next] == false) {
+				visit[next] = true;
+				q[rear++] = (ND){next, cur.c + 1};
 			}
 		}
 	}
+
 	return 0;
 }

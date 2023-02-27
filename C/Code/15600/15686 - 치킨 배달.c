@@ -1,86 +1,87 @@
 #include <stdio.h>
-#define max(a, b) (((a) > (b)) ? (a) : (b))
-#define min(a, b) (((a) > (b)) ? (b) : (a))
-#define abs(x) (((x) < 0) ? (-(x)) : (x))
-
-#define N 50
-#define MAX_LEN 100
-#define M 13
-#define INF 987654321
 
 typedef char bool;
 const bool true = 1;
 const bool false = 0;
-
-typedef struct Position {
+typedef struct Node {
 	int x, y;
-} PS;
+} ND;
 
-PS house[MAX_LEN]; int house_len;
-PS chicken[M]; int chicken_len;
-int result = INF;
+#define INF 987654321
+#define MAX_IDX 50
+#define MAX_CHICKEN 13
+
+#define EMPTY 0
+#define HOME 1
+#define CHICKEN 2
+
+#define abs(x) (((x) < 0) ? (-(x)) : (x))
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+
+ND home[MAX_IDX * 2];
+ND chicken[MAX_CHICKEN];
+int homeLen, chickenLen;
 int n, m;
+int retval;
 
-int getLength(PS a, PS b) {
+int getDistance(ND a, ND b) {
 	return abs(a.x - b.x) + abs(a.y - b.y);
 }
 
-int getResult(bool* arr) {
-	int tempResult = 0;
-	for (int i = 0; i < house_len; ++i) {
-		int tempCase = INF;
-		for (int j = 0; j < chicken_len; ++j) {
-			if (arr[j]) {
-				tempCase = min(tempCase, getLength(house[i], chicken[j]));
-			}
-		}
-		tempResult += tempCase;
-	}
-	return tempResult;
-}
+bool select[MAX_CHICKEN];
+void backtrack(int x, int selected) {
+	if (selected == m) {
+		int tempRetval = 0;
 
-void backtrack(bool* arr, int cur, int used) {
-	if (used == m) {
-		result = min(result, getResult(arr));
+		for (int i = 0; i < homeLen; ++i) {
+			int temp = INF;
+
+			for (int j = 0; j < chickenLen; ++j) {
+				if (select[j] == true) {
+					temp = min(temp, getDistance(home[i], chicken[j]));
+				}
+			}
+			tempRetval += temp;
+		}
+
+		retval = min(retval, tempRetval);
 		return;
 	}
-	for (int i = cur; i < chicken_len; ++i) {
-		arr[i] = true;
-		backtrack(arr, i + 1, used + 1);
-		arr[i] = false;
+	if (x == chickenLen) {
+		return;
 	}
+
+	select[x] = true;
+	backtrack(x + 1, selected + 1);
+	select[x] = false;
+	backtrack(x + 1, selected);
+
 	return;
 }
 
-void solve() {
-	bool choose[M + 1] = { false };
-	backtrack(choose, 0, 0);
-	return;
-}
-
-void read_input() {
+int main() {
 	scanf("%d %d", &n, &m);
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < n; ++j) {
-			#define HOUSE 1
-			#define CHICKEN 2
-			int a;
-			scanf("%d", &a);
-			switch (a) {
-				case HOUSE:
-					house[house_len++] = (PS) { i, j };
+			int t;
+			scanf("%d", &t);
+			switch (t) {
+				case HOME: {
+					home[homeLen++] = (ND){i, j};
 					break;
-				case CHICKEN:
-					chicken[chicken_len++] = (PS) { i, j };
+				}
+				case CHICKEN: {
+					chicken[chickenLen++] = (ND){i, j};
 					break;
+				}
 			}
 		}
 	}
-	return;
-}
-int main() {
-	read_input();
-	solve();
-	printf("%d", result);
+
+	retval = INF;
+
+	backtrack(0, 0);
+
+	printf("%d", retval);
 	return 0;
 }

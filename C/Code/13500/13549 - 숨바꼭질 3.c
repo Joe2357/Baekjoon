@@ -1,56 +1,47 @@
 #include <stdio.h>
 
-typedef char boolean;
-#define True 1
-#define False 0
-
-#define MAX_IDX (int)(2e5 + 1)
-#define INF (int)1e5
-
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 typedef struct Node {
-	int c, m;
+	int pos;
+	int cnt;
 } ND;
 
-boolean visited[MAX_IDX];
+#define MAX_IDX 100000
+bool visit[MAX_IDX * 2 + 2];
+ND q[MAX_IDX * 2 + 2];
+int f, r;
 int n, k;
 
 int main() {
 	scanf("%d %d", &n, &k);
 
-	ND queue[MAX_IDX];
-	queue[0] = (ND){n, 0};
-	visited[n] = True;
-	int front = 0, rear = 1;
+	visit[n] = true;
+	q[r++] = (ND){n, 0};
 
-	while (front < rear) {
-		ND node = queue[front++];
-		// printf("a : %d | %d\n", node.m, node.c);
-		int x = node.c;
-		if (x < 0) {
-			continue;
-		}
-		while (x < MAX_IDX) {
-			if (x == k) {
-				printf("%d", node.m);
+	while (f < r) {
+		ND cur = q[f++];
+		for (int i = cur.pos; i <= MAX_IDX * 2; i *= 2) {
+			if (i == k) {
+				printf("%d", cur.cnt);
 				return 0;
 			}
 
-			if (x + 1 < MAX_IDX && !visited[x + 1]) {
-				visited[x + 1] = True;
-				queue[rear++] = (ND){x + 1, node.m + 1};
+			if (i > 0 && visit[i - 1] == false) {
+				visit[i - 1] = true;
+				q[r++] = (ND){i - 1, cur.cnt + 1};
 			}
-			if (x > 0 && !visited[x - 1]) {
-				visited[x - 1] = True;
-				queue[rear++] = (ND){x - 1, node.m + 1};
+			if (visit[i + 1] == false) {
+				visit[i + 1] = true;
+				q[r++] = (ND){i + 1, cur.cnt + 1};
 			}
 
-			if (x == 0) {
+			if (i == 0) {
 				break;
-			}
-			if ((x <<= 1) < MAX_IDX) {
-				visited[x] = True;
 			}
 		}
 	}
+
 	return 0;
 }

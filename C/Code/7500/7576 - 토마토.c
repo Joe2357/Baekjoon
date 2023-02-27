@@ -1,73 +1,57 @@
 #include <stdio.h>
 
-typedef char boolean;
-#define True 1
-#define False 0
 typedef struct Node {
 	int x, y;
-	int c;
+	int day;
 } ND;
 
-#define DONE 1
-#define NOTDONE 0
 #define WALL -1
-#define MAX_INDEX 1000
-#define INF 987654321
+#define UNRIPE 0
+#define RIPE 1
 
-ND queue[MAX_INDEX * MAX_INDEX];
-int day[MAX_INDEX][MAX_INDEX];
-int front = -1, rear = -1;
-ND pos[4] = { {1, 0},{-1, 0}, {0, 1}, {0, -1} };
-boolean visited[MAX_INDEX][MAX_INDEX + 1] = { False };
+#define MAX_IDX 1000
+int n, m;
+int grid[MAX_IDX][MAX_IDX];
 
-#define min(a, b) (((a) > (b)) ? (b) : (a))
-#define max(a, b) (((a) > (b)) ? (a) : (b))
+ND dir[4] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+ND q[MAX_IDX * MAX_IDX];
+int f, r;
+
 int main() {
-	int n, m;
-	scanf("%d %d", &m, &n);
-	char grid[MAX_INDEX][MAX_INDEX + 1];
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < m; ++j) {
-			int a;
-			scanf("%d", &a);
-			grid[i][j] = a;
-			if (a == DONE) {
-				queue[++rear] = (ND) { i, j, 0 };
-				visited[i][j] = True;
-			}
-			else if (a == NOTDONE) {
-				day[i][j] = INF;
+	scanf("%d %d", &n, &m);
+	int unripeCount = 0;
+	for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < n; ++j) {
+			scanf("%d", &grid[i][j]);
+			if (grid[i][j] == UNRIPE) {
+				++unripeCount;
+			} else if (grid[i][j] == RIPE) {
+				q[r++] = (ND){i, j, 0};
 			}
 		}
 	}
 
-	while (front < rear) {
-		ND cur = queue[++front];
-
+	int retval = 0;
+	while (f < r) {
+		ND cur = q[f++];
+		retval = cur.day;
+		
 		for (int i = 0; i < 4; ++i) {
-			ND temp = (ND) { cur.x + pos[i].x, cur.y + pos[i].y, cur.c + 1 };
-			if (temp.x < 0 || temp.y < 0 || temp.x == n || temp.y == m || grid[temp.x][temp.y] == WALL || visited[temp.x][temp.y]) {
-				continue;
+			ND new = (ND){cur.x + dir[i].x, cur.y + dir[i].y, cur.day + 1};
+			if (0 <= new.x&& new.x < m && 0 <= new.y&& new.y < n) {
+				if (grid[new.x][new.y] == UNRIPE) {
+					--unripeCount;
+					grid[new.x][new.y] = RIPE;
+					q[r++] = new;
+				}
 			}
-
-			visited[temp.x][temp.y] = True;
-			day[temp.x][temp.y] = temp.c;
-			queue[++rear] = temp;
 		}
 	}
 
-	int result = 0;
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < m; ++j) {
-			result = max(result, day[i][j]);
-		}
-	}
-
-	if (result == INF) {
+	if (unripeCount == 0) {
+		printf("%d", retval);
+	} else {
 		printf("-1");
-	}
-	else {
-		printf("%d", result);
 	}
 	return 0;
 }

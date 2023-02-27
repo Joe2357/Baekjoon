@@ -1,23 +1,65 @@
 #include <stdio.h>
-#define min(a, b) (a > b) ? b : a					// macro function
 
-int arr[50], result, rear;							// queue
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-int main(n, m) {
-	scanf("%d %d", &n, &m);
-	for (int i = 0; i < n; i++)						// initialize
-		arr[i] = i + 1;
-	for (; m && n > 1; m--) {						// loop while pop every value
-		int search, temp = 0;
-		scanf("%d", &search);						// searching value
-		while (arr[(rear + temp) % n] != search)	// move count ( right )
-			temp++;
-		result += min(temp, n - temp);				// left and right, which is min?
-		rear = (rear + temp) % n;					// modulo n = repeat using of queue
-		for (int i = rear; i < n; i++)				// erase empty space
-			arr[i] = arr[i + 1];
-		rear %= --n;
+#define MAX_IDX 50
+bool removed[MAX_IDX];
+int n;
+
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+
+int main() {
+	scanf("%d", &n);
+
+	int m;
+	scanf("%d", &m);
+
+	int retval = 0;
+	int cur = 0;
+	while (m--) {
+		int a;
+		scanf("%d", &a);
+
+		// left
+		int leftCur = cur;
+		int leftRetval = 0;
+		while (leftCur != (a - 1)) {
+			if (++leftCur == n) {
+				leftCur -= n;
+			}
+			if (removed[leftCur] == false) {
+				++leftRetval;
+			}
+		}
+
+		// right
+		int rightCur = cur;
+		int rightRetval = 0;
+		while (rightCur != (a - 1)) {
+			if (--rightCur < 0) {
+				rightCur += n;
+			}
+			if (removed[rightCur] == false) {
+				++rightRetval;
+			}
+		}
+
+		removed[a - 1] = true;
+		retval += min(leftRetval, rightRetval);
+
+		cur = a % n;
+		for (int i = 0; i < n; ++i) {
+			if (removed[cur] == false) {
+				break;
+			}
+			if (++cur == n) {
+				cur -= n;
+			}
+		}
 	}
-	printf("%d", result);
+
+	printf("%d", retval);
 	return 0;
 }

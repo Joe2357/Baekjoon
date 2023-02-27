@@ -1,40 +1,69 @@
 #include <stdio.h>
- 
+
+#define MAX_IDX (50 + 1)
+char grid[MAX_IDX][MAX_IDX];
+int n, m;
+
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+#define INF 100
+#define CHESS_SIZE 8
+
 int main() {
-	char arr[51][51], c;
-	int x, y;
-	scanf("%d %d", &x, &y);
-	for (int i = 0; i < x; i++)
-		scanf("%s", arr[i]);							// making greed
-	int min = 64;										// max will be 64
-	for (int i = 0; i <= x - 8; i++) {					// brute-force search
-		for (int j = 0; j <= y - 8; j++) {
-			int maybe, temp = arr[i][j];
-			maybe = 0;									// maybe = have to change in situation
-			for (int a = 0; a < 8; a++) {				// case starts 'W'
-				for (int b = 0; b < 8; b++) {
-					if (arr[i + a][j + b] != temp)
-						maybe++;
-					temp = (temp == 'B') ? 'W' : 'B';
+	int retval = INF;
+	scanf("%d %d", &n, &m);
+	for (int i = 0; i < n; ++i) {
+		scanf("%s", grid[i]);
+	}
+
+	// brute force
+	for (int i = 0; i <= n - CHESS_SIZE; ++i) {
+		for (int j = 0; j <= m - CHESS_SIZE; ++j) {
+			// case 1. first position is white
+			int tempResult = 0;
+			for (int a = 0; a < CHESS_SIZE; ++a) {
+				for (int b = 0; b < CHESS_SIZE; ++b) {
+					switch ((a + b) % 2) {
+						case 0: {
+							if (grid[i + a][j + b] != 'W') {
+								++tempResult;
+							}
+							break;
+						}
+						case 1: {
+							if (grid[i + a][j + b] != 'B') {
+								++tempResult;
+							}
+							break;
+						}
+					}
 				}
-				temp = (temp == 'B') ? 'W' : 'B';
 			}
-			if (maybe < min)
-				min = maybe;
-			maybe = 0;
-			temp = (temp == 'B') ? 'W' : 'B';
-			for (int a = 0; a < 8; a++) {				// case starts 'B'
-				for (int b = 0; b < 8; b++) {
-					if (arr[i + a][j + b] != temp)
-						maybe++;
-					temp = (temp == 'B') ? 'W' : 'B';
+			retval = min(retval, tempResult);
+
+			// case 2. first position is black
+			tempResult = 0;
+			for (int a = 0; a < CHESS_SIZE; ++a) {
+				for (int b = 0; b < CHESS_SIZE; ++b) {
+					switch ((a + b) % 2) {
+						case 0: {
+							if (grid[i + a][j + b] != 'B') {
+								++tempResult;
+							}
+							break;
+						}
+						case 1: {
+							if (grid[i + a][j + b] != 'W') {
+								++tempResult;
+							}
+							break;
+						}
+					}
 				}
-				temp = (temp == 'B') ? 'W' : 'B';
 			}
-			if (maybe < min)
-				min = maybe;
+			retval = min(retval, tempResult);
 		}
 	}
-	printf("%d", min);
+
+	printf("%d", retval);
 	return 0;
 }

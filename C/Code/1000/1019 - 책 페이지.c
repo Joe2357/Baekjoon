@@ -1,36 +1,43 @@
 #include <stdio.h>
 
-/*
-	A : 1230
-	B : 8719
-	Then, last digit ( 0 ~ 9 ) appears (871 - 123 + 1) times
-*/
+#define DECIMAL 10
+int result[DECIMAL];
+int n;
+int d = 1;	// number of digit
+int s = 0;	// start
 
-int result[10], n, exp = 1, start = 0;
-
-void calc(int a) { // calculate digit
-	while (a)
-		result[a % 10] += exp, a /= 10;
+void calc(int x) {
+	while (x > 0) {
+		result[x % 10] += d;
+		x /= 10;
+	}
 	return;
 }
 
 int main() {
 	scanf("%d", &n);
-	while (start != n) // while condition
-	{
-		if (start % 10 || !start) // start : end with 0, end = end with 9
-			calc(start++);
-		else if (n % 10 != 9)
-			calc(n--);
-		else { // calculating result
-			int temp = (n / 10 - start / 10 + 1);
-			for (int i = 0; i < 10; i++)
-				result[i] += temp * exp;
-			start /= 10, n /= 10, exp *= 10;
+
+	// make subproblem
+	while (s < n) {
+		if (s == 0 || s % 10 > 0) {	 // make start point's end digit to 0, but not 0
+			calc(s);
+			++s;
+		} else if (n % 10 != 9) {  // make end point's end digit to 9
+			calc(n);
+			--n;
+		} else {  // solve subproblem
+			int repeatTime = (n / 10 - s / 10 + 1);
+			for (int i = 0; i < DECIMAL; ++i) {
+				result[i] += repeatTime * d;
+			}
+
+			s /= 10, n /= 10, d *= 10;	// discard the end digit
 		}
 	}
-	calc(start);
-	for (int i = 0; i < 10; i++) // print result
+	calc(n);  // last number
+
+	for (int i = 0; i < DECIMAL; ++i) {
 		printf("%d ", result[i]);
+	}
 	return 0;
 }

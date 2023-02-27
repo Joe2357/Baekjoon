@@ -1,43 +1,54 @@
 #include <stdio.h>
 
-#define MAX_INDEX 100
-
-int alphabet[26] = { 0 };
-char result[MAX_INDEX + 1];
+#define MAX_LEN 20
+int alpha['z' - 'a' + 1];
+char input[MAX_LEN + 1];
+char making[MAX_LEN + 1];
 int len;
 
-void backtrack(int used) {
-	if (used == len) {
-		printf("%s\n", result);
+#define getIndex(x) ((x) - ('a'))
+
+void init() {
+	for (int i = 0; i < 26; ++i) {
+		alpha[i] = 0;
+	}
+	return;
+}
+void alphabetCount() {
+	for (len = 0; input[len] != '\0'; ++len) {
+		++alpha[getIndex(input[len])];
+	}
+	making[len] = '\0';
+	return;
+}
+
+void backtrack(int x) {
+	if (x == len) {
+		printf("%s\n", making);
 		return;
 	}
 
 	for (int i = 0; i < 26; ++i) {
-		if (alphabet[i]) {
-			--alphabet[i];
-			result[used] = i + 'a';
-			backtrack(used + 1);
-			++alphabet[i];
+		if (alpha[i] > 0) {
+			--alpha[i];
+			making[x] = i + 'a';
+			backtrack(x + 1);
+
+			++alpha[i];
 		}
 	}
 	return;
 }
 
 int main() {
-	int t, i;
+	int t;
 	scanf("%d", &t);
+
 	while (t--) {
-		char str[MAX_INDEX + 1];
-		scanf("%s", str);
+		init();
+		scanf("%s", input);
 
-		for (int i = 0; i < 26; ++i)
-			alphabet[i] = 0;
-
-		for (i = 0; str[i]; ++i)
-			++alphabet[str[i] - 'a'];
-		len = i;
-		result[len] = '\0';
-
+		alphabetCount();
 		backtrack(0);
 	}
 	return 0;

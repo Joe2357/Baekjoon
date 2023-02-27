@@ -1,52 +1,46 @@
 #include <stdio.h>
 
+typedef long long ll;
 typedef struct Node {
-	long long v;
-	long long d2, d3;
+	ll i;
+	int div2, div3;
 } ND;
 
 #define MAX_IDX 100
 ND arr[MAX_IDX];
 int n;
 
-ND makeNode(long long x) {
-	long long a = 0, b = 0, c = x;
-	while ((c > 0) && ((c & 1) == 0)) {
-		++a, c >>= 1;
+int cmp(ND* a, ND* b) {
+	if (a->div3 == b->div3) {
+		return a->div2 > b->div2;
+	} else {
+		return a->div3 < b->div3;
 	}
-	while ((c > 0) && (c % 3) == 0) {
-		++b, c /= 3;
-	}
-
-	return (ND) { x, a, b };
 }
 
-int cmp(ND* a, ND* b) {
-	if (a->d3 > b->d3) {
-		return -1;
+ND getDivisor(ll x) {
+	int d2 = 0, d3 = 0;
+	ll a = x;
+	while (x % 2 == 0) {
+		x /= 2, ++d2;
 	}
-	else if (a->d3 == b->d3) {
-		if (a->d2 > b->d2) {
-			return 1;
-		}
-		else {
-			return -1;
-		}
+	while (x % 3 == 0) {
+		x /= 3, ++d3;
 	}
-	return 1;
+	return (ND){a, d2, d3};
 }
 
 int main() {
 	scanf("%d", &n);
 	for (int i = 0; i < n; ++i) {
-		long long a;
+		ll a;
 		scanf("%lld", &a);
-		arr[i] = makeNode(a);
+		arr[i] = getDivisor(a);
 	}
 
 	qsort(arr, n, sizeof(ND), cmp);
 	for (int i = 0; i < n; ++i) {
-		printf("%lld ", arr[i].v);
+		printf("%lld ", arr[i].i);
 	}
 	return 0;
 }

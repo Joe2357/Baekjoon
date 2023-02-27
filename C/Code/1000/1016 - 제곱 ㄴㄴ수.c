@@ -1,43 +1,52 @@
 #include <stdio.h>
-#include <math.h>
-#define True 1
-#define False 0
 
-typedef char boolean;
+typedef long long ll;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-boolean notPrime[1000000 + 2] = { 1, 1 }, Multiple[1000000 + 2];
-long long min, max;
-long long sqMax;
+#define MAX_IDX (int)(1e6 + 1)
+bool squareInt[MAX_IDX];
+ll min, max;
+
+ll getSquareRoot(ll n) {
+	ll x = 1;
+	while (x * x <= n) {
+		++x;
+	}
+	return --x;
+}
 
 int main() {
-	// init
 	scanf("%lld %lld", &min, &max);
-	int result = max - min + 1;
-	sqMax = 1;
-	while (sqMax * sqMax <= max)
-		sqMax++;
-	sqMax--;
 
-	// printf("%lld\n", sqMax);
+	// get square root of max
+	ll sqrtMax = getSquareRoot(max);
 
-	// get prime, and erase multiple
-	for (int i = 2; i <= sqMax; i++) {
-		if (!notPrime[i]) { // it's a prime
-			// remove multiple of i ( not prime )
-			for (int j = i * 2; j <= sqMax; j += i)
-				notPrime[j] = True;
+	// Sieve of Eratosthenes
+	for (ll i = 2; i <= sqrtMax; ++i) {
+		ll square = i * i;
 
-			// get multiple
-			for (long long pow = (long long)i * i, mod = (min % pow) * -1; mod <= max - min; mod += pow) {
-				if (mod >= 0) {
-					result -= (!Multiple[mod]);
-					Multiple[mod] = True;
-				}
-			}
+		// get start point
+		ll startPoint = (min / square) * square;
+		if (startPoint < min) {
+			startPoint += square;
+		}
+		startPoint -= min;
+
+		// erase sqaureInt
+		for (ll j = startPoint; j <= max - min; j += square) {
+			squareInt[j] = true;
 		}
 	}
 
-	// print result
-	printf("%d", result);
+	int retval = 0;
+	for (int i = 0; i <= max - min; ++i) {
+		if (squareInt[i] == false) {
+			++retval;
+		}
+	}
+	printf("%d\n", retval);
+
 	return 0;
 }

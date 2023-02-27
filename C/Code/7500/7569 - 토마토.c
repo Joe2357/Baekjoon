@@ -1,58 +1,59 @@
 #include <stdio.h>
-#define QUEUE_SIZE 1000000
 
-typedef struct Tomato {
-	int x, y, z, day;
-} TM;
+typedef struct Node {
+	int x, y, z;
+	int day;
+} ND;
 
-int arr[100][100][100],
-zeroCount,
-front, rear,
-x, y, z;
-TM queue[QUEUE_SIZE];
+#define WALL -1
+#define UNRIPE 0
+#define RIPE 1
 
-TM pos[6] = { {-1, 0, 0}, {1, 0, 0}, {0, -1, 0}, {0, 1, 0}, {0, 0, -1}, {0, 0, 1} };
+#define MAX_IDX 100
+int grid[MAX_IDX][MAX_IDX][MAX_IDX];
+int m, n, h;
+
+ND dir[6] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {-1, 0, 0}, {0, -1, 0}, {0, 0, -1}};
+ND q[MAX_IDX * MAX_IDX * MAX_IDX];
+int f, r;
 
 int main() {
-	scanf("%d %d %d", &x, &y, &z);
-	// first init brute force
-	for (int i = 0; i < z; i++)
-		for (int j = 0; j < y; j++)
-			for (int k = 0; k < x; k++) {
-				int temp;
-				scanf("%d", &temp);
-				arr[k][j][i] = temp;
-				zeroCount += !temp;
-				if (temp == 1)
-					for (int a = 0; a < 6; a++) { // BFS
-						TM tempStruct = { k + pos[a].x, j + pos[a].y, i + pos[a].z, 1 };
-						queue[rear++] = tempStruct;
-						rear %= QUEUE_SIZE;
-					}
+	scanf("%d %d %d", &m, &n, &h);
+	int unripeCount = 0;
+	for (int i = 0; i < h; ++i) {
+		for (int j = 0; j < n; ++j) {
+			for (int k = 0; k < m; ++k) {
+				scanf("%d", &grid[i][j][k]);
+				if (grid[i][j][k] == UNRIPE) {
+					++unripeCount;
+				} else if (grid[i][j][k] == RIPE) {
+					q[r++] = (ND){i, j, k, 0};
+				}
 			}
-	// circular queue expression
-	while (front != rear) {
-		TM temp = queue[front++];
-		front %= QUEUE_SIZE;
-		// out of range
-		if (temp.x < 0 || temp.y < 0 || temp.z < 0 || temp.x == x || temp.y == y || temp.z == z)
-			continue;
-		// already visited
-		else if (arr[temp.x][temp.y][temp.z])
-			continue;
-		// check visited
-		zeroCount--, arr[temp.x][temp.y][temp.z] = 1;
-		if (!zeroCount) { // no more original tomatoes
-			printf("%d", temp.day);
-			return 0;
-		}
-		for (int a = 0; a < 6; a++) { // BFS
-			TM tempStruct = { temp.x + pos[a].x, temp.y + pos[a].y, temp.z + pos[a].z, temp.day + 1 };
-			queue[rear++] = tempStruct;
-			rear %= QUEUE_SIZE;
 		}
 	}
-	// 0 if no original tomato, else 1
-	printf("%d", -1 * (zeroCount != 0));
+
+	int retval = 0;
+	while (f < r) {
+		ND cur = q[f++];
+		retval = cur.day;
+
+		for (int i = 0; i < 6; ++i) {
+			ND new = (ND){cur.x + dir[i].x, cur.y + dir[i].y, cur.z + dir[i].z, cur.day + 1};
+			if (0 <= new.x && new.x < h && 0 <= new.y && new.y < n && 0 <= new.z && new.z < m) {
+				if (grid[new.x][new.y][new.z] == UNRIPE) {
+					--unripeCount;
+					grid[new.x][new.y][new.z] = RIPE;
+					q[r++] = new;
+				}
+			}
+		}
+	}
+
+	if (unripeCount == 0) {
+		printf("%d", retval);
+	} else {
+		printf("-1");
+	}
 	return 0;
 }

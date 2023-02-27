@@ -1,16 +1,40 @@
 #include <stdio.h>
 
-int main(t) {
-	for (scanf("%d", &t); t; t--) {
-		long long x, y, time;
-		scanf("%lld %lld", &x, &y);
-		long long distance = y - x, n = 0, temp;		// just need distance!
-		while (n * n <= distance)
-			n++;										// n * n <= distance
-		n--, temp = distance - n * n, time = 2 * n - 1;	// time++ if temp > n
-		while (temp > 0)
-			temp -= n, time++;
-		printf("%lld\n", time);
+typedef long long ll;
+
+ll find_int_sqrt(ll n) {
+	ll x = 1;
+	while (x * x <= n) {
+		++x;
+	}
+
+	return --x;
+}
+
+int main() {
+	int t;
+	scanf("%d", &t);
+
+	while (t--) {
+		int x, y;
+		scanf("%d %d", &x, &y);
+
+		ll dist = y - x;
+
+		ll sqrt = find_int_sqrt(dist);
+		ll retval = 2 * sqrt - 1;
+
+		ll square1 = sqrt * sqrt;
+		ll square2 = (sqrt + 1) * (sqrt + 1);
+
+		if (dist > square1) {
+			++retval;
+		}
+		if (dist >= (square2 + square1 + 1) / 2) {
+			++retval;
+		}
+
+		printf("%lld\n", retval);
 	}
 	return 0;
 }

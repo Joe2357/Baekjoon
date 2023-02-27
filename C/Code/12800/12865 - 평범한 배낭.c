@@ -1,40 +1,48 @@
 #include <stdio.h>
-#define max(a, b) (a < b) ? b : a
 
-int dp[101][100001], arr[100][2], n, k;
+typedef struct Good {
+	int w;
+	int v;
+} GD;
 
-int knapsack(int position, int capacity) {
-	if (position == n)
-		// check all items
+#define MAX_IDX 100
+#define MAX_WEIGHT 100000
+
+#define INIT -1
+int dp[MAX_IDX + 1][MAX_WEIGHT + 1];
+GD arr[MAX_IDX];
+int n, k;
+
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+
+int knapsack(int cnt, int cap) {
+	if (cnt == n) {
 		return 0;
+	} else if (dp[cnt][cap] != INIT) {
+		return dp[cnt][cap];
+	}
 
-	int temp = dp[position][capacity]; // current weight
-
-	if (temp != -1)
-		// already searched
-		return temp;
-
-	if (arr[position][0] <= capacity)
-		// can store more, put it
-		temp = arr[position][1] + knapsack(position + 1, capacity - arr[position][0]); // put ro bag
-	temp = max(knapsack(position + 1, capacity), temp);								   // didn't put to bag
-
-	dp[position][capacity] = temp; // store current value
-	return temp;
+	int temp = knapsack(cnt + 1, cap);	// not choose
+	if (arr[cnt].w <= cap) {
+		temp = max(temp, knapsack(cnt + 1, cap - arr[cnt].w) + arr[cnt].v);
+	}
+	return dp[cnt][cap] = temp;
 }
 
 int main() {
-	// dp init
-	for (int i = 0; i < 101; i++)
-		for (int j = 0; j < 100001; j++)
-			dp[i][j] = -1;
-
-	// init
 	scanf("%d %d", &n, &k);
-	for (int i = 0; i < n; i++)
-		scanf("%d %d", &arr[i][0], &arr[i][1]);
+	for (int i = 0; i < n; ++i) {
+		int a, b;
+		scanf("%d %d", &a, &b);
+		arr[i] = (GD){a, b};
+	}
 
-	// print result
+	for (int i = 0; i <= n; ++i) {
+		for (int j = 0; j <= MAX_WEIGHT; ++j) {
+			dp[i][j] = INIT;
+		}
+	}
+
 	printf("%d", knapsack(0, k));
 	return 0;
 }

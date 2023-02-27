@@ -1,20 +1,72 @@
 #include <stdio.h>
-#include <string.h>
+
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
+
+typedef struct Node {
+	int x, y;
+} ND;
+
+#define MAX_WALK (50 * 20)
+#define MAX_IDX 100
+ND store[MAX_IDX];
+int n;
+ND start, end;
+
+ND q[MAX_IDX];
+bool v[MAX_IDX];
+int f, r;
+
+#define abs(x) (((x) < 0) ? (-(x)) : (x))
+
+int dist(ND a, ND b) {
+	return abs(a.x - b.x) + abs(a.y - b.y);
+}
 
 int main() {
-	char str[4][1010] = { "0", "0" };
-	scanf("%s %s", str[2], str[3]); // string input
-	strcat(str[0], str[2]), strcat(str[1], str[3]); // "0" + string, So all strings are starts with "0"
-	int arr[1010][1010] = { 0 }; // matrix
-	for (int i = 0; i < strlen(str[0]); i++)
-		for (int j = 0; j < strlen(str[1]); j++) {
-			if (!i || !j) // "0" part, should not match
-				arr[i][j] = 0;
-			else if (str[0][i] == str[1][j]) // common subsequence
-				arr[i][j] = arr[i - 1][j - 1] + 1;
-			else // find the longest subsequenceabove or left
-				arr[i][j] = (arr[i - 1][j] > arr[i][j - 1]) ? arr[i - 1][j] : arr[i][j - 1];
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		// visit init
+		for (int i = 0; i < n; ++i) {
+			v[i] = false;
 		}
-	printf("%d", arr[strlen(str[0]) - 1][strlen(str[1]) - 1]); // print LCS
-	return 0;
+
+		scanf("%d", &n);
+		scanf("%d %d", &start.x, &start.y);
+		for (int i = 0; i < n; ++i) {
+			scanf("%d %d", &store[i].x, &store[i].y);
+		}
+		scanf("%d %d", &end.x, &end.y);
+
+		if (dist(start, end) <= MAX_WALK) {
+			printf("happy\n");
+			continue;
+		}
+
+		f = r = 0;
+		for (int i = 0; i < n; ++i) {
+			if (dist(start, store[i]) <= MAX_WALK) {
+				v[i] = true;
+				q[r++] = store[i];
+			}
+		}
+
+		bool canHappy = false;
+		while (f < r) {
+			ND cur = q[f++];
+			if (dist(cur, end) <= MAX_WALK) {
+				canHappy = true;
+				break;
+			}
+			for (int i = 0; i < n; ++i) {
+				if (v[i] == false && dist(cur, store[i]) <= MAX_WALK) {
+					v[i] = true;
+					q[r++] = store[i];
+				}
+			}
+		}
+		printf("%s\n", (canHappy == true ? "happy" : "sad"));
+	}
 }

@@ -4,87 +4,105 @@ typedef char bool;
 const bool true = 1;
 const bool false = 0;
 
-#define MAX_IDX 100000
-
-int arr[MAX_IDX], front, rear;
+#define MAX_IDX (int)(1e5)
+int arr[MAX_IDX];
 int n;
-char command[MAX_IDX + 1];
-char input[MAX_IDX * 4 + 3];
-bool mode, isError;
+int f, r;
+bool isReversed;
+
+char order[MAX_IDX + 1];
+char arrInput[MAX_IDX * 4 + 1001];
 
 void init() {
-	front = rear = 0;
-	mode = false;
-	isError = false;
+	f = r = 0;
+	isReversed = false;
 	return;
 }
 
+bool preprocess() {
+	int temp = 0;
+	for (int i = 1; arrInput[i] != ']'; ++i) {
+		if (arrInput[i] == ',') {
+			arr[r++] = temp;
+			temp = 0;
+		} else {
+			temp *= 10;
+			temp += (arrInput[i] - '0');
+		}
+	}
+	if (r < n) {
+		arr[r++] = temp;
+	}
+
+	int popCount = 0;
+	for (int i = 0; order[i] != '\0'; ++i) {
+		if (order[i] == 'D') {
+			++popCount;
+		}
+	}
+	return (n < popCount);
+}
+
 void read_input() {
-	scanf("%s", command);
+	scanf("%s", order);
 	scanf("%d", &n);
-	scanf("%s", input);
+	scanf("%s", arrInput);
+	return;
+}
+
+void solve() {
+	for (int i = 0; order[i] != '\0'; ++i) {
+		switch (order[i]) {
+			case 'R': {
+				isReversed = !isReversed;
+				break;
+			}
+			case 'D': {
+				if (isReversed) {
+					--r;
+				} else {
+					++f;
+				}
+				break;
+			}
+		}
+	}
+	return;
+}
+
+void print_result() {
+	if (r == f) {
+		printf("[]\n");
+		return;
+	}
+
+	printf("[");
+	if (isReversed == true) {
+		for (r = r - 1; r > f; --r) {
+			printf("%d,", arr[r]);
+		}
+		printf("%d", arr[f]);
+	} else {
+		for (; f < r - 1; ++f) {
+			printf("%d,", arr[f]);
+		}
+		printf("%d", arr[f]);
+	}
+	printf("]\n");
 	return;
 }
 
 int main() {
 	int t;
 	scanf("%d", &t);
-
 	while (t--) {
 		init();
 		read_input();
-
-		/* input array preprocessing */
-		for (int i = 0, temp = 0; input[i]; i++) {
-			if (input[i] >= '0' && input[i] <= '9') {
-				temp = temp * 10 + input[i] - '0';
-			} else {
-				if (temp > 0) {
-					arr[rear++] = temp;
-				}
-				temp = 0;
-			}
-		}
-
-		/* command processing */
-		for (int i = 0; command[i]; i++) {
-			if (isError)
-				break;
-
-			switch (command[i]) {
-			case 'R':
-				mode = !mode;
-				break;
-			case 'D':
-				if (front == rear) {
-					isError = true;
-					break;
-				}
-				if (mode) {
-					rear--;
-				} else {
-					front++;
-				}
-				break;
-			}
-		}
-
-		/* result print */
-		if (isError) {
-			printf("error\n");
-		} else if (front == rear) {
-			printf("[]\n");
-		} else if (mode) {
-			printf("[");
-			for (int i = rear - 1; i > front; i--)
-				printf("%d,", arr[i]);
-			printf("%d]\n", arr[front]);
+		if (preprocess() == false) {
+			solve();
+			print_result();
 		} else {
-			printf("[");
-			for (int i = front; i < rear - 1; i++) {
-				printf("%d,", arr[i]);
-			}
-			printf("%d]\n", arr[rear - 1]);
+			printf("error\n");
 		}
 	}
 	return 0;

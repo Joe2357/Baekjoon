@@ -1,13 +1,28 @@
 #include <stdio.h>
 
-int main(t, n) {
-	for (scanf("%d", &t); t; t--) {
+typedef struct Node {
+	int zero;
+	int one;
+} ND;
+
+#define MAX_IDX 41
+ND answer[MAX_IDX];
+
+int main() {
+	// init
+	answer[0] = (ND){1, 0};
+	answer[1] = (ND){0, 1};
+	for (int i = 2; i < MAX_IDX; ++i) {
+		answer[i] = (ND){answer[i - 2].zero + answer[i - 1].zero, answer[i - 2].one + answer[i - 1].one};
+	}
+
+	// query
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		int n;
 		scanf("%d", &n);
-		int arr[41] = { 0 };													// arr[n] = how many times we have to operate
-		arr[n] = 1;																// first, we have to operate fibonacci(n) once
-		while (n > 1)
-			arr[n - 1] += arr[n], arr[n - 2] += arr[n], n--;					// fibonacci(n) = fibonacci(n - 1) + fibonacci(n - 2)
-		printf("%d %d\n", arr[0], arr[1]);
+		printf("%d %d\n", answer[n].zero, answer[n].one);
 	}
 	return 0;
 }

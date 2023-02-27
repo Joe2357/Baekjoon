@@ -1,62 +1,54 @@
 #include <stdio.h>
-#define DEBUG 0
 
-int grid[16][16], dp[16][16][4], n;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-// Summary of dp
-// dp[y][x][type] = number of cases of pipe in (x, y) rotated type
-// 0 : cols 1 : rows 2 : diagonal 3 : sum of cases
+#define SPACE 0
+#define WALL 1
+
+#define HORIZONTAL 0
+#define VERTICAL 1
+#define DIAGONAL 2
+
+#define MAX_IDX 16
+bool grid[MAX_IDX][MAX_IDX];
+int dp[MAX_IDX][MAX_IDX][3];
+int n;
+int startX = 0, startY = 1;
 
 int main() {
-	// input
 	scanf("%d", &n);
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			scanf("%d", &grid[i][j]);
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			int a;
+			scanf("%d", &a);
+			grid[i][j] = a;
+		}
+	}
+	dp[startX][startY][HORIZONTAL] = 1;
 
-	// first init
-	for (int i = 1; i < n; i++) {
-		if (grid[0][i])
+	// first layer
+	for (int i = 2; i < n; ++i) {
+		if (grid[startX][i] == WALL) {
 			break;
-		dp[0][i][0] = 1, dp[0][i][3] = 1;
+		}
+		dp[startX][i][HORIZONTAL] = 1;	// only horizontal can fix
 	}
-	// dynamic programming
-	for (int y = 1; y < n; y++) {
-		for (int x = 1; x < n; x++) {
-			if (!grid[y][x]) {
-				// type 0
-				dp[y][x][0] += dp[y][x - 1][0],
-					dp[y][x][0] += dp[y][x - 1][2];
 
-				// type 1
-				dp[y][x][1] += dp[y - 1][x][1],
-					dp[y][x][1] += dp[y - 1][x][2];
-
-				// type 2
-				if (!grid[y - 1][x] && !grid[y][x - 1])
-					dp[y][x][2] += dp[y - 1][x - 1][0] +
-					dp[y - 1][x - 1][1] +
-					dp[y - 1][x - 1][2];
-				dp[y][x][3] = dp[y][x][0] +
-					dp[y][x][1] +
-					dp[y][x][2];
+	// other layer
+	for (int i = 1; i < n; ++i) {
+		for (int j = 1; j < n; ++j) {
+			if (grid[i][j] == SPACE) {
+				dp[i][j][HORIZONTAL] = dp[i][j - 1][HORIZONTAL] + dp[i][j - 1][DIAGONAL];
+				dp[i][j][VERTICAL] = dp[i - 1][j][VERTICAL] + dp[i - 1][j][DIAGONAL];
+				if (grid[i - 1][j] == SPACE && grid[i][j - 1] == SPACE) {
+					dp[i][j][DIAGONAL] = dp[i - 1][j - 1][HORIZONTAL] + dp[i - 1][j - 1][VERTICAL] + dp[i - 1][j - 1][DIAGONAL];
+				}
 			}
 		}
 	}
 
-	// Debug
-	if (DEBUG) {
-		printf("\n");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				printf("%d.%d.%d.%d ",
-					dp[i][j][0], dp[i][j][1],
-					dp[i][j][2], dp[i][j][3]);
-			}
-			printf("\n");
-		}
-	}
-
-	printf("%d", dp[--n][n][3]);
+	printf("%d", dp[n - 1][n - 1][HORIZONTAL] + dp[n - 1][n - 1][VERTICAL] + dp[n - 1][n - 1][DIAGONAL]);
 	return 0;
 }

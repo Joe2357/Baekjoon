@@ -1,55 +1,54 @@
 #include <stdio.h>
 
 typedef struct Node {
-	int left;
-	int right;
+	int left, right;
 } ND;
 
-#define MAX_LEN (int)1e4
-#define MAX_VAL (int)1e6
+#define MAX_IDX 10000
+int input[MAX_IDX];
+int len;
 
-int arr[MAX_LEN];
-int n;
-int root;
+#define MAX_VAL (int)(1e6)
+#define NOTEXIST -1
 ND tree[MAX_VAL + 1];
 
 int makeTree(int s, int e) {
 	if (s == e) {
-		return 0;
+		return NOTEXIST;
+	} else if (s + 1 == e) {
+		tree[input[s]] = (ND){NOTEXIST, NOTEXIST};
+		return input[s];
 	}
-	else if (s + 1 == e) {
-		return arr[s];
-	}
-	else {
-		int r = arr[s];
-		int t;
-		for (t = s + 1; t < e; ++t) {
-			if (arr[t] > r)
-				break;
-		}
 
-		tree[r] = (ND) { makeTree(s + 1, t), makeTree(t, e) };
-		return r;
+	// current value = input[s]
+	int temp = s + 1;
+	while (temp < len && input[temp] < input[s]) {
+		++temp;
 	}
+	tree[input[s]] = (ND){makeTree(s + 1, temp), makeTree(temp, e)};
+
+	return input[s];
 }
 
-void postorder(int x) {
-	if (x != 0) {
-		postorder(tree[x].left);
-		postorder(tree[x].right);
-		printf("%d\n", x);
+void printPostOrder(int x) {
+	if (x == NOTEXIST) {
+		return;
 	}
+
+	printPostOrder(tree[x].left);
+	printPostOrder(tree[x].right);
+	printf("%d\n", x);
 	return;
 }
 
 int main() {
-	n = 0;
 	int temp;
-	while (~scanf("%d", &temp)) {
-		arr[n++] = temp;
+	while (~scanf("%d", &temp)) {  // input until EOF
+		input[len++] = temp;
 	}
 
-	root = makeTree(0, n);
-	postorder(root);
+	int root = makeTree(0, len);
+
+	printPostOrder(root);
 	return 0;
 }

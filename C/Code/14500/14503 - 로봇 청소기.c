@@ -1,64 +1,71 @@
 #include <stdio.h>
-#define MAX_INDEX 50
-#define True 1
-#define False 0
-#define WALL 2
 
-typedef char boolean;
-typedef struct Position {
-	int x, y, d;
-} PS;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-int n, m, r, c, d, result,
-grid[MAX_INDEX][MAX_INDEX];
-boolean visited[MAX_INDEX][MAX_INDEX];
-PS dir[4] = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
+typedef struct ND {
+	int x, y;
+} ND;
+const int North = 0;
+const int East = 1;
+const int South = 2;
+const int West = 3;
+ND dir[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+
+#define EMPTY 0
+#define WALL 1
+#define CLEANED 2
+#define MAX_IDX 50
+bool grid[MAX_IDX][MAX_IDX];
+int n, m;
+int r, c, d;
+int retval;
+
+void clean(int x, int y) {
+	if (grid[x][y] == EMPTY) {
+		grid[x][y] = CLEANED;
+		++retval;
+	}
+	return;
+}
 
 int main() {
-	// init
-	PS robot;
-	scanf("%d %d %d %d %d", &n, &m, &robot.x, &robot.y, &robot.d);
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < m; j++)
-			scanf("%d", &grid[i][j]), visited[i][j] = grid[i][j] * 2;
+	scanf("%d %d", &n, &m);
+	scanf("%d %d %d", &r, &c, &d);
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < m; ++j) {
+			scanf("%d", &grid[i][j]);
+		}
+	}
 
-	// loop simulator
-	int rotated = 0;
-	boolean loop = True;
-	while (loop) {
-		//printf("%d %d %d\n", robot.x, robot.y, robot.d);
+	bool notExit = true;
+	while (notExit == true) {
+		clean(r, c);
 
-		// wipe if not wiped
-		if (!visited[robot.x][robot.y])
-			visited[robot.x][robot.y] = True, result++;
+		int directionStack = 0;
+		bool allCleaned = true;
 
-		// check whether robot can't wipe 4 places
-		boolean leftOver = False;
-		for (int i = 1; i <= 4; i++) {
-			int temp = robot.d - i;
-			temp += (4 * (temp < 0));
-			if (!visited[robot.x + dir[temp].x][robot.y + dir[temp].y]) {
-				robot.x += dir[temp].x, robot.y += dir[temp].y, robot.d = temp;
-				leftOver = True;
+		for (int directionStack = 1; directionStack <= 4; ++directionStack) {
+			int curD = ((d - directionStack) + 8) % 4;
+			if (grid[r + dir[curD].x][c + dir[curD].y] == EMPTY) {
+				allCleaned = false;
+				d = curD;
+				r += dir[curD].x, c += dir[curD].y;	 // move forward
 				break;
 			}
 		}
-		if (leftOver)
-			continue;
 
-		// move backward if back is not a wall
-		int temp = robot.d + 2;
-		temp -= (4 * (temp >= 4));
-		if (visited[robot.x + dir[temp].x][robot.y + dir[temp].y] != WALL) {
-			robot.x += dir[temp].x, robot.y += dir[temp].y;
-			continue;
+		if (allCleaned == true) {
+			int backD = ((d - 2) + 8) % 4;
+			if (grid[r + dir[backD].x][c + dir[backD].y] == WALL) {
+				notExit = false;
+			} else {
+				r += dir[backD].x, c += dir[backD].y;
+			}
 		}
-
-		// no more move ( back is wall )
-		loop = False;
 	}
 
-	// print result
-	printf("%d", result);
+	printf("%d", retval);
 	return 0;
 }
