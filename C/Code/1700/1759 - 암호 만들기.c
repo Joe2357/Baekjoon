@@ -1,44 +1,42 @@
 #include <stdio.h>
 
-typedef char boolean;
-#define True 1
-#define False 0
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-typedef struct Node {
-	int v;
-	int c;
-} ND;
+#define ALPHABET ('z' - 'a' + 1)
+bool isBowel[ALPHABET];
+bool canUse[ALPHABET];
 
+#define MAX_LEN (15 + 1)
+char code[MAX_LEN];
+int bowelUsed;
 int l, c;
-boolean alpha[26] = { False };
-boolean vowel[26] = { False };
-#define M_L 15
-char result[M_L + 1];
 
-void init() {
-	vowel['a' - 'a'] = vowel['e' - 'a'] = vowel['i' - 'a'] = vowel['o' - 'a'] = vowel['u' - 'a'] = True;
-	return;
-}
+#define getIndex(x) (x - 'a')
 
-void backtrack(int n, char now, ND used) {
-	if (n == l) {
-		if (used.v >= 1 && used.c >= 2)
-			printf("%s\n", result);
+void back(int len, int cur) {
+	if (len == l) {
+		if (1 <= bowelUsed && bowelUsed <= (l - 2)) {
+			printf("%s\n", code);
+		}
 		return;
 	}
 
-	for (char t = now + 1; t <= 'z'; ++t) {
-		if (alpha[t - 'a']) {
-			result[n] = t;
-			if (vowel[t - 'a'])
-				++used.v;
-			else
-				++used.c;
-			backtrack(n + 1, t, used);
-			if (vowel[t - 'a'])
-				--used.v;
-			else
-				--used.c;
+	for (int i = cur; i < 'z' - 'a' + 1; ++i) {
+		if (canUse[i] == true) {
+			code[len] = i + 'a';
+			canUse[i] = false;
+			if (isBowel[i] == true) {
+				++bowelUsed;
+			}
+
+			back(len + 1, i + 1);
+
+			canUse[i] = true;
+			if (isBowel[i] == true) {
+				--bowelUsed;
+			}
 		}
 	}
 
@@ -46,17 +44,20 @@ void backtrack(int n, char now, ND used) {
 }
 
 int main() {
-	init();
-
 	scanf("%d %d", &l, &c);
-	result[l] = '\0';
-	for (; c; c--) {
-		char str[2];
-		scanf("%s", str);
-		alpha[str[0] - 'a'] = True;
+	code[l] = '\0';
+	while (c--) {
+		char input[3];
+		scanf("%s", input);
+		canUse[getIndex(input[0])] = true;
 	}
+	isBowel[getIndex('a')] = true;
+	isBowel[getIndex('e')] = true;
+	isBowel[getIndex('i')] = true;
+	isBowel[getIndex('o')] = true;
+	isBowel[getIndex('u')] = true;
 
-	backtrack(0, 'a' - 1, (ND) { 0, 0 });
+	back(0, 0);
 
 	return 0;
 }

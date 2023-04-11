@@ -4,72 +4,64 @@ typedef char bool;
 const bool true = 1;
 const bool false = 0;
 
-#define M (int)(1e6 + 1)
-const int start = 100;
+#define MAX_VAL (2 * 500000)
+#define DEC 10
 
-bool broken[11];
-int target;
-int result;
+bool isBroken[DEC + 1];
+int n;
 
-/*
-  func : canUse(int)
-  description : return whether input number can be used
-  return :
-	= true ( when every button was not broken )
-	= false ( when at least 1 button was broken )
-*/
-bool canUse(int x) {
+#define abs(x) (((x) < 0) ? (-(x)) : (x))
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+
+bool isValidNumber(int x) {
 	if (x == 0) {
-		return !broken[0];
+		return (isBroken[0] == false);
 	}
-	bool c = true;
+
+	bool ret = true;
 	while (x > 0) {
-		c &= (!broken[x % 10]);
+		ret &= (isBroken[x % 10] == false);
 		x /= 10;
 	}
-	return c;
+
+	return ret;
 }
 
-/*
-  func : press(int)
-  description : return the length of number
-  return :
-	= (int)len ( the length of input number )
-*/
-int press(int x) {
+int getDigit(int x) {
 	if (x == 0) {
 		return 1;
 	}
 
-	int p = 0;
+	int ret = 0;
 	while (x > 0) {
-		++p;
+		++ret;
 		x /= 10;
 	}
-	return p;
+
+	return ret;
 }
 
-#define abs(x) (((x) < 0) ? (-(x)) : (x))	 // absolute value function
-#define min(a, b) (((a) > (b)) ? (b) : (a))	 // return smaller value
 int main() {
-	int n;
-	scanf("%d %d", &target, &n);
-	while (n--) {
-		int x;
-		scanf("%d", &x);
-		broken[x] = true;
+	scanf("%d", &n);
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		int a;
+		scanf("%d", &a);
+		isBroken[a] = true;
 	}
 
-	result = abs(target - start);  // start = 100
-	for (int i = 0; i < M; ++i) {  // brute force
-		if (canUse(i)) {
-			result = min(result, abs(i - target) + press(i));
-			if (i >= target) {	// no need to search above
+	int ret = abs(n - 100);
+	for (int i = 0; i <= MAX_VAL; ++i) {
+		if (isValidNumber(i)) {
+			ret = min(ret, abs(n - i) + getDigit(i));
+
+			if (i >= n) {
 				break;
 			}
 		}
 	}
 
-	printf("%d", result);
+	printf("%d", ret);
 	return 0;
 }

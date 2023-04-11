@@ -1,38 +1,45 @@
 #include <stdio.h>
-#define min(a, b) (a > b) ? b : a
-#define MAX_INDEX 1000000
 
-typedef struct Line {
-	int start, end;
-} LN;
+typedef struct Node {
+	int a, b;
+} ND;
 
-int cmp(LN *a, LN *b) {
-	return (a->end > b->end) || (a->end == b->end) && (a->start > b->start);
+#define MAX_IDX 1000000
+ND arr[MAX_IDX];
+int n;
+
+int cmp(ND* x, ND* y) {
+	if (x->a == y->a) {
+		return x->b > y->b;
+	} else {
+		return x->a > y->a;
+	}
 }
 
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+
 int main() {
-	// init
-	LN stack[MAX_INDEX];
-	int top, result = 0;
-	scanf("%d", &top);
-	for (int i = 0; i < top; i++)
-		scanf("%d %d", &stack[i].start, &stack[i].end);
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i) {
+		int a, b;
+		scanf("%d %d", &a, &b);
+		arr[i] = (ND){a, b};
+	}
 
-	// sort
-	qsort(stack, top, sizeof(LN), cmp);
+	qsort(arr, n, sizeof(ND), cmp);
 
-	// calc stack
-	for (--top; top > 0; top--)
-		// no match
-		if (stack[top].start > stack[top - 1].end)
-			result += stack[top].end - stack[top].start;
-		else // have match
-			stack[top - 1] = (LN) { min(stack[top - 1].start, stack[top].start), stack[top].end };
+	ND cur = arr[0];
+	int retval = 0;
+	for (int i = 1; i < n; ++i) {
+		if (cur.b >= arr[i].a) {
+			cur.b = max(cur.b, arr[i].b);
+		} else {
+			retval += (cur.b - cur.a);
+			cur = arr[i];
+		}
+	}
 
-	// last pop
-	result += (stack[0].end - stack[0].start);
-
-	// print result
-	printf("%d", result);
+	retval += (cur.b - cur.a);
+	printf("%d", retval);
 	return 0;
 }

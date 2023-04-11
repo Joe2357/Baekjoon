@@ -1,56 +1,38 @@
 #include <stdio.h>
-#include <math.h>
 
-int arr[6561][6561];
+#define MAX_IDX (6561 + 1)
+char grid[MAX_IDX][MAX_IDX];
 
-void star(int num, int x, int y) {
-	if (num == 1) {
-		/*
-			###
-			# #
-			###
-		*/
-		for (int i = 0; i < 3; i++)
-			for (int j = 0; j < 3; j++)
-				arr[y + i][x + j] = 1;		// 3 * 3 square
-		arr[y + 1][x + 1] = 0;				// erase middle
-		return;
-	}
-	else {
-		num--;
-		for (int i = 0; i < 3; i++)			// recursive 3 * 3 square
-			for (int j = 0; j < 3; j++)
-				if (i == 1 && j == 1)		// erase middle
-					continue;
-				else
-					star(num, x + pow(3, num) * i, y + pow(3, num) * j);	// recursive
-		return;
-	}
-}
+const int false = 0;
 
-void print(int n) {
-	int x, y = 0;
-	while (y < n) {			// print row
-		x = 0;
-		while (x < n) {		// print column
-			if (arr[y][x])
-				printf("*");
-			else
-				printf(" ");
-			x++;
+void getStar(int x, int y, int n) {
+	if (n == 1) {
+		grid[x][y] = '*';
+	} else {
+		for (int i = 0; i < 3; ++i) {
+			for (int j = 0; j < 3; ++j) {
+				if ((i == 1 && j == 1) == false) {
+					getStar(x + (n / 3) * i, y + (n / 3) * j, n / 3);
+				}
+			}
 		}
-		y++;
-		printf("\n");
 	}
 	return;
 }
 
-int main(n) {
+int main() {
+	int n;
 	scanf("%d", &n);
-	int k = 0, temp = n;
-	while (temp / 3)		// n = 3 ^ k
-		temp /= 3, k++;
-	star(k, 0, 0);
-	print(n);
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			grid[i][j] = ' ';
+		}
+		grid[i][n] = '\0';
+	}
+
+	getStar(0, 0, n);
+	for (int i = 0; i < n; ++i) {
+		printf("%s\n", grid[i]);
+	}
 	return 0;
 }

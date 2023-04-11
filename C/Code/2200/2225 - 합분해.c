@@ -1,26 +1,26 @@
 #include <stdio.h>
-#define MOD 1000000000
-#define MAX_INDEX 200
 
-int dp[MAX_INDEX + 1][MAX_INDEX + 1];
+#define MAX_IDX (200 + 1)
+int dp[MAX_IDX][MAX_IDX];
+int n, k;
+
+const int mod = (int)(1e9);
 
 int main() {
-	// init
-	int n, k;
 	scanf("%d %d", &n, &k);
 
-	// dp init
-	for (int i = 0; i <= n; i++)
-		dp[1][i] = 1; // only 1 way to make number i
+	for (int i = 0; i < MAX_IDX; ++i) {
+		dp[0][i] = 1;
+		dp[i][1] = 1;
+	}
+	for (int i = 1; i <= n; ++i) {
+		for (int j = 2; j <= k; ++j) {
+			for (int a = 0; a <= i; ++a) {
+				dp[i][j] += dp[i - a][j - 1], dp[i][j] %= mod;
+			}
+		}
+	}
 
-	// dp
-	for (int i = 2; i <= k; i++)
-		// (i, j) = sum of [(i - a, j - 1) + a]
-		for (int j = 0; j <= n; j++)
-			for (int a = 0; a <= j; a++)
-				dp[i][j] += dp[i - 1][a], dp[i][j] %= MOD;
-
-	// print result
-	printf("%d", dp[k][n]);
+	printf("%d", dp[n][k]);
 	return 0;
 }

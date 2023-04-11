@@ -1,13 +1,21 @@
 #include <stdio.h>
 
-int main(n, k) {
-	int dp[10001] = { 1 };					// case of making that value
-	for (scanf("%d %d", &n, &k); n; n--) {
-		int temp;							// coin's value
-		scanf("%d", &temp);
-		for (int j = temp; j <= k; j++)		// dynamic programming
-			dp[j] += dp[j - temp];
+int main() {
+	int n, k;
+	scanf("%d %d", &n, &k);
+
+#define MAX_IDX 10001
+	int dp[MAX_IDX] = {0};
+	dp[0] = 1;
+
+	for (int i = 0; i < n; ++i) {
+		int a;
+		scanf("%d", &a);
+		for (int j = a; j <= k; ++j) {
+			dp[j] += dp[j - a];
+		}
 	}
-	printf("%d", dp[k]);					// case number that makes k
+
+	printf("%d", dp[k]);
 	return 0;
 }

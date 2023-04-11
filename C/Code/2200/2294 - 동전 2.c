@@ -1,17 +1,31 @@
 #include <stdio.h>
-#define min(a, b) (a > b) ? b : a
-#define MAX 999999
 
-int main(n, k) {
-	int arr[10001] = { 0 };
-	for (int i = 1; i < 10001; i++)
-		arr[i] = MAX;
-	for (scanf("%d %d", &n, &k); n; n--) {				// coin count
-		int temp;										// coin value
-		scanf("%d", &temp);
-		for (int j = temp; j <= k; j++)					// dynamic programming
-			arr[j] = min(arr[j - temp] + 1, arr[j]);
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+
+int main() {
+	int n, k;
+	scanf("%d %d", &n, &k);
+
+#define INF 987654321
+#define MAX_IDX 10001
+	int dp[MAX_IDX] = {0};
+	for (int i = 1; i < MAX_IDX; ++i) {
+		dp[i] = INF;
 	}
-	printf("%d", (arr[k] != MAX) ? arr[k] : -1);
+	dp[0] = 0;
+
+	for (int i = 0; i < n; ++i) {
+		int a;
+		scanf("%d", &a);
+		for (int j = a; j <= k; ++j) {
+			dp[j] = min(dp[j], dp[j - a] + 1);
+		}
+	}
+
+	if (dp[k] == INF) {
+		printf("-1");
+	} else {
+		printf("%d", dp[k]);
+	}
 	return 0;
 }

@@ -1,61 +1,76 @@
 #include <stdio.h>
 
-#define MAX_LEN (int)1e6
+typedef struct Node {
+	int v;
+	int idx;
+} ND;
 
-int arr[2][MAX_LEN];
-int lis[MAX_LEN];
-int n, len;
-int last;
+#define MAX_IDX (1000000 + 1)
+const int START = 0;
+const int END = -1;
+
+int arr[MAX_IDX];
+
+ND LIS[MAX_IDX];
+int lis[MAX_IDX];
+int pre[MAX_IDX];
+int lis_len;
+int lis_cur;
+int n;
 
 int lower_bound(int x) {
-	int start = 0, end = len;
+	int s = 0, e = lis_len + 1;
 	int mid;
 
-	while (end > start) {
-		mid = (start + end) >> 1;
+	while (s < e) {
+		mid = (s + e) / 2;
 
-		if (lis[mid] < x) {
-			start = mid + 1;
-		}
-		else {
-			end = mid;
+		if (LIS[mid].v < x) {
+			s = mid + 1;
+		} else {
+			e = mid;
 		}
 	}
 
-	return end;
+	return e;
 }
 
 int main() {
 	scanf("%d", &n);
 	for (int i = 0; i < n; ++i) {
-		scanf("%d", &arr[0][i]);
+		scanf("%d", arr + i);
 	}
-
-	lis[0] = arr[0][0];
-	arr[1][0] = ++len;
+	lis_len = START;
+	lis_cur = START;
+	LIS[START] = (ND){arr[START], START};
+	pre[START] = END;
 
 	for (int i = 1; i < n; ++i) {
-		if (arr[0][i] > lis[len - 1]) {
-			lis[len++] = arr[0][i];
-			arr[1][i] = len;
-			last = i;
-		}
-		else {
-			int x = lower_bound(arr[0][i]);
-			lis[x] = arr[0][i];
-			arr[1][i] = x + 1;
+		int x = arr[i];
+
+		if (x > LIS[lis_len].v) {
+			pre[i] = LIS[lis_len].idx;
+			LIS[++lis_len] = (ND){x, i};
+			lis_cur = i;
+		} else {
+			int t = lower_bound(x);
+			if (t > 0) {
+				pre[i] = LIS[t - 1].idx;
+			} else {
+				pre[i] = END;
+			}
+			LIS[t] = (ND){x, i};
 		}
 	}
 
-	printf("%d\n", arr[1][last]);
-	for (int i = last, j = len; j > 0; --i) {
-		if (arr[1][i] == j) {
-			lis[--j] = arr[0][i];
-		}
+	printf("%d\n", lis_len + 1);
+	for (int i = 0; lis_cur > END; ++i) {
+		lis[i] = arr[lis_cur];
+		lis_cur = pre[lis_cur];
 	}
-	for (int i = 0; i < len; ++i) {
+
+	for (int i = lis_len; i >= 0; --i) {
 		printf("%d ", lis[i]);
 	}
-
 	return 0;
 }
