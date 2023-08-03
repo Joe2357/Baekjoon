@@ -1,30 +1,35 @@
 #include <stdio.h>
 
+int n, k;
+long long mod, digit_mod;
+
+long long getDigit(int x) {
+	long long r = 1;
+
+	while (x > 0) {
+		x /= 10, r *= 10;
+	}
+	return r;
+}
+
 int main() {
-
-	// init
-	int n, k;
 	scanf("%d %d", &n, &k);
+	mod = n % k, digit_mod = getDigit(n) % k;
 
-	// get modulo & length
-	long long mod = n % k, length = 1;
-	while (n / length >= 10)
-		length *= 10;
-	length *= 10;
-
-	// get result
-	int i;
-	long long temp = mod;
-	for (i = 0; i < k && temp > 0; ++i) {
-		temp *= length, temp += mod;
-		temp %= k;
+	int cur = mod;
+	int result;
+	for (result = 1; result <= k; ++result) {
+		if (cur == 0) {
+			break;
+		} else {
+			cur = (cur * digit_mod + mod) % k;
+		}
 	}
 
-	// print result
-	if (i == k)
+	if (result > k) {
 		printf("-1");
-	else
-		printf("%d", i + 1);
-
+	} else {
+		printf("%d", result);
+	}
 	return 0;
 }

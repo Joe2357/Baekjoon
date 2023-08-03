@@ -1,16 +1,15 @@
 #include <stdio.h>
 
 typedef char bool;
-const bool False = 0;
-const bool True = 1;
+const bool true = 1;
+const bool false = 0;
 
 #define MAX_IDX (50 + 1)
+int truth[MAX_IDX];
+bool isTruth[MAX_IDX];
+int n, m, truth_len;
 
-int partyMember[MAX_IDX][MAX_IDX];
 int parent[MAX_IDX];
-int n, m;
-int result;
-
 int find(int x) {
 	if (x == parent[x]) {
 		return x;
@@ -18,42 +17,57 @@ int find(int x) {
 		return parent[x] = find(parent[x]);
 	}
 }
-void merge(int x, int y) {
-	int A = find(x), B = find(y);
+void merge(int a, int b) {
+	int x = find(a), y = find(b);
 
-	if (A > B) {
-		parent[x] = parent[A] = B;
-	} else if (A < B) {
-		parent[y] = parent[B] = A;
+	if (x != y) {
+		parent[y] = parent[b] = x;
 	}
 	return;
 }
 
-int main() {
-	for (int i = 1; i < MAX_IDX; ++i) {
+int party[MAX_IDX][MAX_IDX];
+
+void read_input() {
+	for (int i = 0; i < truth_len; ++i) {
+		scanf("%d", truth + i);
+	}
+	for (int i = 0; i < m; ++i) {
+		scanf("%d", &party[i][0]);
+		for (int j = 1; j <= party[i][0]; ++j) {
+			scanf("%d", &party[i][j]);
+			merge(party[i][1], party[i][j]);
+		}
+	}
+	return;
+}
+void disjoint_init() {
+	for (int i = 1; i <= n; ++i) {
 		parent[i] = i;
 	}
-	scanf("%d %d", &n, &m);
+	return;
+}
 
-	for (int i = 0; i <= m; ++i) {
-		int a;
-		scanf("%d", &a);
-		for (int j = 0; j < a; ++j) {
-			int x;
-			scanf("%d", &x);
-			partyMember[i][j] = x;
-			merge(x, partyMember[i][0]);
-		}
+bool truthNotExists(int x) {
+	bool retval = false;
+	for (int i = 1; i <= party[x][0]; ++i) {
+		retval |= isTruth[find(party[x][i])];
+	}
+	return (retval == false);
+}
+
+int main() {
+	scanf("%d %d %d", &n, &m, &truth_len);
+	disjoint_init();
+	read_input();
+
+	for (int i = 0; i < truth_len; ++i) {
+		isTruth[truth[i]] = isTruth[find(truth[i])] = true;
 	}
 
-	int truthGroup = find(partyMember[0][0]);
-	for (int i = 1; i <= m; ++i) {
-		bool canLie = True;
-		for (int j = 0; partyMember[i][j] > 0; ++j) {
-			canLie &= (find(partyMember[i][j]) != truthGroup);
-		}
-
-		result += canLie;
+	int result = 0;
+	for (int i = 0; i < m; ++i) {
+		result += truthNotExists(i);
 	}
 
 	printf("%d", result);

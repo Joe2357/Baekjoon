@@ -1,117 +1,220 @@
 #include <stdio.h>
-#define MAX_INDEX 1000001
 
-long min_arr[MAX_INDEX], max_arr[MAX_INDEX];
-int max_rear, min_rear;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-void swap(long *a, long *b) {
-	long c = *a;
-	*a = *b, *b = c;
+typedef struct Node {
+	int v;
+	int idx;
+} ND;
+
+#define MAX_ITER (int)(1e6)
+const int HEAD = 1;
+
+bool deleted[MAX_ITER + 1];
+ND maxH[MAX_ITER * 2 + 100], minH[MAX_ITER * 2 + 100];
+int maxT, minT, remained;
+
+bool isQueueEmpty() { return remained == 0; }
+void insertMaxH(ND x) {
+	maxH[++maxT] = x;
+	int i = maxT;
+
+	while (i > 1 && x.v > maxH[i / 2].v) {
+		ND a = maxH[i / 2];
+		maxH[i / 2] = x, maxH[i] = a;
+		i /= 2;
+	}
+	return;
+}
+void insertMinH(ND x) {
+	minH[++minT] = x;
+	int i = minT;
+
+	while (i > 1 && x.v < minH[i / 2].v) {
+		ND a = minH[i / 2];
+		minH[i / 2] = x, minH[i] = a;
+		i /= 2;
+	}
 	return;
 }
 
-long max_pop() {
-	long r = max_arr[1];
-	int i = 1, tp = 2;
-	max_arr[1] = max_arr[max_rear], max_arr[max_rear--] = 0;
-	while (tp < max_rear) {
-		tp += (max_arr[tp] < max_arr[tp + 1]);
-		if (max_arr[i] >= max_arr[tp])
-			break;
-		swap(&max_arr[i], &max_arr[tp]);
-		i = tp, tp = 2 * i;
-	}
-	if (tp == max_rear && max_arr[i] < max_arr[tp])
-		swap(&max_arr[i], &max_arr[tp]);
-	return r;
-}
+void deleteMaxValue() {
+	bool isExitable = false;
+	do {
+		if (isQueueEmpty() == false) {
+			ND retval = maxH[HEAD];
+			maxH[HEAD] = maxH[maxT--];
 
-long min_pop() {
-	long r = min_arr[1];
-	int i = 1, tp = 2;
-	min_arr[1] = min_arr[min_rear], min_arr[min_rear--] = 0;
-	while (tp < min_rear) {
-		tp += (min_arr[tp] > min_arr[tp + 1]);
-		if (min_arr[i] <= min_arr[tp])
-			break;
-		swap(&min_arr[i], &min_arr[tp]);
-		i = tp, tp = 2 * i;
-	}
-	if (tp == min_rear && min_arr[i] > min_arr[tp])
-		swap(&min_arr[i], &min_arr[tp]);
-	return r;
-}
+			int i = HEAD, tp = i * 2;
+			while (tp < maxT) {
+				tp += (maxH[tp].v < maxH[tp + 1].v);
+				if (maxH[i].v >= maxH[tp].v) {
+					break;
+				}
 
-void max_push(long a, int index) {
-	max_arr[index] = a;
-	int i = index;
-	while (i != 1 && a > max_arr[i / 2]) {
-		swap(&max_arr[i / 2], &max_arr[i]);
-		i /= 2;
-	}
-}
+				ND a = maxH[tp];
+				maxH[tp] = maxH[i], maxH[i] = a;
 
-void min_push(long a, int index) {
-	min_arr[index] = a;
-	int i = index;
-	while (i != 1 && a < min_arr[i / 2]) {
-		swap(&min_arr[i / 2], &min_arr[i]);
-		i /= 2;
-	}
-}
-
-int main(t1, t2) {
-	// test case
-	for (scanf("%d", &t1); t1; t1--) {
-		// init
-		while (min_rear)
-			min_pop();
-		while (max_rear)
-			max_pop();
-
-		// command
-		for (scanf("%d", &t2); t2; t2--) {
-			char str[3];
-			long temp;
-			scanf("%s %ld", str, &temp);
-
-			// push all heaps
-			if (str[0] == 'I') {
-				max_push(temp, ++max_rear);
-				min_push(temp, ++min_rear);
+				i = tp, tp *= 2;
 			}
-			else {
-				// pop
-				if (temp == 1) {
-					if (!max_rear)
-						continue; // can't pop
-					long tempValue = max_pop(); // pop from max
+			if (tp == maxT && maxH[i].v < maxH[tp].v) {
+				ND a = maxH[tp];
+				maxH[tp] = maxH[i], maxH[i] = a;
+			}
 
-					// delete from min
-					int i = min_rear;
-					for (; min_arr[i] != tempValue; i--)
-						;
-					min_push(min_arr[min_rear], i);
-					min_arr[min_rear--] = 0;
+			if (deleted[retval.idx] == false) {
+				deleted[retval.idx] = true;
+				isExitable = true;
+			}
+		} else {
+			isExitable = true;
+		}
+	} while (isExitable == false);
+	return;
+}
+void deleteMinValue() {
+	bool isExitable = false;
+	do {
+		if (isQueueEmpty() == false) {
+			ND retval = minH[HEAD];
+			minH[HEAD] = minH[minT--];
+
+			int i = HEAD, tp = i * 2;
+			while (tp < minT) {
+				tp += (minH[tp].v > minH[tp + 1].v);
+				if (minH[i].v <= minH[tp].v) {
+					break;
 				}
-				else {
-					if (!min_rear)
-						continue;
-					long tempValue = min_pop();
-					int i = max_rear;
-					for (; max_arr[i] != tempValue; i--)
-						;
-					max_push(max_arr[max_rear], i);
-					max_arr[max_rear--] = 0;
-				}
+
+				ND a = minH[tp];
+				minH[tp] = minH[i], minH[i] = a;
+
+				i = tp, tp *= 2;
+			}
+			if (tp == minT && minH[i].v > minH[tp].v) {
+				ND a = minH[tp];
+				minH[tp] = minH[i], minH[i] = a;
+			}
+
+			if (deleted[retval.idx] == false) {
+				deleted[retval.idx] = true;
+				isExitable = true;
+			}
+		} else {
+			isExitable = true;
+		}
+	} while (isExitable == false);
+	return;
+}
+
+void cleanMaxH() {
+	while (deleted[maxH[HEAD].idx] == true) {
+		ND retval = maxH[HEAD];
+		maxH[HEAD] = maxH[maxT--];
+
+		int i = HEAD, tp = i * 2;
+		while (tp < maxT) {
+			tp += (maxH[tp].v < maxH[tp + 1].v);
+			if (maxH[i].v >= maxH[tp].v) {
+				break;
+			}
+
+			ND a = maxH[tp];
+			maxH[tp] = maxH[i], maxH[i] = a;
+
+			i = tp, tp *= 2;
+		}
+		if (tp == maxT && maxH[i].v < maxH[tp].v) {
+			ND a = maxH[tp];
+			maxH[tp] = maxH[i], maxH[i] = a;
+		}
+	}
+	return;
+}
+void cleanMinH() {
+	while (deleted[minH[HEAD].idx] == true) {
+		ND retval = minH[HEAD];
+		minH[HEAD] = minH[minT--];
+
+		int i = HEAD, tp = i * 2;
+		while (tp < minT) {
+			tp += (minH[tp].v > minH[tp + 1].v);
+			if (minH[i].v <= minH[tp].v) {
+				break;
+			}
+
+			ND a = minH[tp];
+			minH[tp] = minH[i], minH[i] = a;
+
+			i = tp, tp *= 2;
+		}
+		if (tp == minT && minH[i].v > minH[tp].v) {
+			ND a = minH[tp];
+			minH[tp] = minH[i], minH[i] = a;
+		}
+	}
+	return;
+}
+
+void init() {
+	for (int i = 0; i < MAX_ITER; ++i) {
+		deleted[i] = false;
+	}
+	maxT = 0, minT = 0, remained = 0;
+	return;
+}
+
+int main() {
+	int t;
+	scanf("%d", &t);
+
+	while (t--) {
+		init();
+
+		int k;
+		scanf("%d", &k);
+
+		for (int i = 0; i < k; ++i) {
+			char command[3];
+			int x;
+			scanf("%s %d", command, &x);
+
+			switch (command[0]) {
+				case 'I': {
+					insertMaxH((ND){x, i});
+					insertMinH((ND){x, i});
+					++remained;
+				} break;
+				case 'D': {
+					if (isQueueEmpty() == false) {
+						--remained;
+						switch (x) {
+							case 1: {
+								deleteMaxValue();
+							} break;
+							case -1: {
+								deleteMinValue();
+							} break;
+						}
+					}
+				} break;
+			}
+
+			if (remained == 0) {
+				maxT = minT = 0;
 			}
 		}
 
-		// print result
-		if (!min_rear && !max_rear)
+		if (isQueueEmpty() == true) {
 			printf("EMPTY\n");
-		else
-			printf("%ld %ld\n", max_arr[1], min_arr[1]);
+		} else {
+			cleanMaxH();
+			cleanMinH();
+			printf("%d %d\n", maxH[HEAD], minH[HEAD]);
+		}
 	}
+
 	return 0;
 }

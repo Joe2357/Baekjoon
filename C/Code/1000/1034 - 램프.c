@@ -1,35 +1,49 @@
 #include <stdio.h>
-#include <string.h>
-#define max(a, b) (a > b) ? a : b
 
-char arr[50][51] = { 0 };
-int n, m, k, result = 0;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
+#define MAX_IDX 50
+char grid[MAX_IDX][MAX_IDX + 1];
+int n, m, k;
+
+const char ON = '1';
+const char OFF = '0';
+
+bool string_compare(int a, int b) {
+	for (int i = 0; i < m; ++i) {
+		if (grid[a][i] != grid[b][i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+#define max(a, b) (((a) > (b)) ? (a) : (b))
 int main() {
-	int off[51] = { 0 }, right[51] = { 0 };
-
 	scanf("%d %d", &n, &m);
-	for (int i = 0; i < n; i++)
-		scanf("%s", arr[i]);
+	for (int i = 0; i < n; ++i) {
+		scanf("%s", grid[i]);
+	}
 	scanf("%d", &k);
-	// count off-lamps
-	for (int i = 0; i < n; i++) {
-		int temp = 0;
-		for (int j = 0; j < m; j++)
-			temp += (arr[i][j] == '0');
-		off[i] = temp;
+
+	int result = 0;
+	for (int i = 0; i < n; ++i) {
+		int offCount = 0;
+		for (int j = 0; j < m; ++j) {
+			offCount += (grid[i][j] == OFF);
+		}
+
+		if (offCount <= k && offCount % 2 == k % 2) {
+			int sameCount = 1;
+			for (int j = 0; j < i; ++j) {
+				sameCount += (string_compare(i, j));
+			}
+			result = max(result, sameCount);
+		}
 	}
-	// count same lines
-	for (int i = 0; i < n; i++) {
-		int temp = 0;
-		for (int j = 0; j < n; j++)
-			temp += (strcmp(arr[i], arr[j]) == 0);
-		right[i] = temp;
-	}
-	// find the biggest case
-	for (int i = 0; i < n; i++)
-		if (off[i] <= k && (k - off[i]) % 2 == 0)
-			result = max(result, right[i]);
+
 	printf("%d", result);
 	return 0;
 }
