@@ -1,22 +1,28 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-	int happy = 0, sad = 0;
-	char str[260];
-	gets(str);
-	for (int i = 0; str[i]; i++)				// brute force
-		if (str[i] == ':' && str[i + 1] == '-') // maybe happy or sad
-			if (str[i + 2] == ')')				// happy
-				happy++, i += 2;
-			else if (str[i + 2] == '(') // sad
-				sad++, i += 2;
-	if (!happy && !sad) // nothing
+	char string[300];
+	int cnt_hap = 0;
+	int cnt_sad = 0;
+	fgets(string, 300, stdin);
+
+	for (int i = 0; i < strlen(string) - 2; i++) {
+		if (string[i] == ':' && string[i + 1] == '-') {
+			if (string[i + 2] == ')')
+				cnt_hap += 1;
+			else if (string[i + 2] == '(')
+				cnt_sad += 1;
+		}
+	}
+
+	if (cnt_hap + cnt_sad == 0)
 		printf("none");
-	else if (happy == sad) // same
-		printf("unsure");
-	else if (happy > sad)
+	else if (cnt_hap > cnt_sad)
 		printf("happy");
-	else if (happy < sad)
+	else if (cnt_hap < cnt_sad)
 		printf("sad");
+	else if (cnt_hap == cnt_sad)
+		printf("unsure");
 	return 0;
 }

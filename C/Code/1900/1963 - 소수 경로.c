@@ -1,82 +1,80 @@
 #include <stdio.h>
 
-typedef struct Node {
-	int value;
-	int count;
-} ND;
+typedef char bool;
+const bool true = 1;
+const bool false = 0;
 
-typedef char boolean;
-#define True 1
-#define False 0
+const int INF = 987654321;
+#define MAX_IDX 10000
 
-#define MAX_INDEX (int)1e4
-boolean isNotPrime[MAX_INDEX + 1];
+bool isNotPrime[MAX_IDX] = {true, true};
 
-void init() {
-	isNotPrime[0] = True, isNotPrime[1] = True;
-	for (int i = 2; i <= MAX_INDEX; ++i)
-		if (!isNotPrime[i])
-			for (int j = i * 2; j <= MAX_INDEX; j += i)
-				isNotPrime[j] = True;
+void prime_init() {
+	for (int i = 2; i < MAX_IDX; ++i) {
+		if (isNotPrime[i] == false) {
+			for (int j = i * 2; j < MAX_IDX; j += i) {
+				isNotPrime[j] = true;
+			}
+		}
+	}
 	return;
 }
 
-int main() {
-	init();
-	int t;
-	scanf("%d", &t);
-	while (t--) {
-		int a, b;
-		scanf("%d %d", &a, &b);
-		boolean visited[MAX_INDEX + 1] = { False };
-		visited[a] = True;
-		ND queue[MAX_INDEX] = { {a, 0} };
-		int front = 0, rear = 1;
-		boolean isAnswerExists = False;
+typedef struct QueueNode {
+	int num;
+	int cnt;
+} QN;
 
-		while (front != rear) {
-			ND node = queue[front++];
-			if (node.value == b) {
-				printf("%d\n", node.count);
-				isAnswerExists = True;
+int t;
+int a, b;
+QN q[MAX_IDX + 1];
+bool visit[MAX_IDX + 1];
+int front, rear;
+int retval;
+
+int main() {
+	prime_init();
+	scanf("%d", &t);
+
+	while (t--) {
+		scanf("%d %d", &a, &b);
+
+		for (int i = 0; i < MAX_IDX; ++i) {
+			visit[i] = false;
+		}
+		retval = INF;
+		front = rear = 0;
+		visit[a] = true;
+		q[rear++] = (QN){a, 0};
+
+		while (front < rear) {
+			QN node = q[front++];
+			if (node.num == b) {
+				retval = node.cnt;
 				break;
 			}
 
-			for (int i = 0; i < 10; ++i) {
-				int temp;
-				/* 1000 */
-				if (i != 0) {
-					temp = (node.value % 1000) + (i * 1000);
-					if (!isNotPrime[temp] && !visited[temp]) {
-						visited[temp] = True;
-						queue[rear++] = (ND) { temp, node.count + 1 };
+			for (int digit = 1; digit < MAX_IDX; digit *= 10) {
+				int std = node.num - (((node.num % (digit * 10)) / digit) * digit);
+
+				for (int j = 0; j < 10; ++j) {
+					int temp = std + (j * digit);
+
+					if (temp < 1000) {
+						continue;
+					} else if (isNotPrime[temp] == false && visit[temp] == false) {
+						visit[temp] = true;
+						q[rear++] = (QN){temp, node.cnt + 1};
 					}
-				}
-
-				/* 100 */
-				temp = (node.value / 1000 * 1000) + (i * 100) + (node.value % 100);
-				if (!isNotPrime[temp] && !visited[temp]) {
-					visited[temp] = True;
-					queue[rear++] = (ND) { temp, node.count + 1 };
-				}
-
-				/* 10 */
-				temp = (node.value / 100 * 100) + (i * 10) + (node.value % 10);
-				if (!isNotPrime[temp] && !visited[temp]) {
-					visited[temp] = True;
-					queue[rear++] = (ND) { temp, node.count + 1 };
-				}
-
-				/* 1 */
-				temp = (node.value / 10 * 10) + (i);
-				if (!isNotPrime[temp] && !visited[temp]) {
-					visited[temp] = True;
-					queue[rear++] = (ND) { temp, node.count + 1 };
 				}
 			}
 		}
 
-		if (!isAnswerExists)
+		if (retval < INF) {
+			printf("%d\n", retval);
+		} else {
 			printf("Impossible\n");
+		}
 	}
+	return 0;
 }

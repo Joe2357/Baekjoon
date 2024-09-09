@@ -1,62 +1,69 @@
 #include <stdio.h>
 
-#define M_L (int)1e5
-int heap[M_L + 2]; int len = 0;
-long long result = 0;
+#define MAX_IDX 100000
+const int HEAD = 1;
+
+int heap[MAX_IDX + 10];
+int top;
+
+int n;
 
 void push(int x) {
-	heap[++len] = x;
-	for (int t = len; t > 1 && x < heap[t >> 1]; t >>= 1) {
-		int a = heap[t >> 1];
-		heap[t >> 1] = x, heap[t] = a;
+	heap[++top] = x;
+	int i = top;
+
+	while (i > HEAD && heap[i / 2] > x) {
+		heap[i] = heap[i / 2];
+		heap[i / 2] = x;
+		i /= 2;
 	}
 	return;
 }
 
 int pop() {
-	int retval = heap[1];
-	heap[1] = heap[len--];
+	int ret = heap[HEAD];
+	heap[HEAD] = heap[top--];
 
-	int a = 1, b = 2;
-	while (b <= len) {
-		b += ((b != len) & (heap[b] > heap[b + 1]));
-		if (heap[a] <= heap[b]) {
+	int i = 1, tp = 2;
+	while (tp < top) {
+		if (heap[tp] > heap[tp + 1]) {
+			++tp;
+		}
+
+		if (heap[i] <= heap[tp]) {
 			break;
+		} else {
+			int temp = heap[tp];
+			heap[tp] = heap[i];
+			heap[i] = temp;
+
+			i = tp, tp *= 2;
 		}
-		else {
-			int c = heap[a];
-			heap[a] = heap[b];
-			heap[b] = c;
-		}
-		a = b, b <<= 1;
+	}
+	if (tp == top && heap[i] > heap[tp]) {
+		int temp = heap[tp];
+		heap[tp] = heap[i];
+		heap[i] = temp;
 	}
 
-	return retval;
+	return ret;
 }
 
 int main() {
-	int n;
 	scanf("%d", &n);
-	while (n--) {
-		int a;
-		scanf("%d", &a);
-		push(a);
-
-		/*
-		for (int i = 1; i <= len; ++i) {
-			printf("%d ", heap[i]);
-		}
-		printf("\n");
-		*/
+	for (int i = 0; i < n; ++i) {
+		int x;
+		scanf("%d", &x);
+		push(x);
 	}
 
-	while (len > 1) {
-		int a = pop() + pop();
-		// printf("t : %d\n", a);
-		result += a;
-		push(a);
+	int result = 0;
+	for (int i = 0; i < n - 1; ++i) {
+		int temp = pop() + pop();
+		push(temp);
+		result += temp;
 	}
 
-	printf("%lld", result);
+	printf("%d", result);
 	return 0;
 }

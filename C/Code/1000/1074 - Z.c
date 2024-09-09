@@ -1,17 +1,25 @@
 #include <stdio.h>
-#include <math.h>
 
-int main(n, r, c, temp) {
+int main() {
+	int n, r, c;
 	scanf("%d %d %d", &n, &r, &c);
-	long long result = 0;
-	while (n > 0) {
-		temp = 0;							// temp = which quadrant does target exist?
-		if (r >= pow(2, n - 1))
-			temp += 2, r -= pow(2, n - 1);
-		if (c >= pow(2, n - 1))
-			temp++, c -= pow(2, n - 1);
-		result += temp * pow(4, --n);		// eval quadrant
+	int result = 0;
+
+	for (; n > 0; --n) {
+		int x = 0;
+
+		if (r >= (1 << (n - 1))) {
+			x += 2;
+			r -= (1 << (n - 1));
+		}
+		if (c >= (1 << (n - 1))) {
+			x += 1;
+			c -= (1 << (n - 1));
+		}
+
+		result += (x * (1 << (2 * n - 2)));
 	}
-	printf("%lld", result + r * 2 + c);		// eval target point
+
+	printf("%d", result);
 	return 0;
 }

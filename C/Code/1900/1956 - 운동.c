@@ -1,41 +1,49 @@
 #include <stdio.h>
 
-#define MAX_INDEX 400
-int matrix[MAX_INDEX][MAX_INDEX];
+#define MAX_IDX 400
+#define INF 987654321
+
+int grid[MAX_IDX + 1][MAX_IDX + 1];
+int v, e;
+int result = INF;
+
+#define min(a, b) (((a) > (b)) ? (b) : (a))
+
+void init() {
+	for (int i = 1; i <= v; ++i) {
+		for (int j = 1; j <= v; ++j) {
+			grid[i][j] = INF;
+		}
+	}
+	return;
+}
 
 int main() {
-	// init
-	int n, k;
-	scanf("%d %d", &n, &k);
+	scanf("%d %d", &v, &e);
+	init();
 
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < n; ++j)
-			#define INF 987654321
-			matrix[i][j] = INF;
-	}
-
-	// edge init
-	for (; k; k--) {
+	while (e--) {
 		int a, b, c;
 		scanf("%d %d %d", &a, &b, &c);
-		matrix[a - 1][b - 1] = c;
+		grid[a][b] = c;
 	}
 
-	// floyd algorithm
-	for (int a = 0; a < n; ++a)
-		for (int b = 0; b < n; ++b)
-			for (int c = 0; c < n; ++c)
-				#define min(a, b) (((a) > (b)) ? (b) : (a))
-				matrix[b][c] = min(matrix[b][c], matrix[b][a] + matrix[a][c]);
+	for (int k = 1; k <= v; ++k) {
+		for (int i = 1; i <= v; ++i) {
+			for (int j = 1; j <= v; ++j) {
+				grid[i][j] = min(grid[i][j], grid[i][k] + grid[k][j]);
+			}
+		}
+	}
 
-	// get result
-	int retval = INF;
-	for (int i = 0; i < n; ++i)
-		for (int j = 0; j < n; ++j)
-			retval = min(retval, matrix[i][j] + matrix[j][i]);
+	for (int i = 1; i <= v; ++i) {
+		result = min(result, grid[i][i]);
+	}
 
-	// print result
-	retval = (retval == INF) ? -1 : retval;
-	printf("%d", retval);
+	if (result == INF) {
+		printf("-1");
+	} else {
+		printf("%d", result);
+	}
 	return 0;
 }
