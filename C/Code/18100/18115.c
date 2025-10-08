@@ -23,9 +23,9 @@ Card* createNewNode(int x) {
 }
 
 void init() {
-	Card* temp_node = createNewNode(START);
-	card_deck = temp_node;
-	card_tale = temp_node;
+	Card* first_node = createNewNode(START);
+	card_deck = first_node;
+	card_tale = first_node;
 	return;
 }
 
@@ -46,11 +46,10 @@ int main() {
 
 	init(); // 카드 덱 초기화 (카드 1은 매번 가장 마지막에 1번 action을 통해 내려짐)
 
-	for (int card_number = 2; card_number <= n; ++card_number) {
+	for (int card_number = START + 1; card_number <= n; ++card_number) {
 		Card* newNode = createNewNode(card_number);
-		int action = actions[n - card_number]; // 입력의 역순으로 처리
-
-		switch (action) {
+		
+		switch (actions[n - card_number]) { // 입력의 역순으로 처리
 			case 1: { // 제일 위의 카드를 바닥에 내려놓음
 				newNode->next = card_deck;
 				card_deck = newNode;
