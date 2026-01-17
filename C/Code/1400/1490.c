@@ -14,7 +14,7 @@ ll n;
 void init(ll x) {
 	ll temp = x;
 	while (temp > 0) {
-		isDigitinNumber[temp % 10] = true;
+		isDigitinNumber[temp % DIGIT] = true;
 		temp /= DIGIT;
 	}
 	return;
